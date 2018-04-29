@@ -1,14 +1,14 @@
 from app import db
 
-class Gentileza(db.Model):
-    __tablename__ = 'usuario'
+class User(db.Model):
+	__tablename__ = "User"
 
-    id= db.Column(db.Integer, primary_key=True, autoincrement=True)
-    descricao = db.Column(db.String, nullable=False)
-    tipo = db.Column(db.Integer, nullable=False)
-    latitude = db.Column(db.String, nullable=False)
-    longitude = db.Column(db.String, nullable=False)
-    nome = db.Column(db.String)
+	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	username = db.Column(db.String(30), unique=True, nullable=False)
+	email = db.Column(db.String(130), unique=True, nullable=False)
+	pass_hash = db.Column(db.String(200), nullable=False)
+	avatar = db.Column(db.String(255), nullable=False)
+	phone = db.Column(db.String(11))
 
-    def __repr__(self):
-        return '<gentileza %r>' % (self.nome)
+	def __repr__(self):
+		return '<User {}>'.format(self.username)
