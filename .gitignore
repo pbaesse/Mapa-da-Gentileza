@@ -1,5 +1,4 @@
 *.py[cod]
-venv/
 
 # C extensions
 *.so
@@ -12,6 +11,8 @@ build
 eggs
 parts
 bin
+lib
+include
 var
 sdist
 develop-eggs
@@ -23,3 +24,9 @@ __pycache__
 *.egg-info/
 .installed.cfg
 *.egg
+
+env
+.venv
+env/
+venv/
+ENV/
