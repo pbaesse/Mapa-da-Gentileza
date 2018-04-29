@@ -9,5 +9,5 @@ as gentilezas ocorram frequentemente na vida das pessoas.
 
 ## Desenvolvedores
 
-![@pbaesse](https://avatars1.githubusercontent.com/u/4050950?s=400&v=4)
-![@math77](https://avatars1.githubusercontent.com/u/21244454?s=400&v=4)
+![Pedro Baesse](https://avatars1.githubusercontent.com/u/4050950?s=100&v=4)
+![Matheus Emanuel](https://avatars1.githubusercontent.com/u/21244454?s=100&v=4)
