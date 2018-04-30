@@ -22,6 +22,7 @@ pylint==1.8.4
 PyMySQL==0.8.0
 python-dateutil==2.7.2
 python-editor==1.0.3
+selenium==3.11.0
 six==1.11.0
 SQLAlchemy==1.2.7
 Werkzeug==0.14.1
