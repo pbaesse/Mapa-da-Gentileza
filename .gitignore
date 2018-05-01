@@ -25,6 +25,7 @@ __pycache__
 .installed.cfg
 *.egg
 
+.env
 env
 .venv
 env/
