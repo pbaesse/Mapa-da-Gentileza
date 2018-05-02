@@ -21,6 +21,7 @@ pkg-resources==0.0.0
 pylint==1.8.4
 PyMySQL==0.8.0
 python-dateutil==2.7.2
+python-dotenv==0.8.2
 python-editor==1.0.3
 selenium==3.11.0
 six==1.11.0
