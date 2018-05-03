@@ -3,6 +3,8 @@ astroid==1.6.3
 behave==1.2.6
 click==6.7
 Flask==1.0
+Flask-GoogleMaps==0.2.6
+Flask-Login==0.4.1
 Flask-Migrate==2.1.1
 Flask-MySQL==1.4.0
 Flask-SQLAlchemy==2.3.2
