@@ -28,6 +28,21 @@ class Post(db.Model):
 	longitude = db.Column(db.Float)
 	post_date = db.Column(db.DateTime, default=datetime.utcnow)
 	user_id = db.Column(db.Integer, db.ForeignKey('User.id'))
+	tag_id = db.Column(db.Integer, db.ForeignKey('Tags.id'))
 
 	def __repr__(self):
 		return '<Post {}>'.format(self.title)
+
+
+class Tags(db.Model):
+	__tablename__ = "Tags"
+
+	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	description = db.Column(db.String(20), nullable=False, unique=True)
+	marker = db.Column(db.String(100), nullable=False, unique=True)
+	#Visao de alto nivel para simplicar consultas ao DB. Esse campo
+	#nao e adicionado ao banco.
+	posts = db.relationship('Post', backref='post', lazy='dynamic')
+
+	def __repr__(self):
+		return '<Tags {}>'.format(self.description)
