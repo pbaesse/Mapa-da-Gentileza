@@ -15,6 +15,18 @@ class User(db.Model):
 
 	def __repr__(self):
 		return '<User {}>'.format(self.username)
+	
+
+	def to_json(self):
+		return {
+			"idUser": self.id,
+			"username": self.username,
+			"email": self.email,
+			"about_me": self.about_me,
+			"avatar": self.avatar,
+			"phone": self.phone,
+			"posts": self.posts
+		}
 
 
 class Post(db.Model):
@@ -31,6 +43,19 @@ class Post(db.Model):
 
 	def __repr__(self):
 		return '<Post {}>'.format(self.title)
+	
+
+	def to_json(self):
+		return {
+			"idPost": self.id,
+			"title": self.title,
+			"body": self.body,
+			"latitude": self.latitude,
+			"longitude": self.longitude,
+			"postDate": self.post_date,
+			"userId": self.user_id,
+			"tagId": self.tag_id
+		}
 
 
 class Tags(db.Model):
