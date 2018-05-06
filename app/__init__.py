@@ -1,12 +1,10 @@
 from flask import Flask
 from config import Config
-from flask_sqlalchemy import SQLAlchemy
-from flask_migrate import Migrate
-from flask_login import LoginManager
-from config import Config
 from midlewares import db, migrate, login
 
 from app.auth import bp_auth
+from app.errors import bp_errors
+from app.feed import bp_feed
 
 
 def create_app():
@@ -16,7 +14,11 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
     login.init_app(app)
+
+    #registro dos blueprints dos modulos do app
     app.register_blueprint(bp_auth, url_prefix='/auth')
+    app.register_blueprint(bp_errors)
+    app.register_blueprint(bp_feed, url_prefix='/feed')
 
     return app
 
