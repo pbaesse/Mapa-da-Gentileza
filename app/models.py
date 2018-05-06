@@ -1,6 +1,5 @@
-from app import db
 from datetime import datetime
-
+from midlewares import db
 
 class User(db.Model):
 	__tablename__ = "User"
