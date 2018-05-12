@@ -5,7 +5,7 @@ Feature: User registration
         When you insert the "username" "Larry"
         And insert the "email" "larry12@gmail.com"
         And insert the "password" "matheuslindao"
-        Then click the button "Sign Up"
+        Then click the button "SignUp"
         And the message should be displayed
             """
                 Seu cadastro foi realizado com sucesso, Larry.
