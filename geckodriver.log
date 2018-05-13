@@ -52,3 +52,145 @@ JavaScript error: resource://pdf.js/PdfJs.jsm, line 251: NS_ERROR_XPC_JAVASCRIPT
 (firefox:9309): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f19e294d650' of type 'MaiAtkType319'
 1526086681255	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 123"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:123 < onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:138 < _middleware/</<()@resource://activity-stream/lib/Store.jsm:52 < Store/this[method]()@resource://activity-stream/lib/Store.jsm:31 < uninit()@resource://activity-stream/lib/Store.jsm:151 < uninit()@resource://activity-stream/lib/ActivityStream.jsm:266 < uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4509 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2281 < GeckoDriver.prototype.quit()@driver.js:3307 < despatch()@server.js:553 < execute()@server.js:527 < onPacket/<()@server.js:502 < onPacket()@server.js:501 < _onJSONObjectReady/<()@transport.js:501
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526169219351	geckodriver	INFO	geckodriver 0.20.1
+1526169219503	geckodriver	INFO	Listening on 127.0.0.1:46349
+1526169220533	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.0rFtlP6OhVpa"
+1526169233516	Marionette	INFO	Enabled via --marionette
+1526169255826	Marionette	INFO	Listening on port 44703
+1526169256522	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526169256757	Marionette	DEBUG	Register listener.js for window 2147483649
+1526169257289	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526169257575	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526169257649	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526169257650	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526169258085	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A5000/auth/register&c=UTF-8&f=regular&d=O%20Firefox%20n%C3%A3o%20conseguiu%20estabelecer%20uma%20conex%C3%A3o%20com%20o%20servidor%20localhost%3A5000."
+
+(firefox:6115): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f1618aff970' of type 'MaiAtkType319'
+1526169258885	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 123"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:123 < onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:138 < _middleware/</<()@resource://activity-stream/lib/Store.jsm:52 < Store/this[method]()@resource://activity-stream/lib/Store.jsm:31 < uninit()@resource://activity-stream/lib/Store.jsm:151 < uninit()@resource://activity-stream/lib/ActivityStream.jsm:266 < uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4509 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2281 < GeckoDriver.prototype.quit()@driver.js:3307 < despatch()@server.js:553 < execute()@server.js:527 < onPacket/<()@server.js:502 < onPacket()@server.js:501 < _onJSONObjectReady/<()@transport.js:501
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526169414378	geckodriver	INFO	geckodriver 0.20.1
+1526169414517	geckodriver	INFO	Listening on 127.0.0.1:55431
+1526169415298	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.1Pf5n3VA51Ws"
+1526169423884	Marionette	INFO	Enabled via --marionette
+1526169443286	Marionette	INFO	Listening on port 36307
+1526169443835	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526169444114	Marionette	DEBUG	Register listener.js for window 2147483649
+1526169445248	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526169445404	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526169445436	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526169445442	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526169445723	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A5000/auth/register&c=UTF-8&f=regular&d=O%20Firefox%20n%C3%A3o%20conseguiu%20estabelecer%20uma%20conex%C3%A3o%20com%20o%20servidor%20localhost%3A5000."
+
+(firefox:6371): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fed3bad46f0' of type 'MaiAtkType319'
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526170096707	geckodriver	INFO	geckodriver 0.20.1
+1526170096809	geckodriver	INFO	Listening on 127.0.0.1:45913
+1526170097714	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.ogXse8h9xRgF"
+1526170112774	Marionette	INFO	Enabled via --marionette
+1526170156632	Marionette	INFO	Listening on port 39149
+1526170158143	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526170158859	Marionette	DEBUG	Register listener.js for window 2147483649
+1526170164182	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526170164833	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526170164882	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526170164883	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526170165967	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A5000/auth/register&c=UTF-8&f=regular&d=O%20Firefox%20n%C3%A3o%20conseguiu%20estabelecer%20uma%20conex%C3%A3o%20com%20o%20servidor%20localhost%3A5000."
+
+(firefox:6755): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f5f0a08b600' of type 'MaiAtkType319'
+1526170168008	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 123"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:123 < onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:138 < _middleware/</<()@resource://activity-stream/lib/Store.jsm:52 < Store/this[method]()@resource://activity-stream/lib/Store.jsm:31 < uninit()@resource://activity-stream/lib/Store.jsm:151 < uninit()@resource://activity-stream/lib/ActivityStream.jsm:266 < uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4509 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2281 < GeckoDriver.prototype.quit()@driver.js:3307 < despatch()@server.js:553 < execute()@server.js:527 < onPacket/<()@server.js:502 < onPacket()@server.js:501 < _onJSONObjectReady/<()@transport.js:501
+1526170168613	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1526170168865	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526171187791	geckodriver	INFO	geckodriver 0.20.1
+1526171187903	geckodriver	INFO	Listening on 127.0.0.1:54255
+1526171188852	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.jVGnk8MPIaiJ"
+1526171203517	Marionette	INFO	Enabled via --marionette
+1526171242350	Marionette	INFO	Listening on port 43603
+1526171243930	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526171247655	Marionette	DEBUG	Register listener.js for window 2147483649
+1526171252910	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526171253298	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526171253333	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526171253337	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526171254135	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A5000/auth/register&c=UTF-8&f=regular&d=O%20Firefox%20n%C3%A3o%20conseguiu%20estabelecer%20uma%20conex%C3%A3o%20com%20o%20servidor%20localhost%3A5000."
+
+(firefox:7507): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fe4816da290' of type 'MaiAtkType319'
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526171367460	geckodriver	INFO	geckodriver 0.20.1
+1526171367485	geckodriver	INFO	Listening on 127.0.0.1:55593
+1526171367583	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.ZKtqCtV2734l"
+1526171373890	Marionette	INFO	Enabled via --marionette
+1526171392402	Marionette	INFO	Listening on port 35789
+1526171392447	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526171392674	Marionette	DEBUG	Register listener.js for window 2147483649
+1526171393193	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526171393451	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526171393481	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526171393486	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526171393742	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A5000/auth/register&c=UTF-8&f=regular&d=O%20Firefox%20n%C3%A3o%20conseguiu%20estabelecer%20uma%20conex%C3%A3o%20com%20o%20servidor%20localhost%3A5000."
+
+(firefox:7685): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fad78927bf0' of type 'MaiAtkType319'
+1526171394709	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 123"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:123 < onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:138 < _middleware/</<()@resource://activity-stream/lib/Store.jsm:52 < Store/this[method]()@resource://activity-stream/lib/Store.jsm:31 < uninit()@resource://activity-stream/lib/Store.jsm:151 < uninit()@resource://activity-stream/lib/ActivityStream.jsm:266 < uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4509 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2281 < GeckoDriver.prototype.quit()@driver.js:3307 < despatch()@server.js:553 < execute()@server.js:527 < onPacket/<()@server.js:502 < onPacket()@server.js:501 < _onJSONObjectReady/<()@transport.js:501
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526171789587	geckodriver	INFO	geckodriver 0.20.1
+1526171789712	geckodriver	INFO	Listening on 127.0.0.1:51805
+1526171790861	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.ZaIckRcfYewZ"
+1526171805606	Marionette	INFO	Enabled via --marionette
+1526171839522	Marionette	INFO	Listening on port 46113
+1526171840994	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526171841675	Marionette	DEBUG	Register listener.js for window 2147483649
+1526171845646	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526171846614	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526171846635	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526171846637	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526171849594	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A5000/auth/register&c=UTF-8&f=regular&d=O%20Firefox%20n%C3%A3o%20conseguiu%20estabelecer%20uma%20conex%C3%A3o%20com%20o%20servidor%20localhost%3A5000."
+
+(firefox:8160): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f44098f5510' of type 'MaiAtkType319'
+1526171865623	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1526171865812	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526171999086	geckodriver	INFO	geckodriver 0.20.1
+1526171999125	geckodriver	INFO	Listening on 127.0.0.1:45505
+1526171999538	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.PrCV1aYya9BI"
+1526172020466	Marionette	INFO	Enabled via --marionette
+1526172071869	Marionette	INFO	Listening on port 45503
+
+(firefox:9194): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'load_complete' is invalid for instance '0x7f57cf0abd80' of type 'MaiAtkType139'
+[Parent 9194, Gecko_IOThread] WARNING: pipe error (99): Conexão fechada pela outra ponta: file /build/firefox-_ZEv2Z/firefox-57.0.1+linuxmint1+sylvia/ipc/chromium/src/chrome/common/ipc_channel_posix.cc, line 353
+1526172203609	geckodriver	INFO	geckodriver 0.20.1
+1526172203711	geckodriver	INFO	Listening on 127.0.0.1:42277
+1526172203847	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.lCjmG2gvSUsI"
+1526172207301	Marionette	INFO	Enabled via --marionette
+1526172214938	Marionette	INFO	Listening on port 35881
+1526172215051	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526172215261	Marionette	DEBUG	Register listener.js for window 2147483649
+1526172215698	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526172215803	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526172215826	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526172215832	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526172216049	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A5000/auth/register&c=UTF-8&f=regular&d=O%20Firefox%20n%C3%A3o%20conseguiu%20estabelecer%20uma%20conex%C3%A3o%20com%20o%20servidor%20localhost%3A5000."
+
+(firefox:9483): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f89ab388060' of type 'MaiAtkType319'
+1526172216992	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 123"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:123 < onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:138 < _middleware/</<()@resource://activity-stream/lib/Store.jsm:52 < Store/this[method]()@resource://activity-stream/lib/Store.jsm:31 < uninit()@resource://activity-stream/lib/Store.jsm:151 < uninit()@resource://activity-stream/lib/ActivityStream.jsm:266 < uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4509 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2281 < GeckoDriver.prototype.quit()@driver.js:3307 < despatch()@server.js:553 < execute()@server.js:527 < onPacket/<()@server.js:502 < onPacket()@server.js:501 < _onJSONObjectReady/<()@transport.js:501
+JavaScript error: jar:file:///usr/lib/firefox/omni.ja!/components/nsSearchService.js, line 769: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsICryptoHash.init]
+JavaScript error: resource://gre/modules/JSONFile.jsm, line 158: Error: Data is not ready.
+JavaScript error: resource://gre/modules/JSONFile.jsm, line 158: Error: Data is not ready.
+JavaScript error: resource://gre/modules/JSONFile.jsm, line 158: Error: Data is not ready.
+JavaScript error: resource://pdf.js/PdfJs.jsm, line 251: NS_ERROR_XPC_JAVASCRIPT_ERROR_WITH_DETAILS: [JavaScript Error: "Data is not ready." {file: "resource://gre/modules/JSONFile.jsm" line: 158}]'[JavaScript Error: "Data is not ready." {file: "resource://gre/modules/JSONFile.jsm" line: 158}]' when calling method: [nsIHandlerService::store]
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526172334899	geckodriver	INFO	geckodriver 0.20.1
+1526172334910	geckodriver	INFO	Listening on 127.0.0.1:39327
+1526172335909	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.PNSD7HVSwm8t"
+1526172339754	Marionette	INFO	Enabled via --marionette
+1526172361146	Marionette	INFO	Listening on port 34833
+1526172361251	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526172361491	Marionette	DEBUG	Register listener.js for window 2147483649
+1526172362018	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526172362122	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526172362143	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526172362148	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526172362559	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "about:neterror?e=connectionFailure&u=http%3A//localhost%3A5000/auth/register&c=UTF-8&f=regular&d=O%20Firefox%20n%C3%A3o%20conseguiu%20estabelecer%20uma%20conex%C3%A3o%20com%20o%20servidor%20localhost%3A5000."
+
+(firefox:9701): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fd347f62a60' of type 'MaiAtkType319'
+1526172363814	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 123"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:123 < onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:138 < _middleware/</<()@resource://activity-stream/lib/Store.jsm:52 < Store/this[method]()@resource://activity-stream/lib/Store.jsm:31 < uninit()@resource://activity-stream/lib/Store.jsm:151 < uninit()@resource://activity-stream/lib/ActivityStream.jsm:266 < uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4509 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2281 < GeckoDriver.prototype.quit()@driver.js:3307 < despatch()@server.js:553 < execute()@server.js:527 < onPacket/<()@server.js:502 < onPacket()@server.js:501 < _onJSONObjectReady/<()@transport.js:501
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
