@@ -194,3 +194,677 @@ JavaScript error: resource://pdf.js/PdfJs.jsm, line 251: NS_ERROR_XPC_JAVASCRIPT
 (firefox:9701): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fd347f62a60' of type 'MaiAtkType319'
 1526172363814	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 123"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:123 < onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:138 < _middleware/</<()@resource://activity-stream/lib/Store.jsm:52 < Store/this[method]()@resource://activity-stream/lib/Store.jsm:31 < uninit()@resource://activity-stream/lib/Store.jsm:151 < uninit()@resource://activity-stream/lib/ActivityStream.jsm:266 < uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4509 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2281 < GeckoDriver.prototype.quit()@driver.js:3307 < despatch()@server.js:553 < execute()@server.js:527 < onPacket/<()@server.js:502 < onPacket()@server.js:501 < _onJSONObjectReady/<()@transport.js:501
 *** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526175260674	geckodriver	INFO	geckodriver 0.20.1
+1526175260881	geckodriver	INFO	Listening on 127.0.0.1:37389
+1526175261741	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.yatcMlqp8S2V"
+1526175273542	Marionette	INFO	Enabled via --marionette
+1526175294055	Marionette	INFO	Listening on port 46647
+1526175294507	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526175294774	Marionette	DEBUG	Register listener.js for window 2147483649
+1526175296214	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526175297798	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526175297799	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526175297940	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526175297949	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526175368866	geckodriver	INFO	geckodriver 0.20.1
+1526175369192	geckodriver	INFO	Listening on 127.0.0.1:53765
+1526175369853	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.s9YR9A90E9Vg"
+1526175380670	Marionette	INFO	Enabled via --marionette
+1526175394133	Marionette	INFO	Listening on port 36457
+1526175394672	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526175394937	Marionette	DEBUG	Register listener.js for window 2147483649
+1526175396398	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526175396739	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526175396747	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526175396835	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526175396843	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+1526175397179	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 123"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:123 < onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:138 < _middleware/</<()@resource://activity-stream/lib/Store.jsm:52 < Store/this[method]()@resource://activity-stream/lib/Store.jsm:31 < uninit()@resource://activity-stream/lib/Store.jsm:151 < uninit()@resource://activity-stream/lib/ActivityStream.jsm:266 < uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4509 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2281 < GeckoDriver.prototype.quit()@driver.js:3307 < despatch()@server.js:553 < execute()@server.js:527 < onPacket/<()@server.js:502 < onPacket()@server.js:501 < _onJSONObjectReady/<()@transport.js:501
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526175818596	geckodriver	INFO	geckodriver 0.20.1
+1526175818813	geckodriver	INFO	Listening on 127.0.0.1:43433
+1526175819597	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.zm2F7Zxeeppl"
+1526175827378	Marionette	INFO	Enabled via --marionette
+1526175845620	Marionette	INFO	Listening on port 33041
+1526175848102	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526175848372	Marionette	DEBUG	Register listener.js for window 2147483649
+1526175851901	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526175852325	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526175852329	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526175852484	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526175852832	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:12428): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f05b5f96b50' of type 'MaiAtkType139'
+
+(firefox:12428): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f05b5f96e20' of type 'MaiAtkType139'
+
+(firefox:12428): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f05b63f6830' of type 'MaiAtkType139'
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526175962172	geckodriver	INFO	geckodriver 0.20.1
+1526175962295	geckodriver	INFO	Listening on 127.0.0.1:33309
+1526175963325	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.tiG8IatKDKSJ"
+1526175967836	Marionette	INFO	Enabled via --marionette
+1526175985760	Marionette	INFO	Listening on port 33171
+1526175985931	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526175986162	Marionette	DEBUG	Register listener.js for window 2147483649
+1526175986582	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526175986758	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526175986764	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526175986931	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526175986983	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:12635): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f04aa4f16f0' of type 'MaiAtkType139'
+
+(firefox:12635): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f04a9aff060' of type 'MaiAtkType139'
+
+(firefox:12635): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f04a9aff1f0' of type 'MaiAtkType139'
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526176422289	geckodriver	INFO	geckodriver 0.20.1
+1526176422317	geckodriver	INFO	Listening on 127.0.0.1:51059
+1526176423312	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.ogW1eJ8mByE0"
+1526176427380	Marionette	INFO	Enabled via --marionette
+1526176441809	Marionette	INFO	Listening on port 36995
+1526176441911	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526176442147	Marionette	DEBUG	Register listener.js for window 2147483649
+1526176442232	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526176442327	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526176442332	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526176442423	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526176442456	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:12965): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f3d43162600' of type 'MaiAtkType139'
+
+(firefox:12965): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f3d4f1df970' of type 'MaiAtkType139'
+
+(firefox:12965): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f3d4f1dfb00' of type 'MaiAtkType139'
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526176498373	geckodriver	INFO	geckodriver 0.20.1
+1526176498390	geckodriver	INFO	Listening on 127.0.0.1:43753
+1526176499392	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.CCuSAK9hy5lT"
+1526176502764	Marionette	INFO	Enabled via --marionette
+1526176509508	Marionette	INFO	Listening on port 37135
+1526176509556	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526176509784	Marionette	DEBUG	Register listener.js for window 2147483649
+1526176509864	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526176509936	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526176509938	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526176510217	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526176510248	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:13138): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fd7f2038650' of type 'MaiAtkType139'
+
+(firefox:13138): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fd7f2038920' of type 'MaiAtkType139'
+
+(firefox:13138): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fd7f2038ab0' of type 'MaiAtkType139'
+1526176522580	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526176525941	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526176525944	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526176528326	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526176528557	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526176761570	geckodriver	INFO	geckodriver 0.20.1
+1526176761589	geckodriver	INFO	Listening on 127.0.0.1:39495
+1526176762627	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.1SaenmnnBycG"
+1526176769142	Marionette	INFO	Enabled via --marionette
+1526176778643	Marionette	INFO	Listening on port 41609
+1526176778716	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526176778910	Marionette	DEBUG	Register listener.js for window 2147483649
+1526176779009	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526176779128	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526176779132	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526176779213	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526176779256	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:13464): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7ff719ca8f10' of type 'MaiAtkType139'
+
+(firefox:13464): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7ff71a851970' of type 'MaiAtkType139'
+
+(firefox:13464): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7ff71a851b00' of type 'MaiAtkType139'
+1526176780109	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526176785318	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526177387462	geckodriver	INFO	geckodriver 0.20.1
+1526177387478	geckodriver	INFO	Listening on 127.0.0.1:43929
+1526177388474	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.oDqQ3koGON3I"
+1526177390718	Marionette	INFO	Enabled via --marionette
+1526177396912	Marionette	INFO	Listening on port 37747
+1526177396974	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526177397187	Marionette	DEBUG	Register listener.js for window 2147483649
+1526177397382	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526177397555	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526177397559	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526177397659	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526177397668	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:13983): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fa17d64f420' of type 'MaiAtkType139'
+
+(firefox:13983): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fa17d64f6f0' of type 'MaiAtkType139'
+
+(firefox:13983): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fa17d64f880' of type 'MaiAtkType139'
+1526177399906	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526177400831	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526177400833	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526177400874	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526177400903	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526177446914	geckodriver	INFO	geckodriver 0.20.1
+1526177446929	geckodriver	INFO	Listening on 127.0.0.1:34403
+1526177447921	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.1cS1fuByy4sF"
+1526177450368	Marionette	INFO	Enabled via --marionette
+1526177456682	Marionette	INFO	Listening on port 42275
+1526177456788	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526177457017	Marionette	DEBUG	Register listener.js for window 2147483649
+1526177457211	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526177457311	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526177457317	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526177457391	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526177457417	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:14191): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f18a292b970' of type 'MaiAtkType139'
+
+(firefox:14191): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f18a292bc40' of type 'MaiAtkType139'
+
+(firefox:14191): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f18a292bdd0' of type 'MaiAtkType139'
+1526177458791	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526177459128	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526177459130	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526177459173	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526177459198	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526177989908	geckodriver	INFO	geckodriver 0.20.1
+1526177989977	geckodriver	INFO	Listening on 127.0.0.1:52753
+1526177990933	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.kYdWxC2aNuGJ"
+1526177996414	Marionette	INFO	Enabled via --marionette
+1526178010656	Marionette	INFO	Listening on port 36263
+1526178010911	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526178011118	Marionette	DEBUG	Register listener.js for window 2147483649
+1526178011278	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526178011931	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526178011936	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526178011994	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526178012002	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:14855): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f60d1189ec0' of type 'MaiAtkType139'
+
+(firefox:14855): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f60d128a5b0' of type 'MaiAtkType139'
+
+(firefox:14855): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f60d11ee1a0' of type 'MaiAtkType139'
+1526178013760	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526178015119	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526178015120	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526178015157	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526178015165	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526178447921	geckodriver	INFO	geckodriver 0.20.1
+1526178448196	geckodriver	INFO	Listening on 127.0.0.1:35745
+1526178449288	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.HPIc4FBWbfNs"
+1526178464246	Marionette	INFO	Enabled via --marionette
+1526178480491	Marionette	INFO	Listening on port 33071
+1526178480672	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526178480861	Marionette	DEBUG	Register listener.js for window 2147483649
+1526178482104	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526178483157	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526178483161	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526178483398	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526178483406	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:15381): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f0123abc790' of type 'MaiAtkType139'
+
+(firefox:15381): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f0123abca60' of type 'MaiAtkType139'
+
+(firefox:15381): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f0123abcbf0' of type 'MaiAtkType139'
+1526178485047	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526178489455	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526178489457	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526178489504	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526178489509	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526178610395	geckodriver	INFO	geckodriver 0.20.1
+1526178610408	geckodriver	INFO	Listening on 127.0.0.1:33897
+1526178610551	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.MBpQuoKYVESX"
+1526178616783	Marionette	INFO	Enabled via --marionette
+1526178707389	Marionette	INFO	Listening on port 43041
+1526178832940	geckodriver	INFO	geckodriver 0.20.1
+1526178833027	geckodriver	INFO	Listening on 127.0.0.1:38989
+1526178833229	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.wUMzeABNA5Rx"
+1526178838473	Marionette	INFO	Enabled via --marionette
+1526178847138	Marionette	INFO	Listening on port 34953
+1526178847487	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526178847704	Marionette	DEBUG	Register listener.js for window 2147483649
+1526178847932	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526178848725	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526178848726	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526178848922	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526178849284	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:15743): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fcb53dc4d30' of type 'MaiAtkType139'
+
+(firefox:15743): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fcb558ff1f0' of type 'MaiAtkType139'
+
+(firefox:15743): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fcb558ff380' of type 'MaiAtkType139'
+1526178850688	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526178853096	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526178853098	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526178853174	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526178853187	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526179002245	geckodriver	INFO	geckodriver 0.20.1
+1526179002290	geckodriver	INFO	Listening on 127.0.0.1:48605
+1526179003209	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.xOUWnAnOlVvx"
+1526179025419	Marionette	INFO	Enabled via --marionette
+1526179058546	Marionette	INFO	Listening on port 35983
+1526179059324	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526179059566	Marionette	DEBUG	Register listener.js for window 2147483649
+1526179061871	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526179062725	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526179062725	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526179063038	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526179063047	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:16083): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fe468e0e470' of type 'MaiAtkType139'
+
+(firefox:16083): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fe468e0e740' of type 'MaiAtkType139'
+
+(firefox:16083): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fe468e0e8d0' of type 'MaiAtkType139'
+1526179065777	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526179071068	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+1526179073307	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: resource://gre/modules/osfile/osfile_async_front.jsm, line 410: Error: OS.File has been shut down. Rejecting post to stat
+1526179212289	geckodriver	INFO	geckodriver 0.20.1
+1526179212312	geckodriver	INFO	Listening on 127.0.0.1:42143
+1526179213271	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.s1mNYIm3QVxT"
+1526179217661	Marionette	INFO	Enabled via --marionette
+1526179230354	Marionette	INFO	Listening on port 44981
+1526179230667	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526179230874	Marionette	DEBUG	Register listener.js for window 2147483649
+1526179230972	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526179231083	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526179231095	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526179231172	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526179231199	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:17200): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f4573549920' of type 'MaiAtkType139'
+
+(firefox:17200): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f45749ef0b0' of type 'MaiAtkType139'
+
+(firefox:17200): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f4572b34150' of type 'MaiAtkType139'
+1526179232053	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526179234240	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526179234241	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526179234271	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526179234278	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526180774545	geckodriver	INFO	geckodriver 0.20.1
+1526180774657	geckodriver	INFO	Listening on 127.0.0.1:58043
+1526180775529	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.7ErlduIymzqk"
+1526180788115	Marionette	INFO	Enabled via --marionette
+1526180805319	Marionette	INFO	Listening on port 45635
+1526180805844	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526180806042	Marionette	DEBUG	Register listener.js for window 2147483649
+1526180807484	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526180807841	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526180807842	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526180807941	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526180807954	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:18921): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f207bb39dd0' of type 'MaiAtkType139'
+
+(firefox:18921): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f2099776830' of type 'MaiAtkType139'
+
+(firefox:18921): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f2099776bf0' of type 'MaiAtkType139'
+1526180809860	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526180813737	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526180813738	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526180813768	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526180813779	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526180881421	geckodriver	INFO	geckodriver 0.20.1
+1526180881435	geckodriver	INFO	Listening on 127.0.0.1:53159
+1526180882455	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.lLC5qdbD9lzZ"
+1526180884959	Marionette	INFO	Enabled via --marionette
+1526180898454	Marionette	INFO	Listening on port 33259
+1526180898972	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526180899531	Marionette	DEBUG	Register listener.js for window 2147483649
+1526180900691	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526180900964	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526180900972	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526180901054	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526180901071	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:19260): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f97da36c330' of type 'MaiAtkType139'
+
+(firefox:19260): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f97e4d1e470' of type 'MaiAtkType139'
+
+(firefox:19260): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f97bb05f1a0' of type 'MaiAtkType139'
+1526180901784	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526180903188	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526180903223	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526180903260	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526180903281	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526181033879	geckodriver	INFO	geckodriver 0.20.1
+1526181033897	geckodriver	INFO	Listening on 127.0.0.1:48815
+1526181035144	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.GRWRn7eZ4Twv"
+1526181042993	Marionette	INFO	Enabled via --marionette
+1526181065749	Marionette	INFO	Listening on port 44761
+1526181066304	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526181067135	Marionette	DEBUG	Register listener.js for window 2147483649
+1526181067452	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526181068464	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526181068465	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526181070488	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526181072908	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+JavaScript error: jar:file:///usr/lib/firefox/browser/omni.ja!/components/nsBrowserGlue.js, line 953: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIAppShellService.hiddenDOMWindow]
+1526181073943	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1526181074039	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526181213623	geckodriver	INFO	geckodriver 0.20.1
+1526181213643	geckodriver	INFO	Listening on 127.0.0.1:33963
+1526181214667	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.34VE8v6RWwaj"
+1526181217463	Marionette	INFO	Enabled via --marionette
+1526181224439	Marionette	INFO	Listening on port 42457
+1526181224568	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526181224761	Marionette	DEBUG	Register listener.js for window 2147483649
+1526181224972	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526181225072	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526181225077	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526181225608	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526181225680	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+1526181225890	addons.xpi	WARN	Exception running bootstrap method shutdown on activity-stream@mozilla.org: [Exception... "Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIObserverService.removeObserver]"  nsresult: "0x80004005 (NS_ERROR_FAILURE)"  location: "JS frame :: resource://activity-stream/lib/SnippetsFeed.jsm :: uninit :: line 123"  data: no] Stack trace: uninit()@resource://activity-stream/lib/SnippetsFeed.jsm:123 < onAction()@resource://activity-stream/lib/SnippetsFeed.jsm:138 < _middleware/</<()@resource://activity-stream/lib/Store.jsm:52 < Store/this[method]()@resource://activity-stream/lib/Store.jsm:31 < uninit()@resource://activity-stream/lib/Store.jsm:151 < uninit()@resource://activity-stream/lib/ActivityStream.jsm:266 < uninit()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:80 < shutdown()@resource://gre/modules/addons/XPIProvider.jsm -> jar:file:///usr/lib/firefox/browser/features/activity-stream@mozilla.org.xpi!/bootstrap.js:196 < callBootstrapMethod()@resource://gre/modules/addons/XPIProvider.jsm:4509 < observe()@resource://gre/modules/addons/XPIProvider.jsm:2281 < GeckoDriver.prototype.quit()@driver.js:3307 < despatch()@server.js:553 < execute()@server.js:527 < onPacket/<()@server.js:502 < onPacket()@server.js:501 < _onJSONObjectReady/<()@transport.js:501
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526181305703	geckodriver	INFO	geckodriver 0.20.1
+1526181305716	geckodriver	INFO	Listening on 127.0.0.1:55361
+1526181306724	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.Zz1IVLywo3dE"
+1526181308951	Marionette	INFO	Enabled via --marionette
+1526181314454	Marionette	INFO	Listening on port 38943
+1526181314534	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526181314737	Marionette	DEBUG	Register listener.js for window 2147483649
+1526181314798	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526181315288	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526181315290	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526181315380	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526181315389	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:19900): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fa7607b29c0' of type 'MaiAtkType139'
+
+(firefox:19900): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fa74cd1d2e0' of type 'MaiAtkType139'
+
+(firefox:19900): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fa74cd1d470' of type 'MaiAtkType139'
+1526181315812	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526181316969	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526181316973	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526181317007	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526181317032	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526181658393	geckodriver	INFO	geckodriver 0.20.1
+1526181658405	geckodriver	INFO	Listening on 127.0.0.1:44767
+1526181659409	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.cvmsHCrLiSen"
+1526181661311	Marionette	INFO	Enabled via --marionette
+1526181667534	Marionette	INFO	Listening on port 35083
+1526181667561	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526181667757	Marionette	DEBUG	Register listener.js for window 2147483649
+1526181667857	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526181667951	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526181667952	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526181668010	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526181668016	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:20996): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fc6eb312650' of type 'MaiAtkType139'
+
+(firefox:20996): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fc6edbb8830' of type 'MaiAtkType139'
+
+(firefox:20996): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fc6edbb89c0' of type 'MaiAtkType139'
+1526181668641	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526181669769	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526181669774	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526181669812	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526181669818	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526181703574	geckodriver	INFO	geckodriver 0.20.1
+1526181703588	geckodriver	INFO	Listening on 127.0.0.1:48729
+1526181704606	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.heT2qonISYyw"
+1526181706471	Marionette	INFO	Enabled via --marionette
+1526181711924	Marionette	INFO	Listening on port 40853
+1526181712174	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526181712448	Marionette	DEBUG	Register listener.js for window 2147483649
+1526181712511	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526181712628	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526181712630	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526181712690	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526181712713	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:21271): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f1e268e44c0' of type 'MaiAtkType139'
+
+(firefox:21271): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f1e268e4790' of type 'MaiAtkType139'
+
+(firefox:21271): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f1e268e4920' of type 'MaiAtkType139'
+1526181713328	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526181714527	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526181714529	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526181714557	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526181714561	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526181847345	geckodriver	INFO	geckodriver 0.20.1
+1526181847358	geckodriver	INFO	Listening on 127.0.0.1:48593
+1526181848361	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.2sRYC9lmoUCK"
+1526181850329	Marionette	INFO	Enabled via --marionette
+1526181855706	Marionette	INFO	Listening on port 38059
+1526181855835	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526181856026	Marionette	DEBUG	Register listener.js for window 2147483649
+1526181856242	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526181856402	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526181856402	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526181856496	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526181856522	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:21430): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fcd1d23ec90' of type 'MaiAtkType139'
+
+(firefox:21430): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fcd1e041560' of type 'MaiAtkType139'
+
+(firefox:21430): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fcd138600b0' of type 'MaiAtkType139'
+1526181857740	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526181858267	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526181858268	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526181858300	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526181858325	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526232214842	geckodriver	INFO	geckodriver 0.20.1
+1526232214966	geckodriver	INFO	Listening on 127.0.0.1:57909
+1526232215783	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.rGs1eUNH94ML"
+1526232226796	Marionette	INFO	Enabled via --marionette
+1526232264789	Marionette	INFO	Listening on port 32971
+1526232266449	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526232266825	Marionette	DEBUG	Register listener.js for window 2147483649
+1526232270138	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526232271508	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526232271509	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526232276101	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526232276229	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+JavaScript error: resource://gre/modules/osfile/osfile_async_front.jsm, line 426: Error: OS.File has been shut down. Rejecting request to stat
+1526232362251	geckodriver	INFO	geckodriver 0.20.1
+1526232362332	geckodriver	INFO	Listening on 127.0.0.1:34719
+1526232362469	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.v2uPYtccSb9F"
+1526232383907	Marionette	INFO	Enabled via --marionette
+1526232409340	Marionette	INFO	Listening on port 34445
+1526232409858	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526232410071	Marionette	DEBUG	Register listener.js for window 2147483649
+1526232411404	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526232412228	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526232412229	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526232412302	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526232412309	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:5983): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f9d2b30b9c0' of type 'MaiAtkType139'
+
+(firefox:5983): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f9d404c4330' of type 'MaiAtkType139'
+
+(firefox:5983): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f9d404c44c0' of type 'MaiAtkType139'
+1526232412914	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526232418133	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+JavaScript error: jar:file:///usr/lib/firefox/browser/omni.ja!/components/nsBrowserGlue.js, line 953: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIAppShellService.hiddenDOMWindow]
+JavaScript error: jar:file:///usr/lib/firefox/browser/omni.ja!/components/nsBrowserGlue.js, line 1168: NS_ERROR_NOT_AVAILABLE: Component returned failure code: 0x80040111 (NS_ERROR_NOT_AVAILABLE) [nsIPK11TokenDB.getInternalKeyToken]
+1526232420490	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1526232420496	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526234961590	geckodriver	INFO	geckodriver 0.20.1
+1526234962983	geckodriver	INFO	Listening on 127.0.0.1:46035
+1526234965118	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.6dqsrBDApo3p"
+1526235006293	Marionette	INFO	Enabled via --marionette
+1526235054941	Marionette	INFO	Listening on port 43827
+JavaScript error: resource:///modules/sessionstore/SessionSaver.jsm, line 186: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIAppShellService.hiddenDOMWindow]
+1526235151972	geckodriver	INFO	geckodriver 0.20.1
+1526235153040	geckodriver	INFO	Listening on 127.0.0.1:54165
+1526235154456	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.7B0WEwFSjZ1V"
+1526235164972	Marionette	INFO	Enabled via --marionette
+1526235185924	Marionette	INFO	Listening on port 41697
+1526235186226	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526235186466	Marionette	DEBUG	Register listener.js for window 2147483649
+1526235187488	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526235189756	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526235189760	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526235191541	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526235191996	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+ExceptionHandler::GenerateDump cloned child 9389
+ExceptionHandler::SendContinueSignalToChild sent continue signal to child
+ExceptionHandler::WaitForContinueSignal waiting for continue signal...
+1526254098617	geckodriver	INFO	geckodriver 0.20.1
+1526254098726	geckodriver	INFO	Listening on 127.0.0.1:54871
+1526254099629	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.l1sRUb9EvHAN"
+1526254113494	Marionette	INFO	Enabled via --marionette
+1526254136343	Marionette	INFO	Listening on port 36787
+1526254139034	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526254139225	Marionette	DEBUG	Register listener.js for window 2147483649
+1526254141768	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526254142066	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526254142067	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526254142244	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526254142257	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:5465): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f5e317b8e20' of type 'MaiAtkType139'
+
+(firefox:5465): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f5e1938b150' of type 'MaiAtkType139'
+
+(firefox:5465): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f5e1938b2e0' of type 'MaiAtkType139'
+1526254143733	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526254144908	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526254144912	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526254145058	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526254145063	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526254444544	geckodriver	INFO	geckodriver 0.20.1
+1526254444665	geckodriver	INFO	Listening on 127.0.0.1:40121
+1526254445661	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.RounRxXUASF3"
+1526254459813	Marionette	INFO	Enabled via --marionette
+1526254480840	Marionette	INFO	Listening on port 43225
+1526254481343	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526254481528	Marionette	DEBUG	Register listener.js for window 2147483649
+1526254482183	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526254484165	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526254484169	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526254484650	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526254484669	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:5857): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f248caef880' of type 'MaiAtkType139'
+
+(firefox:5857): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f248caefba0' of type 'MaiAtkType139'
+
+(firefox:5857): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f248caefe20' of type 'MaiAtkType139'
+1526254486215	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526254488037	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526254488042	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526254488073	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526254488082	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526254618773	geckodriver	INFO	geckodriver 0.20.1
+1526254618848	geckodriver	INFO	Listening on 127.0.0.1:57201
+1526254619780	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.hCHIpmZ24bPs"
+1526254643127	Marionette	INFO	Enabled via --marionette
+1526254665477	Marionette	INFO	Listening on port 34947
+1526254665631	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526254665833	Marionette	DEBUG	Register listener.js for window 2147483649
+1526254667343	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526254668259	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526254668261	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526254668423	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526254668432	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+1526254671694	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526254678763	Marionette	DEBUG	Canceled page load listener because no navigation has been detected
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526255126609	geckodriver	INFO	geckodriver 0.20.1
+1526255126854	geckodriver	INFO	Listening on 127.0.0.1:51017
+1526255127622	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.RYJWSpnIQMK2"
+1526255141145	Marionette	INFO	Enabled via --marionette
+1526255158316	Marionette	INFO	Listening on port 36283
+1526255159638	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526255159830	Marionette	DEBUG	Register listener.js for window 2147483649
+1526255161892	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526255162267	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526255162271	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526255163407	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526255163415	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:6781): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f4db5df85b0' of type 'MaiAtkType139'
+
+(firefox:6781): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f4db5df8880' of type 'MaiAtkType139'
+
+(firefox:6781): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7f4db5df8a10' of type 'MaiAtkType139'
+1526255167914	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526255171125	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526255171127	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526255171988	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526255172365	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526255412853	geckodriver	INFO	geckodriver 0.20.1
+1526255412899	geckodriver	INFO	Listening on 127.0.0.1:56971
+1526255413870	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.s2yjMEtGdY2k"
+1526255421472	Marionette	INFO	Enabled via --marionette
+1526255436435	Marionette	INFO	Listening on port 37313
+1526255436888	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526255437087	Marionette	DEBUG	Register listener.js for window 2147483649
+1526255440426	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526255442838	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526255442838	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526255442962	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526255442969	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:7107): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fc522b76fb0' of type 'MaiAtkType139'
+
+(firefox:7107): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fc522d10b00' of type 'MaiAtkType139'
+
+(firefox:7107): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fc522d10ce0' of type 'MaiAtkType139'
+1526255446131	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526255450865	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526255450872	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526255450914	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526255450947	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+JavaScript error: jar:file:///usr/lib/firefox/browser/omni.ja!/components/nsBrowserGlue.js, line 953: NS_ERROR_FAILURE: Component returned failure code: 0x80004005 (NS_ERROR_FAILURE) [nsIAppShellService.hiddenDOMWindow]
+1526255452439	addons.productaddons	WARN	Failed downloading XML, status: 0, reason: error
+1526255452450	addons.productaddons	WARN	Failed downloading via XHR, status: 0, reason: error
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping
+1526255799197	geckodriver	INFO	geckodriver 0.20.1
+1526255799380	geckodriver	INFO	Listening on 127.0.0.1:42429
+1526255800236	mozrunner::runner	INFO	Running command: "/usr/lib/firefox/firefox" "-marionette" "-profile" "/tmp/rust_mozprofile.3MnEOJIDl5hv"
+1526255812452	Marionette	INFO	Enabled via --marionette
+1526255830227	Marionette	INFO	Listening on port 42557
+1526255830434	Marionette	WARN	TLS certificate errors will be ignored for this session
+1526255830637	Marionette	DEBUG	Register listener.js for window 2147483649
+1526255831756	Marionette	DEBUG	Received DOM event "beforeunload" for "about:blank"
+1526255833675	Marionette	DEBUG	Received DOM event "pagehide" for "about:blank"
+1526255833676	Marionette	DEBUG	Received DOM event "unload" for "about:blank"
+1526255833801	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526255833806	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+
+(firefox:8021): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fc5650c5380' of type 'MaiAtkType139'
+
+(firefox:8021): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fc54899d2e0' of type 'MaiAtkType139'
+
+(firefox:8021): GLib-GObject-WARNING **: /build/glib2.0-prJhLS/glib2.0-2.48.2/./gobject/gsignal.c:3486: signal name 'selection_changed' is invalid for instance '0x7fc54899d470' of type 'MaiAtkType139'
+1526255836428	Marionette	DEBUG	Received DOM event "beforeunload" for "http://localhost:5000/auth/register"
+1526255838424	Marionette	DEBUG	Received DOM event "pagehide" for "http://localhost:5000/auth/register"
+1526255838429	Marionette	DEBUG	Received DOM event "unload" for "http://localhost:5000/auth/register"
+1526255838468	Marionette	DEBUG	Received DOM event "DOMContentLoaded" for "http://localhost:5000/auth/register"
+1526255838482	Marionette	DEBUG	Received DOM event "pageshow" for "http://localhost:5000/auth/register"
+*** UTM:SVC TimerManager:registerTimer called after profile-before-change notification. Ignoring timer registration for id: telemetry_modules_ping

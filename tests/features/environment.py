@@ -22,4 +22,4 @@ def save_to_file(context, scenario):
         file.write("Duration: {} s \n \t".format(context.scenario.duration))
         file.write("Filename: {} \n \t".format(context.scenario.filename))
         file.write("Status: {} \n\n".format(str(context.scenario.status)))
-        file.write("-------------------------------------------")
+        file.write("------------------------------------------- \n \n")

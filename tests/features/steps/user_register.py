@@ -4,7 +4,7 @@ data = {
     'username' : 'username',
     'email' : 'email',
     'password' : 'password',
-    'SignUp' : 'SignUp'
+    'signUp' : 'signUp'
 }
 
 
@@ -26,5 +26,5 @@ def click(context, btn):
 @then('the message should be displayed')
 def read_msg(context):
     page_h1 = context.browser.find_element_by_id('msg').text
-    assert context.text == page_h1.text, '''
+    assert context.text == page_h1, '''
     {} != {}''' .format(page_h1, context.text) 

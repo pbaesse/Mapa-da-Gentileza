@@ -13,6 +13,20 @@ class User(db.Model):
 	phone = db.Column(db.String(11))
 	posts = db.relationship('Post', backref='author', lazy='dynamic')
 
+
+	def __init__(self, username, email, pass_hash, avatar):
+		self.username = username
+		self.email = email
+		self.pass_hash = pass_hash
+		self.avatar = avatar
+	
+
+	def save(self):
+		user = User(self.username, self.email, self.pass_hash, self.avatar)
+		db.session.add(user)
+		db.session.commit()
+
+
 	def __repr__(self):
 		return '<User {}>'.format(self.username)
 	

@@ -12,10 +12,10 @@ class LoginForm(FlaskForm):
 
 class RegisterForm(FlaskForm):
     email = StringField('Email', validators=[DataRequired(), Email()])
-    username = StringField('Username', validators=[DataRequired(), Email()])
+    username = StringField('Username', validators=[DataRequired()])
     password = PasswordField('Password', validators=[DataRequired()])
-    password_confirm = PasswordField('Confirm password', validators=[DataRequired(), EqualTo('password')])
-    submit = SubmitField('Sign Up')
+    #password_confirm = PasswordField('Confirm password', validators=[DataRequired(), EqualTo('password')])
+    signUp = SubmitField('Sign Up')
 
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()

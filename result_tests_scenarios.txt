@@ -1,0 +1,8 @@
+Scenario: To register successfully 
+ 	Feature to which it belongs: <Feature "User registration": 1 scenario(s)> 
+ 	Duration: 7.0757622718811035 s 
+ 	Filename: tests/features/user_register.feature 
+ 	Status: Status.failed 
+
+------------------------------------------- 
+ 
