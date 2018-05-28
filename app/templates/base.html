@@ -2,12 +2,12 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/uikit.min.css') }}">
+	<script type="text/javascript" src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
 	<title>Mapa da Gentileza</title>
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBh375XYCbOpmdiuFZtw2_ql23u-7amr70&libraries=places&callback=initAutocomplete"
-         async defer></script>
+
 </head>
 <body>
 	{% block content %}{% endblock %}
