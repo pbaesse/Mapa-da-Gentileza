@@ -4,6 +4,7 @@ from midlewares import db
 class User(db.Model):
 	__tablename__ = "User"
 
+
 	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 	username = db.Column(db.String(30), unique=True, nullable=False)
 	email = db.Column(db.String(130), unique=True, nullable=False)
@@ -25,8 +26,7 @@ class User(db.Model):
 	
 
 	def save(self):
-		user = User(self.username, self.email, self.pass_hash, self.avatar)
-		db.session.add(user)
+		db.session.add(self)
 		db.session.commit()
 
 
@@ -42,7 +42,8 @@ class User(db.Model):
 			"about_me": self.about_me,
 			"avatar": self.avatar,
 			"phone": self.phone,
-			"posts": self.posts
+			"posts": self.posts,
+			"lastAcess": self.last_acess
 		}
 
 
@@ -57,6 +58,7 @@ class Post(db.Model):
 	post_date = db.Column(db.DateTime, default=datetime.utcnow)
 	user_id = db.Column(db.Integer, db.ForeignKey('User.id'))
 	tag_id = db.Column(db.Integer, db.ForeignKey('Tags.id'))
+
 
 	def __repr__(self):
 		return '<Post {}>'.format(self.title)
@@ -91,6 +93,7 @@ class Post(db.Model):
 class Tags(db.Model):
 	__tablename__ = "Tags"
 
+
 	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 	description = db.Column(db.String(20), nullable=False, unique=True)
 	marker = db.Column(db.String(100), nullable=False, unique=True)
@@ -100,3 +103,15 @@ class Tags(db.Model):
 
 	def __repr__(self):
 		return '<Tags {}>'.format(self.description)
+	
+
+	def get_all(self):
+		return self.query.all()
+
+	
+	def to_json(self):
+		return {
+			"idTag": self.id,
+			"description": self.description,
+			"marker": self.marker
+		}
