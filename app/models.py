@@ -11,6 +11,9 @@ class User(db.Model):
 	pass_hash = db.Column(db.String(200), nullable=False)
 	avatar = db.Column(db.String(255), nullable=False)
 	phone = db.Column(db.String(11))
+	last_acess = db.Column(db.DateTime, default=datetime.utcnow)
+	registration_date = db.Column(db.DateTime, default=datetime.utcnow)
+	count_logins = db.Column(db.Integer)
 	posts = db.relationship('Post', backref='author', lazy='dynamic')
 
 
@@ -59,6 +62,19 @@ class Post(db.Model):
 		return '<Post {}>'.format(self.title)
 	
 
+	def save(self):
+		db.session.add(self)
+		db.session.commit()
+
+
+	def get_all(self):
+		return self.query.all()
+	
+
+	def get_post_by_id(self):
+		return self.query.filter_by_id(id=self.id).first()
+
+		
 	def to_json(self):
 		return {
 			"idPost": self.id,
