@@ -1,5 +1,7 @@
 from datetime import datetime
 from midlewares import db
+import bcrypt
+
 
 class User(db.Model):
 	__tablename__ = "User"
@@ -28,6 +30,14 @@ class User(db.Model):
 	def save(self):
 		db.session.add(self)
 		db.session.commit()
+	
+
+	def encrypt_pass(self, password):
+		return bcrypt.hashpw(password, bcrypt.gensalt(9))
+
+
+	def check_pass(self, password, pass_hash):
+		return bcrypt.checkpw(password, pass_hash)
 
 
 	def __repr__(self):
