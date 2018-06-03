@@ -1,0 +1,23 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+behave = "*"
+selenium = "*"
+
+[packages]
+flask = "*"
+python-dotenv = "*"
+sqlalchemy = "*"
+flask-sqlalchemy = "*"
+flask-login = "*"
+flask-mysql = "*"
+migrate = "*"
+flask-migrate = "*"
+bcrypt = "*"
+flask-wtf = "*"
+
+[requires]
+python_version = "3.5"
