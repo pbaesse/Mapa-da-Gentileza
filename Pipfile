@@ -1,0 +1,46 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+
+[packages]
+alembic = "*"
+astroid = "*"
+bcrypt = "*"
+behave = "*"
+cffi = "*"
+click = "*"
+flask-login = "*"
+flask-mysql = "*"
+isort = *"
+itsdangerous = "*"
+lazy-object-proxy = "*"
+mccabe = "*"
+migrate = "*"
+parse = "*"
+pkg-resources = "*"
+pycparser = "*"
+pylint = "*"
+python-dateutil = "*"
+python-dotenv = "*"
+python-editor = "*"
+selenium = "*"
+six = "*"
+sqlalchemy = "*"
+wrapt = "*"
+Flask = "*"
+Flask-Migrate = "*"
+Flask-SQLAlchemy = "*"
+Flask-WTF = "*"
+"Jinja2" = "*"
+Mako = "*"
+MarkupSafe = "*"
+parse_type = "*"
+PyMySQL = "*"
+Werkzeug = "*"
+WTForms = "*"
+
+[requires]
+python_version = "3.5"
