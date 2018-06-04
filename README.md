@@ -8,6 +8,13 @@ as gentilezas ocorram frequentemente na vida das pessoas.
 
 ## Instalação
 
+> Apos o comando `pipenv install` abra o seu editor de texto favorito, crie um arquivo .env e coloque as seguintes 
+> variáveis de ambiente: 
+>	`FLASK_APP=mapadagentileza:create_app()`
+>	`FLASK_ENV=development`
+> Depois no seu terminal digite o comando `exit` para sair do ambiente virtual e execute `pipenv shell` novamente 
+> para que o pipenv carregue suas variáveis de ambiente. No final execute `flask run` para iniciar o projeto.	
+
 ```
 $ git clone https://github.com/pbaesse/Mapa-da-Gentileza.git
 $ cd Mapa-da-Gentileza
