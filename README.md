@@ -6,6 +6,16 @@ Se alguém foi gentil com você ou você foi gentil com alguém, compartilhe na 
 que assim seja criada uma rede mundial de compartilhamento de amor :heart: e gentileza pelo mundo e com isso
 as gentilezas ocorram frequentemente na vida das pessoas.
 
+## Instalação
+
+```
+$ git clone https://github.com/pbaesse/Mapa-da-Gentileza.git
+$ cd Mapa-da-Gentileza
+$ pipenv --three
+$ pipenv shell
+(Mapa-da-Gentileza) $ pipenv install
+
+```
 
 ## Desenvolvedores
 
