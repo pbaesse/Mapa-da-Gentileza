@@ -1,5 +1,5 @@
 from app.auth import bp_auth
-from app.models import User
+from app.models import Users
 from flask import render_template, redirect, request, url_for
 from app.auth.forms import RegisterForm
 
@@ -10,7 +10,7 @@ def register():
     if form.validate_on_submit():
         #ajeitar isso aqui quando estiver codificando as rotas
         avatar = "vsvskvjsdvsv"
-        user = User(form.username.data, form.email.data, form.password.data, avatar)
+        user = Users(form.username.data, form.email.data, form.password.data, avatar)
         user.save()
         #consertar isso aqui.
         return render_template("auth/teste.html", msg="Seu cadastro foi realizado com sucesso, Larry.")

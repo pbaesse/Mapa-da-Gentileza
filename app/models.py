@@ -3,27 +3,28 @@ from midlewares import db
 import bcrypt
 
 
-class User(db.Model):
-	__tablename__ = "User"
+class Users(db.Model):
+	__tablename__ = "Users"
 
 
 	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
 	username = db.Column(db.String(30), unique=True, nullable=False)
 	email = db.Column(db.String(130), unique=True, nullable=False)
-	about_me = db.Column(db.String(100))
-	pass_hash = db.Column(db.String(200), nullable=False)
+	about_me = db.Column(db.Text)
+	password_hash = db.Column(db.String(200), nullable=False)
 	avatar = db.Column(db.String(255), nullable=False)
-	phone = db.Column(db.String(11))
+	phone = db.Column(db.String(13))
 	last_acess = db.Column(db.DateTime, default=datetime.utcnow)
 	registration_date = db.Column(db.DateTime, default=datetime.utcnow)
 	count_logins = db.Column(db.Integer)
-	posts = db.relationship('Post', backref='author', lazy='dynamic')
+	device_ip_register = db.Column(db.String(15), nullable=False)
+	posts = db.relationship('Kindness', backref='author', lazy='dynamic')
 
 
 	def __init__(self, username, email, pass_hash, avatar):
 		self.username = username
 		self.email = email
-		self.pass_hash = pass_hash
+		self.password_hash = pass_hash
 		self.avatar = avatar
 	
 
@@ -57,21 +58,21 @@ class User(db.Model):
 		}
 
 
-class Post(db.Model):
-	__tablename__ = "Post"
+class Kindness(db.Model):
+	__tablename__ = "Kindness"
 
-	id = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	id_kindness = db.Column(db.Integer, primary_key=True, autoincrement=True)
 	title = db.Column(db.String(50))
-	body = db.Column(db.String(200))
+	body = db.Column(db.Text)
 	latitude = db.Column(db.Float)
 	longitude = db.Column(db.Float)
 	post_date = db.Column(db.DateTime, default=datetime.utcnow)
-	user_id = db.Column(db.Integer, db.ForeignKey('User.id'))
+	user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
 	tag_id = db.Column(db.Integer, db.ForeignKey('Tags.id'))
 
 
 	def __repr__(self):
-		return '<Post {}>'.format(self.title)
+		return '<Kindness {}>'.format(self.title)
 	
 
 	def save(self):
@@ -84,12 +85,12 @@ class Post(db.Model):
 	
 
 	def get_post_by_id(self):
-		return self.query.filter_by_id(id=self.id).first()
+		return self.query.filter_by_id(id=self.id_kindness).first()
 
 		
 	def to_json(self):
 		return {
-			"idPost": self.id,
+			"idPost": self.id_kindness,
 			"title": self.title,
 			"body": self.body,
 			"latitude": self.latitude,
@@ -125,3 +126,45 @@ class Tags(db.Model):
 			"description": self.description,
 			"marker": self.marker
 		}
+
+
+class Likes(db.Model):
+	__tablename__ = "Likes"
+
+
+	id_like = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+	id_user = db.Column(db.Integer, db.ForeignKey('Users.id'))
+	id_kindness = db.Column(db.Integer, db.ForeignKey('Kindness.id_kindness'))
+
+
+class Kindness_Files(db.Model):
+	__tablename__ = "Kindness_Files"
+
+
+	id_kindness_file = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	file_extension = db.Column(db.String(6), nullable=False)
+	file_size = db.Column(db.Float, nullable=False)
+	#depois olhar como vai ser guardado esse caminho para diminuir ou aumentar
+	#o tamanho da coluna.
+	file_path = db.Column(db.String(200), nullable=False)
+	date_upload = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+	id_kindness = db.Column(db.Integer, db.ForeignKey('Kindness.id_kindness'))
+
+
+	def save_file(self):
+		pass
+
+
+class Tokens_Reset_Password(db.Model):
+	__tablename__ = "Tokens_Reset_Password"
+
+
+	id_token = db.Column(db.Integer, primary_key=True, autoincrement=True)
+	token = db.Column(db.String(200), unique=True, nullable=False)
+	send_date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+	id_user = db.Column(db.Integer, db.ForeignKey('Users.id'))
+
+
+	def generate_token(self):
+		pass
