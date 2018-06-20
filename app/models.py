@@ -58,6 +58,12 @@ class Users(db.Model):
 		}
 
 
+kindness_tags_association = db.Table('Kindness_Tags', 
+	db.Column('id_kindness', db.Integer, db.ForeignKey('Kindness.id_kindness')),
+	db.Column('id_tag', db.Integer, db.ForeignKey('Tags.id'))
+)
+
+
 class Kindness(db.Model):
 	__tablename__ = "Kindness"
 
@@ -68,7 +74,7 @@ class Kindness(db.Model):
 	longitude = db.Column(db.Float)
 	post_date = db.Column(db.DateTime, default=datetime.utcnow)
 	user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
-	tag_id = db.Column(db.Integer, db.ForeignKey('Tags.id'))
+	tags = db.relationship("Tags", secondary=kindness_tags_association)
 
 
 	def __repr__(self):
