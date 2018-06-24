@@ -1,5 +1,5 @@
 from datetime import datetime
-from midlewares import db
+from extensions import db
 import bcrypt
 
 

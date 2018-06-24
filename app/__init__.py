@@ -1,6 +1,6 @@
 from flask import Flask
 from config import Config
-from midlewares import db, migrate, login
+from extensions import db, migrate, login
 
 from app.auth import bp_auth
 from app.errors import bp_errors
