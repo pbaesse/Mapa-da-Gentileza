@@ -18,6 +18,7 @@ migrate = "*"
 flask-migrate = "*"
 bcrypt = "*"
 flask-wtf = "*"
+flask-bcrypt = "*"
 
 [requires]
 python_version = "3.5"
