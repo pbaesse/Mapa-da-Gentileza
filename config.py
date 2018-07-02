@@ -1,11 +1,13 @@
 import os
+from dotenv import load_dotenv
 
 basedir = os.path.abspath(os.path.dirname(__file__))
+load_dotenv(os.path.join(basedir, '.env'))
 
 
-class Config(object):
+class Config:
 	""" Class that defines the application settings."""
 
-	SQLALCHEMY_DATABASE_URI = 'mysql+pymysql://root:root@localhost/KindnessMap'
+	SECRET_KEY = os.environ.get('SECRET_KEY')
+	SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
 	SQLALCHEMY_TRACK_MODIFICATIONS = False
-	SECRET_KEY = '&a*50Aj#'
