@@ -10,7 +10,8 @@ def register():
     if form.validate_on_submit():
         #ajeitar isso aqui quando estiver codificando as rotas
         avatar = "vsvskvjsdvsv"
-        user = Users(form.username.data, form.email.data, form.password.data, avatar)
+        ip = "197.123.12.23"
+        user = Users(form.username.data, form.email.data, form.password.data, avatar, ip)
         user.save()
         #consertar isso aqui.
         return render_template("auth/teste.html", msg="Seu cadastro foi realizado com sucesso, Larry.")

@@ -21,11 +21,12 @@ class Users(db.Model):
 	posts = db.relationship('Kindness', backref='author', lazy='dynamic')
 
 
-	def __init__(self, username, email, pass_hash, avatar):
+	def __init__(self, username, email, pass_hash, avatar, ip):
 		self.username = username
 		self.email = email
 		self.password_hash = pass_hash
 		self.avatar = avatar
+		self.device_ip_register = ip
 	
 
 	def save(self):
@@ -59,8 +60,8 @@ class Users(db.Model):
 
 
 kindness_tags_association = db.Table('Kindness_Tags', 
-	db.Column('id_kindness', db.Integer, db.ForeignKey('Kindness.id_kindness')),
-	db.Column('id_tag', db.Integer, db.ForeignKey('Tags.id'))
+	db.Column('id_kindness', db.Integer, db.ForeignKey('Kindness.id_kindness'), primary_key=True),
+	db.Column('id_tag', db.Integer, db.ForeignKey('Tags.id'), primary_key=True)
 )
 
 
@@ -74,7 +75,7 @@ class Kindness(db.Model):
 	longitude = db.Column(db.Float)
 	post_date = db.Column(db.DateTime, default=datetime.utcnow)
 	user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
-	tags = db.relationship("Tags", secondary=kindness_tags_association)
+	tags = db.relationship('Tags', secondary=kindness_tags_association, lazy='subquery', backref=db.backref('kindness', lazy=True))
 
 
 	def __repr__(self):
@@ -116,7 +117,7 @@ class Tags(db.Model):
 	marker = db.Column(db.String(100), nullable=False, unique=True)
 	#Visao de alto nivel para simplicar consultas ao DB. Esse campo
 	#nao e adicionado ao banco.
-	posts = db.relationship('Post', backref='post', lazy='dynamic')
+	#posts = db.relationship('Kindness', backref='post', lazy='dynamic')
 
 	def __repr__(self):
 		return '<Tags {}>'.format(self.description)
