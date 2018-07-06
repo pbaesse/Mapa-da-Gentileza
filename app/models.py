@@ -17,6 +17,8 @@ class Users(db.Model):
 	last_acess = db.Column(db.DateTime, default=datetime.utcnow)
 	registration_date = db.Column(db.DateTime, default=datetime.utcnow)
 	count_logins = db.Column(db.Integer)
+	genre = db.Column(db.String(10))
+	date_birth = db.Column(db.DateTime)
 	device_ip_register = db.Column(db.String(15), nullable=False)
 	posts = db.relationship('Kindness', backref='author', lazy='dynamic')
 
