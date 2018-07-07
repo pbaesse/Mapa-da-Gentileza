@@ -17,9 +17,6 @@ class RegisterForm(FlaskForm):
     #password_confirm = PasswordField('Confirm password', validators=[DataRequired(), EqualTo('password')])
     signUp = SubmitField('Sign Up')
 
-    def validate_email(self, email):
-        user = Users.query.filter_by(email=email.data).first()
-        if user is not None:
-            raise ValidationError('Ooops, esse email já possui uma conta.')
+    
 
 

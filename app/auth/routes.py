@@ -16,3 +16,14 @@ def register():
         #consertar isso aqui.
         return render_template("auth/teste.html", msg="Seu cadastro foi realizado com sucesso, Larry.")
     return render_template("auth/login.html", form=form)
+
+@bp_auth.route("/login", methods=['GET', 'POST'])
+def login():
+    pass
+
+
+@bp_auth.route("/reset_password", methods=['GET', 'POST'])
+def reset_password():
+    pass
+
+
