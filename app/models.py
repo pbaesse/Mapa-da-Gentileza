@@ -1,5 +1,7 @@
 from datetime import datetime
 from extensions import db
+#refatorar isso aqui depois.
+from app.constants import UNNAMED
 import bcrypt
 
 
@@ -77,6 +79,7 @@ class Kindness(db.Model):
 	longitude = db.Column(db.Float)
 	post_date = db.Column(db.DateTime, default=datetime.utcnow)
 	user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
+	unnamed = db.Column(db.Boolean, default=UNNAMED)
 	tags = db.relationship('Tags', secondary=kindness_tags_association, lazy='subquery', backref=db.backref('kindness', lazy=True))
 
 

@@ -1,4 +1,4 @@
-from app.models import Kindness
+from app.models import Kindness, Kindness_Files
 
 
 class KindnessController:
@@ -25,4 +25,8 @@ class KindnessController:
 
 
 	def get_kindness_by_id(self, kindness):
+		pass
+
+
+	def upload_file_kindness(self, kindness_file):
 		pass
