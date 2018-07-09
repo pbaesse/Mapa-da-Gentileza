@@ -19,6 +19,7 @@ flask-migrate = "*"
 bcrypt = "*"
 flask-wtf = "*"
 flask-bcrypt = "*"
+flask-uploads = "*"
 
 [requires]
 python_version = "3.5"

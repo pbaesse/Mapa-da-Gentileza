@@ -5,7 +5,7 @@ class KindnessController:
 
 
 	def save_new_kindness(self, kindness):
-		pass
+		
 
 
 	def delete_kindness(self, kindness):
@@ -13,10 +13,6 @@ class KindnessController:
 
 
 	def update_kindness(self, kindness):
-		pass
-
-
-	def save_new_kindness_anonymity(self, kindness):
 		pass
 
 
