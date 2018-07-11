@@ -5,7 +5,8 @@ import random
 
 class UsersController:
 
-
+	
+	@staticmethod
 	def save_new_user(self, user):
 		received_data = [
 			user.first_name, user.email,
@@ -23,11 +24,15 @@ class UsersController:
 
 
 	def get_all_users(self):
-		pass
+		return Users.query.all()
 
 
 	def get_user_by_id(self, user):
-		pass
+		return Users.query.filter_by_id(id=user.id).first()
+
+
+	def search_users_by_name(self, user):
+		return Users.query.filter_by(first_name=user.first_name)
 
 
 	def generate_unique_username(self, first_name):

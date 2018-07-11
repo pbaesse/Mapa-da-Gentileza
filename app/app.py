@@ -6,6 +6,7 @@ from app.auth import bp_auth
 from app.errors import bp_errors
 from app.feed import bp_feed
 from app import models
+from app.controllers import users_controller
 
 
 def create_app():

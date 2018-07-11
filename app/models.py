@@ -1,7 +1,7 @@
 from datetime import datetime
 from extensions import db
 #refatorar isso aqui depois.
-from app.constants import UNNAMED
+from app.constants import UNNAMED, CONFIRMED
 import bcrypt
 
 
@@ -23,6 +23,7 @@ class Users(db.Model):
 	count_logins = db.Column(db.Integer)
 	genre = db.Column(db.String(10), nullable=False)
 	date_birth = db.Column(db.DateTime, nullable=False)
+	confirmed = db.Column(db.Boolean, default=CONFIRMED)
 	device_ip_register = db.Column(db.String(15), nullable=False)
 	posts = db.relationship('Kindness', backref='author', lazy='dynamic')
 
