@@ -1,3 +1,7 @@
-UNNAMED = False
-CONFIRMED = False
-#usar um ENUM
+from enum import Enum
+
+
+class Constants(Enum):
+	
+	UNNAMED = False
+	CONFIRMED = False

@@ -1,7 +1,7 @@
 from datetime import datetime
 from extensions import db
 #refatorar isso aqui depois.
-from app.constants import UNNAMED, CONFIRMED
+from app.constants import Constants
 import bcrypt
 
 
@@ -23,7 +23,7 @@ class Users(db.Model):
 	count_logins = db.Column(db.Integer)
 	genre = db.Column(db.String(10), nullable=False)
 	date_birth = db.Column(db.DateTime, nullable=False)
-	confirmed = db.Column(db.Boolean, default=CONFIRMED)
+	confirmed = db.Column(db.Boolean, default=Constants.CONFIRMED)
 	device_ip_register = db.Column(db.String(15), nullable=False)
 	posts = db.relationship('Kindness', backref='author', lazy='dynamic')
 
@@ -82,7 +82,7 @@ class Kindness(db.Model):
 	longitude = db.Column(db.Float)
 	post_date = db.Column(db.DateTime, default=datetime.utcnow)
 	user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
-	unnamed = db.Column(db.Boolean, default=UNNAMED)
+	unnamed = db.Column(db.Boolean, default=Constants.UNNAMED)
 	tags = db.relationship('Tags', secondary=kindness_tags_association, lazy='subquery', backref=db.backref('kindness', lazy=True))
 
 
