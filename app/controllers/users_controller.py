@@ -1,11 +1,18 @@
 from app.models import Users
 from datetime import datetime
+from app.app import login
+import bcrypt
 import random
 
 
 class UsersController:
 
 	
+	@login.user_loader
+	def load_user(username):
+		return Users.query.get(username)
+
+
 	@staticmethod
 	def save_new_user(self, user):
 		received_data = [
@@ -15,8 +22,14 @@ class UsersController:
 		]
 
 		if all(received_data):
-			#enviar email de confirmação antes de habilitar conta.
+			user.pass_hash = encrypt_pass(user.password)
 			user.save()
+
+
+	def login(email, password):
+		user = Users.query.filter_by(email=email).first()
+		if user is not None and check_pass(password, user.pass_hash):
+			return user
 
 
 	def update_profile(self, user):
@@ -27,12 +40,12 @@ class UsersController:
 		return Users.query.all()
 
 
-	def get_user_by_id(self, user):
-		return Users.query.filter_by_id(id=user.id).first()
+	def get_user_by_username(self, username):
+		return Users.query.filter_by(username=username).first()
 
 
-	def search_users_by_name(self, user):
-		return Users.query.filter_by(first_name=user.first_name)
+	def search_users_by_name(self, first_name):
+		return Users.query.filter_by(first_name=first_name)
 
 
 	def generate_unique_username(self, first_name):
@@ -46,3 +59,11 @@ class UsersController:
 
 	def update_password(self, user):
 		pass
+
+
+	def encrypt_pass(self, password):
+		return bcrypt.hashpw(password, bcrypt.gensalt(9))
+
+
+	def check_pass(self, password, pass_hash):
+		return bcrypt.checkpw(password, pass_hash)

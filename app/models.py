@@ -1,11 +1,11 @@
 from datetime import datetime
 from extensions import db
+from flask_login import UserMixin
 #refatorar isso aqui depois.
 from app.constants import Constants
-import bcrypt
 
 
-class Users(db.Model):
+class Users(UserMixin, db.Model):
 	__tablename__ = "Users"
 
 
@@ -39,14 +39,6 @@ class Users(db.Model):
 	def save(self):
 		db.session.add(self)
 		db.session.commit()
-	
-
-	def encrypt_pass(self, password):
-		return bcrypt.hashpw(password, bcrypt.gensalt(9))
-
-
-	def check_pass(self, password, pass_hash):
-		return bcrypt.checkpw(password, pass_hash)
 
 
 	def __repr__(self):
