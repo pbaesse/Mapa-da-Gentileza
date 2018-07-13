@@ -20,6 +20,7 @@ bcrypt = "*"
 flask-wtf = "*"
 flask-bcrypt = "*"
 flask-uploads = "*"
+dynaconf = "*"
 
 [requires]
 python_version = "3.5"
