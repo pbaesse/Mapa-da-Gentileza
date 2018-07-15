@@ -1,8 +1,11 @@
-from flask import render_template, redirect, request, url_for
-from app.auth import bp_auth
+from flask import render_template, redirect, request, url_for, Blueprint
+#from app.auth import bp_auth
 from app.models import Users
 from app.auth.forms import RegisterForm
 from app.controllers.users_controller import UsersController
+
+
+bp_auth = Blueprint('auth', __name__, url_prefix='/auth')
 
 
 @bp_auth.route("/register", methods=['GET', 'POST'])
@@ -31,3 +34,7 @@ def login():
 @bp_auth.route("/reset_password", methods=['GET', 'POST'])
 def reset_password():
     pass
+
+
+def configure(app):
+    app.register_blueprint(bp_auth)

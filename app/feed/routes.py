@@ -1,12 +1,14 @@
-from flask import render_template
-from app.feed import bp_feed
+from flask import render_template, Blueprint
 from app.feed.forms import NewKindnessForm
+
+
+bp_feed = Blueprint('feed', __name__, url_prefix='/feed')
 
 
 @bp_feed.route("/new_kindness", methods=['GET', 'POST'])
 def new_kindness():
-	pass
+    pass
 
 
-
-
+def configure(app):
+	app.register_blueprint(bp_feed)
