@@ -15,6 +15,6 @@ class RegisterForm(FlaskForm):
 	email = StringField('Email', validators=[DataRequired(), Email()])
 	username = StringField('Username', validators=[DataRequired()])
 	password = PasswordField('Password', validators=[DataRequired()])
-	genre = SelectField(choices=[('Masculine', 'Masculine'), ('Feminine', 'Feminine'), ('Other', 'Other')])
-	date_birth = DateField('Date Birth', validators=[DataRequired()])
+	#genre = SelectField(choices=[('Masculine', 'Masculine'), ('Feminine', 'Feminine'), ('Other', 'Other')])
+	#date_birth = DateField('Date Birth', validators=[DataRequired()])
 	signUp = SubmitField('Sign Up')

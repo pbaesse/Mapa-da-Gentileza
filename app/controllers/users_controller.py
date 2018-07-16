@@ -15,7 +15,7 @@ class UsersController:
         return bcrypt.hashpw(password.encode('utf8'), bcrypt.gensalt(9))
 
     def check_pass(self, password, pass_hash):
-        return bcrypt.checkpw(password.encode('utf8'), pass_hash)
+        return bcrypt.checkpw(password.encode('utf8'), pass_hash.encode('utf8'))
 
     def save_new_user(self, user):
         received_data = [
@@ -28,9 +28,9 @@ class UsersController:
             user.password_hash = self.encrypt_pass(user.password_hash)
             user.save()
 
-    def login(email, password):
+    def login(self, email, password):
         user = Users.query.filter_by(email=email).first()
-        if user is not None and check_pass(password, user.pass_hash):
+        if user is not None and self.check_pass(password, user.password_hash):
             return user
 
     def update_profile(self, user):

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<form action="{{ url_for('auth.login') }}" method="POST">
+		{{ form.hidden_tag() }}
+		<div>
+			{{ form.email.label }}
+			{{ form.email }}
+		</div>
+		<div>
+			{{ form.password.label }}
+			{{ form.password }}
+		</div>
+		{{ form.submit() }}
+	</form>
+</body>
+</html>
