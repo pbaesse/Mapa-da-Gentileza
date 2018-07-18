@@ -59,11 +59,11 @@ class Kindness(db.Model):
 
     id_kindness = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(50))
-    body = db.Column(db.Text)
-    latitude = db.Column(db.Float)
-    longitude = db.Column(db.Float)
+    body = db.Column(db.Text, nullable=False)
+    latitude = db.Column(db.Float, nullable=False)
+    longitude = db.Column(db.Float, nullable=False)
     post_date = db.Column(db.DateTime, default=datetime.utcnow)
-    user_id = db.Column(db.Integer, db.ForeignKey('Users.id'))
+    user_id = db.Column(db.Integer, db.ForeignKey('Users.id'), nullable=False)
     unnamed = db.Column(db.Boolean, default=False)
     tags = db.relationship('Tags', secondary=kindness_tags_association,
                            lazy='subquery', backref=db.backref('kindness', lazy=True))
@@ -74,12 +74,6 @@ class Kindness(db.Model):
     def save(self):
         db.session.add(self)
         db.session.commit()
-
-    def get_all(self):
-        return self.query.all()
-
-    def get_post_by_id(self):
-        return self.query.filter_by_id(id=self.id_kindness).first()
 
     def to_json(self):
         return {
