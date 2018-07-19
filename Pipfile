@@ -21,6 +21,7 @@ flask-wtf = "*"
 flask-bcrypt = "*"
 flask-uploads = "*"
 dynaconf = "*"
+pyjwt = "*"
 
 [requires]
 python_version = "3.5"

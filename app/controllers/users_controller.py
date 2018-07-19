@@ -1,8 +1,12 @@
 import bcrypt
 import random
+import jwt
+from time import time
+from dynaconf import settings
 from datetime import datetime
 from app.models import Users
 from app.core import login
+from extensions import db
 
 
 class UsersController:
@@ -26,7 +30,8 @@ class UsersController:
 
         if all(received_data):
             user.password_hash = self.encrypt_pass(user.password_hash)
-            user.save()
+            db.session.add(user)
+            db.session.commit()
 
     def login(self, email, password):
         user = Users.query.filter_by(email=email).first()
@@ -36,6 +41,9 @@ class UsersController:
     def update_profile(self, user):
         pass
 
+    """ 
+    refatorar isso para usar quando necessario no lugar de criar essa funcao
+    
     def get_all_users(self):
         return Users.query.all()
 
@@ -44,6 +52,7 @@ class UsersController:
 
     def search_users_by_name(self, first_name):
         return Users.query.filter_by(first_name=first_name)
+    """
 
     def generate_unique_username(self, first_name):
         numero = random.randrange(
@@ -54,4 +63,18 @@ class UsersController:
         pass
 
     def update_password(self, user):
-        pass
+        user.password_hash = self.encrypt_pass(user.password_hash)
+        db.session.commit()
+
+    def generate_token_reset_password(self, id_user, expire_in=600):
+        return jwt.encode({'reset_password': id_user, 'exp': time() + expire_in},
+                          settings.get('SECRET_KEY'), algorithm='HS256').decode('utf-8')
+
+    @staticmethod
+    def verify_token_reset_password(token):
+        try:
+            id = jwt.decode(token, settings.get('SECRET_KEY'),
+                            algorithm=['HS256'])['reset_password']
+        except:
+            return
+        return Users.query.get(id)

@@ -11,10 +11,17 @@ class LoginForm(FlaskForm):
 
 
 class RegisterForm(FlaskForm):
-	first_name = StringField('First name', validators=[DataRequired()])
-	email = StringField('Email', validators=[DataRequired(), Email()])
-	username = StringField('Username', validators=[DataRequired()])
-	password = PasswordField('Password', validators=[DataRequired()])
-	#genre = SelectField(choices=[('Masculine', 'Masculine'), ('Feminine', 'Feminine'), ('Other', 'Other')])
-	#date_birth = DateField('Date Birth', validators=[DataRequired()])
-	signUp = SubmitField('Sign Up')
+    first_name = StringField('First name', validators=[DataRequired()])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    username = StringField('Username', validators=[DataRequired()])
+    password = PasswordField('Password', validators=[DataRequired()])
+    #genre = SelectField(choices=[('Masculine', 'Masculine'), ('Feminine', 'Feminine'), ('Other', 'Other')])
+    #date_birth = DateField('Date Birth', validators=[DataRequired()])
+    signUp = SubmitField('Sign Up')
+
+
+class ResetPasswordForm(FlaskForm):
+    password = PasswordField('New password', validators=[DataRequired()])
+    password_confirm = PasswordField('Repeat password', validators=[
+                                     DataRequired(), EqualTo('password')])
+    submit = SubmitField('Reset')

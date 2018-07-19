@@ -1,7 +1,7 @@
 from flask import render_template, redirect, request, url_for, Blueprint
 from flask_login import login_user, current_user, logout_user
 from app.models import Users
-from app.auth.forms import RegisterForm, LoginForm
+from app.auth.forms import RegisterForm, LoginForm, ResetPasswordForm
 from app.controllers.users_controller import UsersController
 
 
@@ -22,7 +22,7 @@ def register():
                      password_hash=form.password.data, first_name=form.first_name.data, genre=genre, date_birth=date, device_ip_register=ip)
         controller = UsersController()
         controller.save_new_user(user)
-        return render_template("feed/feed.html", msg="Seu cadastro foi realizado com sucesso, Larry.")
+        return redirect(url_for('feed.feed'))
     return render_template("auth/register.html", form=form)
 
 
@@ -41,9 +41,19 @@ def login():
     return render_template("auth/login.html", form=form)
 
 
-@bp_auth.route("/reset_password", methods=['GET', 'POST'])
-def reset_password():
-    pass
+@bp_auth.route("/reset_password/<token>", methods=['GET', 'POST'])
+def reset_password(token):
+    if current_user.is_authenticated:
+        return redirect(url_for('feed.feed'))
+    user = UsersController.verify_token_reset_password(token)
+    if not user:
+        return redirect(url_for('login'))
+    form = ResetPasswordForm()
+    if form.validate_on_submit():
+        controller = UsersController()
+        controller.update_password(form.password.data)
+        return redirect(url_for('auth.login'))
+    return render_template("auth/reset_password.html", form=form)
 
 
 @bp_auth.route("/logout")
