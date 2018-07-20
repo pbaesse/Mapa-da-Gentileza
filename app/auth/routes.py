@@ -1,8 +1,9 @@
-from flask import render_template, redirect, request, url_for, Blueprint
+from flask import render_template, redirect, flash, request, url_for, Blueprint
 from flask_login import login_user, current_user, logout_user
 from app.models import Users
-from app.auth.forms import RegisterForm, LoginForm, ResetPasswordForm
+from app.auth.forms import RegisterForm, LoginForm, ResetPasswordForm, RequestResetPasswordForm
 from app.controllers.users_controller import UsersController
+from app.services.mail import send_password_reset_email
 
 
 bp_auth = Blueprint('auth', __name__, url_prefix='/auth')
@@ -37,7 +38,7 @@ def login():
         if user is not None:
             login_user(user)
             return redirect(url_for('feed.feed'))
-        return redirect(url_for('login'))
+        return redirect(url_for('auth.login'))
     return render_template("auth/login.html", form=form)
 
 
@@ -47,13 +48,27 @@ def reset_password(token):
         return redirect(url_for('feed.feed'))
     user = UsersController.verify_token_reset_password(token)
     if not user:
-        return redirect(url_for('login'))
+        return redirect(url_for('auth.login'))
     form = ResetPasswordForm()
     if form.validate_on_submit():
         controller = UsersController()
         controller.update_password(form.password.data)
         return redirect(url_for('auth.login'))
     return render_template("auth/reset_password.html", form=form)
+
+
+@bp_auth.route("/reset_password_request", methods=['GET', 'POST'])
+def reset_password_request():
+    if current_user.is_authenticated:
+        return redirect(url_for('feed.feed'))
+    form = RequestResetPasswordForm()
+    if form.validate_on_submit():
+        user = Users.query.filter_by(email=form.email.data).first()
+        if user:
+            send_password_reset_email(user)
+        flash("Verifique seu email para instruções de redefinição.")
+        return redirect(url_for('auth.login'))
+    return render_template("auth/reset_password_request.html", form=form)
 
 
 @bp_auth.route("/logout")

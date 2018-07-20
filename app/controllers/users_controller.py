@@ -41,19 +41,6 @@ class UsersController:
     def update_profile(self, user):
         pass
 
-    """ 
-    refatorar isso para usar quando necessario no lugar de criar essa funcao
-    
-    def get_all_users(self):
-        return Users.query.all()
-
-    def get_user_by_username(self, username):
-        return Users.query.filter_by(username=username).first()
-
-    def search_users_by_name(self, first_name):
-        return Users.query.filter_by(first_name=first_name)
-    """
-
     def generate_unique_username(self, first_name):
         numero = random.randrange(
             datetime.now().second * datetime.now().minute) + 77
@@ -66,7 +53,8 @@ class UsersController:
         user.password_hash = self.encrypt_pass(user.password_hash)
         db.session.commit()
 
-    def generate_token_reset_password(self, id_user, expire_in=600):
+    @staticmethod
+    def generate_token_reset_password(id_user, expire_in=600):
         return jwt.encode({'reset_password': id_user, 'exp': time() + expire_in},
                           settings.get('SECRET_KEY'), algorithm='HS256').decode('utf-8')
 

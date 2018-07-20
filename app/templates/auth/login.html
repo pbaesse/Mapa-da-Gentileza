@@ -16,5 +16,9 @@
 		</div>
 		{{ form.submit() }}
 	</form>
+	<p>
+		Esqueceu sua senha?
+		<a href="{{ url_for('auth.reset_password_request') }}">Recuperar!</a>
+	</p>
 </body>
 </html>

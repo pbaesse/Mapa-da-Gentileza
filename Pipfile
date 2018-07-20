@@ -22,6 +22,7 @@ flask-bcrypt = "*"
 flask-uploads = "*"
 dynaconf = "*"
 pyjwt = "*"
+flask-mail = "*"
 
 [requires]
 python_version = "3.5"

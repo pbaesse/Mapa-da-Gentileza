@@ -26,13 +26,6 @@ class Users(UserMixin, db.Model):
     device_ip_register = db.Column(db.String(15), nullable=False)
     posts = db.relationship('Kindness', backref='author', lazy='dynamic')
 
-    def save(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def set_password(self):
-        pass
-
     def __repr__(self):
         return '<User {}>'.format(self.username)
 
@@ -74,10 +67,6 @@ class Kindness(db.Model):
     def __repr__(self):
         return '<Kindness {}>'.format(self.title)
 
-    def save(self):
-        db.session.add(self)
-        db.session.commit()
-
     def to_json(self):
         return {
             "idPost": self.id_kindness,
@@ -96,7 +85,8 @@ class Tags(db.Model):
 
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     description = db.Column(db.String(20), nullable=False, unique=True)
-    marker = db.Column(db.String(100), nullable=False, unique=True)
+    path_file_marker = db.Column(db.String(100), nullable=False, unique=True)
+    file_name_marker = db.Column(db.String(30), nullable=False, unique=True)
     # Visao de alto nivel para simplicar consultas ao DB. Esse campo
     # nao e adicionado ao banco.
     #posts = db.relationship('Kindness', backref='post', lazy='dynamic')
@@ -111,7 +101,8 @@ class Tags(db.Model):
         return {
             "idTag": self.id,
             "description": self.description,
-            "marker": self.marker
+            "path_marker": self.path_file_marker,
+            "file_name": self.file_name_marker
         }
 
 
@@ -138,9 +129,6 @@ class Kindness_Files(db.Model):
         db.DateTime, default=datetime.utcnow, nullable=False)
     id_kindness = db.Column(db.Integer, db.ForeignKey('Kindness.id_kindness'))
 
-    def save_file(self):
-        pass
-
 
 class Tokens_Reset_Password(db.Model):
     __tablename__ = "Tokens_Reset_Password"
@@ -149,6 +137,3 @@ class Tokens_Reset_Password(db.Model):
     token = db.Column(db.String(200), unique=True, nullable=False)
     send_date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     id_user = db.Column(db.Integer, db.ForeignKey('Users.id'))
-
-    def generate_token(self):
-        pass
