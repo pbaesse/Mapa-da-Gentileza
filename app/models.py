@@ -23,6 +23,7 @@ class Users(UserMixin, db.Model):
     genre = db.Column(db.String(10), nullable=False)
     date_birth = db.Column(db.DateTime, nullable=False)
     confirmed = db.Column(db.Boolean, default=False)
+    date_last_change_pass = db.Column(db.DateTime, default=datetime.utcnow)
     device_ip_register = db.Column(db.String(15), nullable=False)
     posts = db.relationship('Kindness', backref='author', lazy='dynamic')
 
