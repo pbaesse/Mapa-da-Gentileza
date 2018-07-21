@@ -41,16 +41,11 @@ class UsersController:
     def update_profile(self, user):
         pass
 
-    def generate_unique_username(self, first_name):
-        numero = random.randrange(
-            datetime.now().second * datetime.now().minute) + 77
-        return user.first_name + str(numero)
-
     def delete_account(self, user):
         pass
 
-    def update_password(self, user):
-        user.password_hash = self.encrypt_pass(user.password_hash)
+    def update_password(self, user, new_password):
+        user.password_hash = self.encrypt_pass(new_password)
         db.session.commit()
 
     @staticmethod

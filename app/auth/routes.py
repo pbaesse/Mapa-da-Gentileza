@@ -52,9 +52,9 @@ def reset_password(token):
     form = ResetPasswordForm()
     if form.validate_on_submit():
         controller = UsersController()
-        controller.update_password(form.password.data)
+        controller.update_password(user=user, new_password=form.password.data)
         return redirect(url_for('auth.login'))
-    return render_template("auth/reset_password.html", form=form)
+    return render_template("auth/reset_password.html", form=form, token=token)
 
 
 @bp_auth.route("/reset_password_request", methods=['GET', 'POST'])
