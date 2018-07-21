@@ -16,11 +16,11 @@ def register():
     form = RegisterForm()
     if form.validate_on_submit():
         # ajeitar isso aqui quando estiver codificando as rotas
-        ip = "197.123.12.23"
+        ip_client = request.remote_addr
         genre = "Masculino"
         date = "1999-11-28"
         user = Users(username=form.username.data, email=form.email.data,
-                     password_hash=form.password.data, first_name=form.first_name.data, genre=genre, date_birth=date, device_ip_register=ip)
+                     password_hash=form.password.data, first_name=form.first_name.data, genre=genre, date_birth=date, device_ip_register=ip_client)
         controller = UsersController()
         controller.save_new_user(user)
         send_confirm_email(user)
