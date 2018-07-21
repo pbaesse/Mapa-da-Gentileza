@@ -3,7 +3,7 @@ from flask_login import login_user, current_user, logout_user
 from app.models import Users
 from app.auth.forms import RegisterForm, LoginForm, ResetPasswordForm, RequestResetPasswordForm
 from app.controllers.users_controller import UsersController
-from app.services.mail import send_password_reset_email
+from app.services.mail import send_password_reset_email, send_confirm_email
 
 
 bp_auth = Blueprint('auth', __name__, url_prefix='/auth')
@@ -23,7 +23,8 @@ def register():
                      password_hash=form.password.data, first_name=form.first_name.data, genre=genre, date_birth=date, device_ip_register=ip)
         controller = UsersController()
         controller.save_new_user(user)
-        return redirect(url_for('feed.feed'))
+        send_confirm_email(user)
+        return render_template("auth/confirm_email_msg.html", user=user)
     return render_template("auth/register.html", form=form)
 
 
@@ -69,6 +70,16 @@ def reset_password_request():
         flash("Verifique seu email para instruções de redefinição.")
         return redirect(url_for('auth.login'))
     return render_template("auth/reset_password_request.html", form=form)
+
+
+@bp_auth.route("/confirm_email/<token>", methods=['GET', 'POST'])
+def confirm_email(token):
+    user = UsersController.verify_token_confirmed_email(token)
+    if not user:
+        return redirect(url_for('auth.register'))
+    controller = UsersController()
+    controller.confirmed_email(user)
+    return redirect(url_for('auth.login'))
 
 
 @bp_auth.route("/logout")

@@ -1,0 +1,11 @@
+<h2>Olá, {{ user.first_name }}</h2>
+
+<h3>Você acabou de registrar-se no KindnessMap</h3>
+
+<p>
+	Por favor clique no link abaixo para ativar sua conta e começar a usar os nossos serviços
+	<a href="{{ url_for('auth.confirm_email', token=token, _external=True) }}">Clique, por favor.</a>
+</p>
+
+<p>Abraços</p>
+<p>KindnessMap Team</p>

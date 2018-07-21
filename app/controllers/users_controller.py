@@ -48,6 +48,10 @@ class UsersController:
         user.password_hash = self.encrypt_pass(new_password)
         db.session.commit()
 
+    def confirmed_email(self, user):
+        user.confirmed = True
+        db.session.commit()
+
     @staticmethod
     def generate_token_reset_password(id_user, expire_in=600):
         return jwt.encode({'reset_password': id_user, 'exp': time() + expire_in},
@@ -61,3 +65,17 @@ class UsersController:
         except:
             return
         return Users.query.get(id)
+
+    @staticmethod
+    def generate_token_confirmed_email(email_user, expire_in=600):
+        return jwt.encode({'confirm_email': email_user, 'exp': time() + expire_in},
+                          settings.get('SECRET_KEY'), algorithm='HS256').decode('utf-8')
+
+    @staticmethod
+    def verify_token_confirmed_email(token):
+        try:
+            email = jwt.decode(token, settings.get(
+                'SECRET_KEY'), algorithm=['HS256'])['confirm_email']
+        except:
+            return
+        return Users.query.filter_by(email=email).first()
