@@ -9,7 +9,7 @@ bp_feed = Blueprint('feed', __name__, url_prefix='/feed')
 @bp_feed.route("/")
 @login_required
 def feed():
-    return render_template("feed/feed.html", msg="Massa")
+    return render_template("feed/feed.html")
 
 
 @bp_feed.route("/new_kindness", methods=['GET', 'POST'])

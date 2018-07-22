@@ -23,7 +23,7 @@ class Users(UserMixin, db.Model):
     genre = db.Column(db.String(10), nullable=False)
     date_birth = db.Column(db.DateTime, nullable=False)
     confirmed = db.Column(db.Boolean, default=False)
-    date_last_change_pass = db.Column(db.DateTime, default=datetime.utcnow)
+    date_last_change_pass = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     device_ip_register = db.Column(db.String(15), nullable=False)
     posts = db.relationship('Kindness', backref='author', lazy='dynamic')
 
@@ -137,4 +137,5 @@ class Tokens_Reset_Password(db.Model):
     id_token = db.Column(db.Integer, primary_key=True, autoincrement=True)
     token = db.Column(db.String(200), unique=True, nullable=False)
     send_date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    was_used = db.Column(db.Boolean, default=False)
     id_user = db.Column(db.Integer, db.ForeignKey('Users.id'))
