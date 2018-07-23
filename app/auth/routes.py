@@ -28,6 +28,7 @@ def register():
     return render_template("auth/register.html", form=form)
 
 
+@bp_auth.route("/", methods=['GET', 'POST'])
 @bp_auth.route("/login", methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:

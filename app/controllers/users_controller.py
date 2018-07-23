@@ -6,6 +6,7 @@ from dynaconf import settings
 from datetime import datetime
 from app.models import Users
 from app.core import login
+#from flask_login import current_user
 from extensions import db
 
 
@@ -38,11 +39,19 @@ class UsersController:
         if user is not None and self.check_pass(password, user.password_hash):
             return user
 
-    def update_profile(self, user):
-        pass
+    def update_profile(self, user, current_user):
+        current_user.first_name = user.first_name
+        current_user.last_name = user.last_name
+        current_user.about_me = user.about_me
+        current_user.avatar = user.avatar
+        db.session.commit()
 
     def delete_account(self, user):
         pass
+
+    def check_password(self, password, current_user):
+        if self.encrypt_pass(password) == current_user.password_hash:
+            return True
 
     def update_password(self, user, new_password):
         user.password_hash = self.encrypt_pass(new_password)
