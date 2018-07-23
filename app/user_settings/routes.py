@@ -37,8 +37,8 @@ def update_password():
     form = UpdatePasswordForm()
     if form.validate_on_submit():
         controller = UsersController()
-        if controller.check_password(password=form.new_password.data, current_user=current_user):
-            controler.update_password(
+        if controller.check_pass(password=form.old_password.data, pass_hash=current_user.password_hash):
+            controller.update_password(
                 user=current_user, new_password=form.new_password.data)
             return redirect(url_for('user_settings.update_password'))
         return redirect(url_for('user_settings.update_password'))

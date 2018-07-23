@@ -49,10 +49,6 @@ class UsersController:
     def delete_account(self, user):
         pass
 
-    def check_password(self, password, current_user):
-        if self.encrypt_pass(password) == current_user.password_hash:
-            return True
-
     def update_password(self, user, new_password):
         user.password_hash = self.encrypt_pass(new_password)
         db.session.commit()
