@@ -36,7 +36,7 @@ class UsersController:
 
     def login(self, email, password):
         user = Users.query.filter_by(email=email).first()
-        if user is not None and self.check_pass(password, user.password_hash):
+        if user is not None and self.check_pass(password, user.password_hash) and user.confirmed:
             return user
 
     def update_profile(self, user, current_user):

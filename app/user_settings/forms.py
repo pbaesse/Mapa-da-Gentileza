@@ -16,10 +16,12 @@ class UpdateProfileForm(FlaskForm):
     last_name = StringField('Last name')
     about_me = TextAreaField('Biography')
     avatar = FileField('Avatar')
-    #birthday = StringField('Day', validators=[DataRequired()])
+    birthday = StringField('Day', validators=[DataRequired()])
     # substituir por select com os meses existentes.
-    #month_birth = StringField('Month', validators=[DataRequired()])
-    #year_birth = StringField('Year', validators=[DataRequired()])
+    month_birth = SelectField('Month', choices=[('01', 'January'), ('02', 'February'), ('03', 'March'), ('04', 'April'), ('05', 'May'), ('06', 'June'), (
+        '07', 'July'), ('08', 'August'), ('09', 'September'), ('10', 'October'),
+        ('11', 'November'), ('12', 'December')], validators=[DataRequired()])
+    year_birth = StringField('Year', validators=[DataRequired()])
     update = SubmitField('Update')
 
     def __init__(self, current_username, *args, **kwargs):

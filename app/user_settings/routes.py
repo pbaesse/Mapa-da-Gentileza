@@ -15,13 +15,13 @@ bp_user_settings = Blueprint(
 def edit_profile():
     form = UpdateProfileForm(current_user.username)
     if form.validate_on_submit():
+        #corrigir a inserção da data no banco. ERRO.
+        date_birth = form.year_birth.data + "-" + form.month_birth.data + "-"+form.birthday.data
+
         user = Users(first_name=form.first_name.data, last_name=form.last_name.data,
-                     about_me=form.about_me.data, avatar=form.avatar.data)
+                     about_me=form.about_me.data, avatar=form.avatar.data, date_birth=str(datetime.strptime(date_birth, "%Y-%m-%d")))
         controller = UsersController()
         controller.update_profile(user=user, current_user=current_user)
-        #date_birth = form.year_birth.data + "-" + form.month_birth.data + "-"+form.birthday.data
-        # current_user.date_birth = str(
-        # datetime.strptime(date_birth, "%Y-%m-%d"))
         return redirect(url_for('user_settings.edit_profile'))
     elif request.method == "GET":
         form.first_name.data = current_user.first_name
