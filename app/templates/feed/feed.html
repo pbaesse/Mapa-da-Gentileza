@@ -4,6 +4,10 @@
 	<title></title>
 </head>
 <body>
+	<div>
+		<a href="{{ url_for('auth.logout') }}">Logout</a>
+		<a href="{{ url_for('feed.get_user', username=current_user.username) }}">Profile</a>
+	</div>
 	<h1>Olá</h1>
 </body>
 </html>

@@ -6,7 +6,6 @@ from dynaconf import settings
 from datetime import datetime
 from app.models import Users
 from app.core import login
-#from flask_login import current_user
 from extensions import db
 
 
@@ -48,6 +47,11 @@ class UsersController:
 
     def delete_account(self, user):
         pass
+
+    @staticmethod
+    def last_access(user):
+        user.last_access = datetime.utcnow()
+        db.session.commit()
 
     def update_password(self, user, new_password):
         user.password_hash = self.encrypt_pass(new_password)

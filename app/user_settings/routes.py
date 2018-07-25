@@ -10,13 +10,20 @@ bp_user_settings = Blueprint(
     'user_settings', __name__, url_prefix='/settings')
 
 
+@bp_user_settings.before_app_request
+def before_request():
+    if current_user.is_authenticated:
+        UsersController.last_access(current_user)
+
+
 @bp_user_settings.route("/edit_profile", methods=['GET', 'POST'])
 @login_required
 def edit_profile():
     form = UpdateProfileForm(current_user.username)
     if form.validate_on_submit():
-        #corrigir a inserção da data no banco. ERRO.
-        date_birth = form.year_birth.data + "-" + form.month_birth.data + "-"+form.birthday.data
+        # corrigir a inserção da data no banco. ERRO.
+        date_birth = form.year_birth.data + "-" + \
+            form.month_birth.data + "-" + form.birthday.data
 
         user = Users(first_name=form.first_name.data, last_name=form.last_name.data,
                      about_me=form.about_me.data, avatar=form.avatar.data, date_birth=str(datetime.strptime(date_birth, "%Y-%m-%d")))

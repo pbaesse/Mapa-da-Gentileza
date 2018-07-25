@@ -17,7 +17,7 @@ class Users(UserMixin, db.Model):
     password_hash = db.Column(db.String(200), nullable=False)
     avatar = db.Column(db.String(255))
     phone = db.Column(db.String(13))
-    last_acess = db.Column(db.DateTime, default=datetime.utcnow)
+    last_access = db.Column(db.DateTime, default=datetime.utcnow)
     registration_date = db.Column(db.DateTime, default=datetime.utcnow)
     count_logins = db.Column(db.Integer)
     genre = db.Column(db.String(10), nullable=False)
