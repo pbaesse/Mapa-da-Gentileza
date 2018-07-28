@@ -3,6 +3,7 @@ from flask_login import login_required, current_user
 from app.models import Kindness, Users
 from app.feed.forms import NewKindnessForm
 from app.controllers.users_controller import UsersController
+from app.controllers.kindness_controller import KindnessController
 
 
 bp_feed = Blueprint('feed', __name__, url_prefix='/feed')
@@ -18,6 +19,11 @@ def before_request():
 @login_required
 def feed():
     form = NewKindnessForm()
+    if form.validate_on_submit():
+        kindness = Kindness(title=form.title.data,
+                            body=form.body.data, user_id=current_user.id)
+        controller = KindnessController()
+        controller.save_new_kindness(kindness)
     return render_template("feed/feed.html", form=form)
 
 

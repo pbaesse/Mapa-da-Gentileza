@@ -9,7 +9,7 @@ bp_errors = Blueprint('errors', __name__)
 
 @bp_errors.errorhandler(404)
 def not_found_error(error):
-    pass
+	return render_template("errors/error_404.html")
 
 
 @bp_errors.errorhandler(500)

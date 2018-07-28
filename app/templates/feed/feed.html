@@ -1,7 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/leaflet.css') }}">
+	<title>Feed</title>
+	<style>
+		body{
+			padding: 0;
+			margin: 0;
+		}
+		#map{
+			width: 800px;
+			height: 500px;
+		}
+
+	</style>
 </head>
 <body>
 	<div>
@@ -9,5 +22,9 @@
 		<a href="{{ url_for('feed.get_user', username=current_user.username) }}">Profile</a>
 	</div>
 	<h1>Olá</h1>
+	<div id="map"></div>
+	
+	<script type="text/javascript" src="{{ url_for('static', filename='js/leaflet.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/map.js') }}"></script>
 </body>
 </html>
