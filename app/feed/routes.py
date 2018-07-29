@@ -1,4 +1,4 @@
-from flask import render_template, Blueprint
+from flask import render_template, Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import Kindness, Users
 from app.feed.forms import NewKindnessForm
@@ -15,15 +15,19 @@ def before_request():
         UsersController.last_access(current_user)
 
 
-@bp_feed.route("/")
+@bp_feed.route("/", methods=['GET', 'POST'])
 @login_required
 def feed():
     form = NewKindnessForm()
     if form.validate_on_submit():
-        kindness = Kindness(title=form.title.data,
-                            body=form.body.data, user_id=current_user.id)
+        data = request.get_json()
+        print(data)
+        kindness = Kindness(title=data['title'], latitude=data['latitude'],
+                            longitude=data['longitude'], body=data['body'], user_id=current_user.id)
         controller = KindnessController()
         controller.save_new_kindness(kindness)
+        # ajeitar essa mensagem.
+        return jsonify(data={'message': 'Salvo {}'.format(form.title.data)})
     return render_template("feed/feed.html", form=form)
 
 

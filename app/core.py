@@ -22,7 +22,7 @@ def create_app():
     dynaconf.init_app(app)
     mail.init_app(app)
     #configure_uploads(app, photos)
-
+    
     # configurando os blueprints
     accounts.configure(app)
     errors.configure(app)

@@ -8,7 +8,7 @@ class KindnessController:
         received_data = [
             kindness.body, kindness.latitude,
             kindness.longitude, kindness.user_id,
-            kindness.unnamed
+            kindness.title
         ]
 
         if all(received_data):
