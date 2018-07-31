@@ -81,6 +81,36 @@
 			longitude = parseFloat(local.latlng.lng.toString());
 		}
 
+		function addMarker(lat, lon, content){
+			var newMarker = createMarker(lat, lon);
+
+			newMarker.addTo(map);
+			newMarker.bindPopup(content);
+			newMarker.openPopup();
+
+  			//newMarker.on("popupopen", onPopupOpen);
+
+  			return newMarker;
+
+		}
+
+		function createMarker(lat, lon){
+			var coord = [lat, lon];
+			var newMarker;
+
+			var iconProp = {
+				iconUrl: "../static/img/marker-icon.png"
+			,   iconSize: [44, 59]
+			, 	iconAnchor: [22, 59]
+			,   popupAnchor: [0, -50]
+			};
+
+			var iconM = L.icon(iconProp);
+			newMarker = L.marker(coord, {icon: iconM});
+
+            return newMarker;
+		}
+
 		map.on('click', mapClick);
 
 				$(document).ready(function() {
@@ -120,7 +150,28 @@
 		                }
 		            }
 		        })
+		        	$.ajax({
+		            	type: 'GET',
+		            	url: "{{ url_for('feed.list_kindness') }}",
+		            	dataType: 'json',
+		            	contentType: 'application/json; charset=utf-8',
+		            	success: function(callback){
+		            		console.log(callback);
+
+		            		callback.forEach(function(kindness){
+		            			var lat = kindness.latitude;
+		            			var lon = kindness.longitude;
+		            			var body = kindness.body;
+		            			addMarker(lat, lon, body);
+		            		});
+
+		                },
+		            	error: function(){
+		            		$(this).html("error!");
+		            	}    
+		            });
 		    });
+				
 		/*
 		function mostrarDados(){
 

@@ -21,7 +21,6 @@ def feed():
     form = NewKindnessForm()
     if form.validate_on_submit():
         data = request.get_json()
-        print(data)
         kindness = Kindness(title=data['title'], latitude=data['latitude'],
                             longitude=data['longitude'], body=data['body'], user_id=current_user.id)
         controller = KindnessController()
@@ -29,6 +28,12 @@ def feed():
         # ajeitar essa mensagem.
         return jsonify(data={'message': 'Salvo {}'.format(form.title.data)})
     return render_template("feed/feed.html", form=form)
+
+
+@bp_feed.route("/list_kindness", methods=['GET'])
+def list_kindness():
+    posts = Kindness.query.all()
+    return jsonify([kindness.to_json() for kindness in posts])
 
 
 @bp_feed.route("/<username>")

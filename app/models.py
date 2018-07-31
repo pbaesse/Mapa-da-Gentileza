@@ -76,8 +76,7 @@ class Kindness(db.Model):
             "latitude": self.latitude,
             "longitude": self.longitude,
             "postDate": self.post_date,
-            "userId": self.user_id,
-            "tagId": self.tag_id
+            "userId": self.user_id
         }
 
 
