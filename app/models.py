@@ -56,6 +56,7 @@ class Kindness(db.Model):
 
     id_kindness = db.Column(db.Integer, primary_key=True, autoincrement=True)
     title = db.Column(db.String(50))
+    identifier = db.Column(db.String(40), unique=True, nullable=False)
     body = db.Column(db.Text, nullable=False)
     latitude = db.Column(db.Float, nullable=False)
     longitude = db.Column(db.Float, nullable=False)
