@@ -13,4 +13,4 @@ login.login_view = 'auth.login'
 login.login_message = u"Faca login para acessar"
 mail = Mail()
 dynaconf = FlaskDynaconf()
-#photos = UploadSet('photos', IMAGES)
+photos = UploadSet('photos', IMAGES)

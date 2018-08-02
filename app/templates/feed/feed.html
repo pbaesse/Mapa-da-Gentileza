@@ -23,7 +23,7 @@
 	</div>
 	<h1>Olá</h1>
 	<div id="map"></div>
-	<form id="form-new-post">
+	<form id="form-new-post" enctype="multipart/form-data">
 		{{ form.hidden_tag() }}
 		<div>
 			{{ form.title.label }}
@@ -33,13 +33,19 @@
 			{{ form.body.label }}
 			{{ form.body }}
 		</div>
+		<div>
+			{{ form.files.label }}
+			{{ form.files(id="uploadedImage") }}
+			<img id="uploadedPreview" style="width: 100px; height: 100px;">
+		</div>
 		{{ form.save_post() }}
 	</form>
 	<p id="respostas"></p>
 
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/leaflet.js') }}"></script>
-	<!--<script type="text/javascript" src="{{ url_for('static', filename='js/map.js') }}"></script>-->
+	<script type="text/javascript" src="{{ url_for('static', filename='js/feed.js') }}"></script>
+	<!--
 	<script type="text/javascript">
 		// REFATORAR TODO ESSE JS PARA UM ARQUIVO SEPARADO.
 		var initialCoord = [-22.91, -43.20];
@@ -193,5 +199,6 @@
 		}
 		*/
 	</script>
+-->
 </body>
 </html>
