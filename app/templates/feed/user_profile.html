@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Profile | {{ user.username }}</title>
 </head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 	<h1>{{ user.username }}</h1>
 	<p>
 		{{ user.about_me }}
@@ -13,5 +14,5 @@
 		<a href="{{ url_for('user_settings.edit_profile') }}">Edit profile</a>
 	</p>
 	{% endif %}
-</body>
+{% endblock %}
 </html>

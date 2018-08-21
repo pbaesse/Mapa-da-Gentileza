@@ -71,7 +71,7 @@ class Kindness(db.Model):
 
     def to_json(self):
         return {
-            "idPost": self.id_kindness,
+            "idPost": self.identifier,
             "title": self.title,
             "body": self.body,
             "latitude": self.latitude,
@@ -131,11 +131,13 @@ class Kindness_Files(db.Model):
     id_kindness = db.Column(db.Integer, db.ForeignKey('Kindness.id_kindness'))
 
 
-class Tokens_Reset_Password(db.Model):
-    __tablename__ = "Tokens_Reset_Password"
+class Tokens(db.Model):
+    __tablename__ = "Tokens"
 
     id_token = db.Column(db.Integer, primary_key=True, autoincrement=True)
     token = db.Column(db.String(200), unique=True, nullable=False)
     send_date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
     was_used = db.Column(db.Boolean, default=False)
+    type_token = db.Column(db.String(15), nullable=False)
+    is_valid = db.Column(db.Boolean, default=True, nullable=False)
     id_user = db.Column(db.Integer, db.ForeignKey('Users.id'))

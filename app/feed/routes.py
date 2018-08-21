@@ -1,7 +1,7 @@
 from flask import render_template, Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import Kindness, Users
-from app.feed.forms import NewKindnessForm
+from app.feed.forms import NewKindnessForm, UpdateKindnessForm
 from app.controllers.users_controller import UsersController
 from app.controllers.kindness_controller import KindnessController
 
@@ -41,6 +41,20 @@ def list_kindness():
 def get_user(username):
     user = Users.query.filter_by(username=username).first()
     return render_template("feed/user_profile.html", user=user)
+
+
+@bp_feed.route("/update_kindness")
+def update_kindness():
+    form = UpdateKindnessForm()
+    if form.validate_on_submit():
+        data = request.get_json()
+        kindness = Kindness(title=data['title'], latitude=data[
+                            'latitude'], longitude=data['longitude'], body=data['body'])
+        controller = KindnessController()
+        controller.update_kindness(
+            kindness_up=kindness, kindness_identifier=data['identifier'])
+        return jsonify(response={'message': 'Post {} atualizado'.format(form.title.data)})
+    return render_template("feed/feed.html", form=form)
 
 
 def configure(app):

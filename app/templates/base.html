@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/uikit.min.css') }}">
-	<script type="text/javascript" src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
-	<script type="text/javascript" src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
-	<title>Mapa da Gentileza</title>
-
-</head>
 <body>
+	<div>
+		<a href="{{ url_for('auth.logout') }}">Logout</a>
+		<a href="{{ url_for('feed.get_user', username=current_user.username) }}">Profile</a>
+		<a href="{{ url_for('feed.feed') }}">Feed</a>
+	</div>
 	{% block content %}{% endblock %}
 </body>
 </html>

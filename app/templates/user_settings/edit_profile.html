@@ -3,9 +3,14 @@
 <head>
 	<title></title>
 </head>
-<body>
+{% extends "base.html" %}
+{% block content %}
 	<form action="{{ url_for('user_settings.edit_profile') }}" method="POST">
 		{{ form.hidden_tag() }}
+		<div>
+			{{ form.avatar.label }}
+			{{ form.avatar }}
+		</div>
 		<div>
 			{{ form.first_name.label }}
 			{{ form.first_name }}
@@ -17,10 +22,6 @@
 		<div>
 			{{ form.about_me.label }}
 			{{ form.about_me(cols=50, rows=4) }}
-		</div>
-		<div>
-			{{ form.avatar.label }}
-			{{ form.avatar }}
 		</div>
 		<div>
 			{{ form.birthday.label }}
@@ -36,5 +37,5 @@
 		</div>
 		{{ form.update() }}
 	</form>
-</body>
+{% endblock %}
 </html>

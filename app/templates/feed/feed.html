@@ -3,6 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/leaflet.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/semantic.min.css') }}">
 	<title>Feed</title>
 	<style>
 		body{
@@ -16,11 +17,8 @@
 
 	</style>
 </head>
-<body>
-	<div>
-		<a href="{{ url_for('auth.logout') }}">Logout</a>
-		<a href="{{ url_for('feed.get_user', username=current_user.username) }}">Profile</a>
-	</div>
+{% extends "base.html" %}
+{% block content %}
 	<h1>Olá</h1>
 	<div id="map"></div>
 	<form id="form-new-post" enctype="multipart/form-data">
@@ -44,6 +42,7 @@
 
 	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/leaflet.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/semantic.min.js') }}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/feed.js') }}"></script>
-</body>
+{% endblock %}
 </html>

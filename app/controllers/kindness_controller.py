@@ -1,4 +1,4 @@
-from uuid
+import uuid
 from app.models import Kindness, Kindness_Files
 from extensions import db
 
@@ -21,8 +21,13 @@ class KindnessController:
         Kindness.query.filter_by(identifier=kindness_identifier).delete()
         db.session.commit()
 
-    def update_kindness(self, kindness):
-        pass
+    def update_kindness(self, kindness_up, kindness_identifier):
+        kindness = Kindness.query.filter_by(identifier=kindness_identifier)
+        kindness.title = kindness_up.title
+        kindness.body = kindness_up.body
+        kindness.latitude = kindness_up.latitude
+        kindness.longitude = kindness_up.longitude
+        db.session.commit()
 
     def upload_file_kindness(self, kindness_file):
         pass

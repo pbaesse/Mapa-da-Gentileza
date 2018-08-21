@@ -12,3 +12,7 @@ class NewKindnessForm(FlaskForm):
 	#unnamed = RadioField('Unnamed', choices=[('True', 'Unnamed')])
 	files = FileField('Images', validators=[FileAllowed(photos, "Images only!!")])
 	save_post = SubmitField('Post')
+
+
+class UpdateKindnessForm(FlaskForm):
+	pass
