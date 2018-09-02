@@ -1,5 +1,5 @@
 import uuid
-from app.models import Kindness, Kindness_Files
+from app.models import Kindness, Tags
 from extensions import db
 
 
@@ -29,6 +29,5 @@ class KindnessController:
         kindness.longitude = kindness_up.longitude
         db.session.commit()
 
-    def upload_file_kindness(self, kindness_file):
+    def save_kindness_tags(self, kindness, tags):
         pass
-

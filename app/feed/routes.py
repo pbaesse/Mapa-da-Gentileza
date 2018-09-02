@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import Kindness, Users, Kindness_Files
+from app.models import Kindness, Users, Kindness_Files, Tags
 from app.feed.forms import NewKindnessForm, UpdateKindnessForm
 from app.controllers.users_controller import UsersController
 from app.controllers.kindness_controller import KindnessController
@@ -19,6 +19,9 @@ def before_request():
 @login_required
 def feed():
     form = NewKindnessForm()
+    tags = Tags.query.all()
+    tags_list = [(tag.id, tag.description) for tag in tags]
+    form.tags.choices = tags_list
     if form.validate_on_submit():
         data = request.get_json()
         kindness = Kindness(title=data['title'], latitude=data['latitude'],
