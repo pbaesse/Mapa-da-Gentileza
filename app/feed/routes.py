@@ -1,6 +1,6 @@
 from flask import render_template, Blueprint, jsonify, request
 from flask_login import login_required, current_user
-from app.models import Kindness, Users
+from app.models import Kindness, Users, Kindness_Files
 from app.feed.forms import NewKindnessForm, UpdateKindnessForm
 from app.controllers.users_controller import UsersController
 from app.controllers.kindness_controller import KindnessController
