@@ -4,6 +4,7 @@ from app.models import Kindness, Users, Kindness_Files, Tags
 from app.feed.forms import NewKindnessForm, UpdateKindnessForm
 from app.controllers.users_controller import UsersController
 from app.controllers.kindness_controller import KindnessController
+from extensions import photos
 
 
 bp_feed = Blueprint('feed', __name__, url_prefix='/feed')
@@ -24,12 +25,15 @@ def feed():
     form.tags.choices = tags_list
     if form.validate_on_submit():
         data = request.get_json()
-        kindness = Kindness(title=data['title'], latitude=data['latitude'],
-                            longitude=data['longitude'], body=data['body'], user_id=current_user.id)
+        print(form.file.data)
+        filename = photos.save(form.file.data)
+        print(form.latitude.data)
+        kindness = Kindness(title=form.title.data, latitude=form.latitude.data,
+                            longitude=form.longitude.data, body=form.body.data, user_id=current_user.id)
         controller = KindnessController()
         controller.save_new_kindness(kindness)
         # ajeitar essa mensagem.
-        return jsonify(data={'message': 'Salvo {}'.format(form.title.data)})
+        return jsonify(data={'message': 'Postado {}'.format(form.title.data)})
     return render_template("feed/feed.html", form=form)
 
 
@@ -56,7 +60,7 @@ def update_kindness():
         controller = KindnessController()
         controller.update_kindness(
             kindness_up=kindness, kindness_identifier=data['identifier'])
-        return jsonify(response={'message': 'Post {} atualizado'.format(form.title.data)})
+        return jsonify(response={'message': 'Post {} atualizado com sucesso'.format(form.title.data)})
     return render_template("feed/feed.html", form=form)
 
 

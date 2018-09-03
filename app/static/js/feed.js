@@ -13,7 +13,7 @@ L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
 }).addTo(map);
 
 
-// responsável por pegar 
+// responsável por pegar
 function mapClick(local){
 	latitude = parseFloat(local.latlng.lat.toString());
 	longitude = parseFloat(local.latlng.lng.toString());
@@ -25,7 +25,7 @@ map.on('click', mapClick);
 $(document).ready(function(){
 	getKindness();
 	createKindness();
-	
+
 	$.ajaxSetup({
 		beforeSend: function(xhr, settings) {
 		if (!/^(GET|HEAD|OPTIONS|TRACE)$/i.test(settings.type) && !this.crossDomain) {
@@ -42,7 +42,7 @@ $(document).ready(function(){
 			$("#uploadedPreview").attr('src', event.target.result);
 		};
 	});
-	
+
 });
 
 function addMarker(lat, lon, content){
@@ -92,39 +92,32 @@ function getKindness(){
 	    },
 	    error: function(){
 	    	$(this).html("error!");
-	    }    
+	    }
 	});
 }
 
 function createKindness(){
 
 	$('#form-new-post').submit(function (e) {
-		
-		var data = {};
-		var Form = this;
-		$.each(this.elements, function(i, v) {
-			var input = $(v);
-		    data[input.attr("name")] = input.val();
-			delete data["undefined"];
 
-		});
-		
-		data["latitude"] = latitude;
-		data["longitude"] = longitude;
+		$("#latitude").val(latitude);
+		$("#longitude").val(longitude);
 
-	    var url = "../feed/";
-
+		var formData = new FormData($(this)[0]);
+		var url = "../feed/";
+		console.log(formData);
 	    $.ajax({
 	        type: "POST",
 	        url: url,
-	        dataType: 'json',
-	        contentType: 'application/json; charset=utf-8',
-	        data: JSON.stringify(data), 
+	        data: formData,
 	        success: function (data) {
-	            console.log(data) 
-	            $('#respostas').html("salvo");
+	            console.log(data)
+	            $('#respostas').html(data['message']);
 	            getKindness();
-	        }
+	        },
+					cache: false,
+          contentType: false,
+          processData: false
 	    });
 	    e.preventDefault();
 	});
