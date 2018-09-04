@@ -6,14 +6,12 @@ from extensions import photos, db
 
 class KindnessFilesController:
 
-    
+
     @staticmethod
     def save_image(image, id_kindness):
         filename = photos.save(image)
         extension = filename.split('.')[-1]
-        #Problema nessa linha. Corrigir
-        size = os.path.getsize(filename)
-        kind_image = Kindness_Files(file_path=filename, file_extension=extension, file_size=size, id_kindness=id_kindness)
+        kind_image = Kindness_Files(file_path=filename, file_extension=extension, id_kindness=id_kindness)
         db.session.add(kind_image)
         db.session.commit()
 

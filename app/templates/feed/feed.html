@@ -14,7 +14,11 @@
 			width: 800px;
 			height: 500px;
 		}
-
+		#uploadedPreview{
+			width: 100px;
+			height: 100px;
+			border: 1px solid black;
+		}
 	</style>
 </head>
 {% extends "base.html" %}
@@ -33,7 +37,7 @@
 		</div>
 		<div>
 			{{ form.file.label }}
-			{{ form.file(_id='uploadedImage')}}
+			{{ form.file(id='uploadedImage')}}
 		</div>
 		<img src="" id="uploadedPreview">
 		<div>

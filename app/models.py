@@ -122,10 +122,10 @@ class Kindness_Files(db.Model):
     id_kindness_file = db.Column(
         db.Integer, primary_key=True, autoincrement=True)
     file_extension = db.Column(db.String(6), nullable=False)
-    file_size = db.Column(db.Float, nullable=False)
+    file_size = db.Column(db.Float)
     # depois olhar como vai ser guardado esse caminho para diminuir ou aumentar
     # o tamanho da coluna.
-    file_path = db.Column(db.String(200), nullable=False)
+    file_path = db.Column(db.String(70), nullable=False)
     date_upload = db.Column(
         db.DateTime, default=datetime.utcnow, nullable=False)
     id_kindness = db.Column(db.Integer, db.ForeignKey('Kindness.id_kindness'))

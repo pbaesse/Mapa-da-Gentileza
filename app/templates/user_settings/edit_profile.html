@@ -2,14 +2,21 @@
 <html>
 <head>
 	<title></title>
+	<style>
+		#previewAvatar{
+			width: 150px;
+			height: 200px;
+		}
+	</style>
 </head>
 {% extends "base.html" %}
 {% block content %}
-	<form action="{{ url_for('user_settings.edit_profile') }}" method="POST">
+	<form action="{{ url_for('user_settings.edit_profile') }}" method="POST" id="update-profile">
 		{{ form.hidden_tag() }}
+		<img src="" id="previewAvatar">
 		<div>
 			{{ form.avatar.label }}
-			{{ form.avatar }}
+			{{ form.avatar(id='uploadAvatar') }}
 		</div>
 		<div>
 			{{ form.first_name.label }}
@@ -37,5 +44,7 @@
 		</div>
 		{{ form.update() }}
 	</form>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+	<script type="text/javascript" src="{{ url_for('static', filename='js/profile.js') }}"></script>
 {% endblock %}
 </html>
