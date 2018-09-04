@@ -17,6 +17,9 @@ class KindnessController:
             db.session.add(kindness)
             db.session.commit()
 
+            db.session.refresh(kindness)
+            return kindness.id_kindness
+
     def delete_kindness(self, kindness_identifier):
         Kindness.query.filter_by(identifier=kindness_identifier).delete()
         db.session.commit()
