@@ -110,6 +110,7 @@ function createKindness(){
 	        type: "POST",
 	        url: url,
 	        data: formData,
+					async: true,
 	        success: function (data) {
 	            console.log(data)
 	            $('#respostas').html(data['message']);
