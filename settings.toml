@@ -7,7 +7,7 @@ MAIL_SERVER = "smtp.googlemail.com"
 MAIL_PORT = 587
 MAIL_USE_TLS = 1
 UPLOADED_PHOTOS_URL = "http://localhost:5000/uploads/photos/"
-UPLOADED_PHOTOS_DEST = "uploads/posts_images/"
+UPLOADED_PHOTOS_DEST = "uploads/"
 
 [testing]
 

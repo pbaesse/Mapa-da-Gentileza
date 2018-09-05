@@ -1,4 +1,4 @@
-from flask import Blueprint, request, render_template, redirect, url_for
+from flask import Blueprint, request, render_template, redirect, url_for, jsonify
 from flask_login import login_required, current_user
 from datetime import datetime
 from app.models import Users
@@ -30,13 +30,11 @@ def edit_profile():
         controller = UsersController()
         controller.update_profile(user=user, current_user=current_user)
         return redirect(url_for('user_settings.edit_profile'))
-    elif request.method == "GET":
-        form.first_name.data = current_user.first_name
-        form.last_name.data = current_user.last_name
-        form.about_me.data = current_user.about_me
-        form.avatar.data = current_user.avatar
     return render_template("user_settings/edit_profile.html", form=form)
 
+@bp_user_settings.route("/get_profile", methods=['GET'])
+def get_profile():
+    return jsonify(current_user.to_json())
 
 @bp_user_settings.route("/update_password", methods=['GET', 'POST'])
 @login_required

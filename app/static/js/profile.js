@@ -1,4 +1,6 @@
 $(document).ready(function(){
+  getProfile();
+
   $("#uploadAvatar").change(function(){
 		var reader = new FileReader();
 		reader.readAsDataURL($("#uploadAvatar")[0].files[0]);
@@ -28,4 +30,25 @@ function updateProfile(){
     });
     e.preventDefault();
   });
+}
+
+function getProfile(){
+
+  $.ajax({
+	    type: 'GET',
+	    url: "../settings/get_profile",
+	    dataType: 'json',
+	    contentType: 'application/json; charset=utf-8',
+	    success: function(user){
+	    	console.log(user);
+
+        $("#first_name").val(user.firstName);
+        $("#last_name").val(user.lastName);
+        $("#about_me").val(user.aboutMe);
+        $("#previewAvatar").attr('src', user.avatar);
+	    },
+	    error: function(){
+	    	$(this).html("error!");
+	    }
+	});
 }

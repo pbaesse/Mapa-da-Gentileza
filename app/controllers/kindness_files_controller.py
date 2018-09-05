@@ -9,7 +9,7 @@ class KindnessFilesController:
 
     @staticmethod
     def save_image(image, id_kindness):
-        filename = photos.save(image)
+        filename = photos.save(image, folder="posts_images/")
         extension = filename.split('.')[-1]
         kind_image = Kindness_Files(file_path=filename, file_extension=extension, id_kindness=id_kindness)
         db.session.add(kind_image)

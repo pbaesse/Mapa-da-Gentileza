@@ -34,12 +34,15 @@ class Users(UserMixin, db.Model):
         return {
             "idUser": self.id,
             "username": self.username,
+            "firstName": self.first_name,
+            "lastName": self.last_name,
+            "genre": self.genre,
+            "dateBirth": self.date_birth,
             "email": self.email,
-            "about_me": self.about_me,
+            "aboutMe": self.about_me,
             "avatar": self.avatar,
             "phone": self.phone,
-            "posts": self.posts,
-            "lastAcess": self.last_acess
+            "lastAcess": self.last_access
         }
 
 
