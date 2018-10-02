@@ -3,7 +3,6 @@ from flask_wtf.file import FileField, FileAllowed
 from wtforms import StringField, SubmitField, TextAreaField, SelectField, RadioField, HiddenField
 from wtforms.validators import DataRequired, ValidationError
 from app.models import Tags
-from extensions import photos
 
 
 class NewKindnessForm(FlaskForm):
@@ -13,7 +12,7 @@ class NewKindnessForm(FlaskForm):
 	latitude = HiddenField('latitude')
 	longitude = HiddenField('longitude')
 	#unnamed = RadioField('Unnamed', choices=[('True', 'Unnamed')])
-	file = FileField('Image', validators=[FileAllowed(photos, "Images only!!")])
+	file = FileField('Image')
 	save_post = SubmitField('Post')
 
 

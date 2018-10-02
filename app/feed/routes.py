@@ -4,8 +4,7 @@ from app.models import Kindness, Users, Kindness_Files, Tags
 from app.feed.forms import NewKindnessForm, UpdateKindnessForm
 from app.controllers.users_controller import UsersController
 from app.controllers.kindness_controller import KindnessController
-from app.controllers.kindness_files_controller import KindnessFilesController
-from extensions import photos
+from app.controllers.files_controller import FilesController
 
 
 bp_feed = Blueprint('feed', __name__, url_prefix='/feed')
@@ -30,7 +29,8 @@ def feed():
                             longitude=form.longitude.data, body=form.body.data, user_id=current_user.id)
         controller = KindnessController()
         id_kindness = controller.save_new_kindness(kindness)
-        KindnessFilesController.save_image(post_image, id_kindness)
+        files = FilesController()
+        files.save_image(files=post_image, id_kindness=id_kindness, type_upload="img_kindness")
         print("ID: {} ".format(id_kindness))
         # ajeitar essa mensagem.
         return jsonify(data={'message': 'Postado {}'.format(form.title.data)})

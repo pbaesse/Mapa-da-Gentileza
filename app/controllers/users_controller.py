@@ -6,7 +6,7 @@ from dynaconf import settings
 from datetime import datetime
 from app.models import Users
 from app.core import login
-from extensions import db, photos
+from extensions import db
 
 
 class UsersController:
@@ -38,7 +38,7 @@ class UsersController:
         if user is not None and self.check_pass(password, user.password_hash) and user.confirmed:
             return user
 
-    def save_avatar(self, image):
+    """def save_avatar(self, image):
         filename = photos.save(image, folder="users_images/")
         extension = filename.split('.')[-1]
         return filename
@@ -48,7 +48,7 @@ class UsersController:
         current_user.last_name = user.last_name
         current_user.about_me = user.about_me
         current_user.avatar = self.save_avatar(user.avatar)
-        db.session.commit()
+        db.session.commit()"""
 
     def delete_account(self, user):
         pass

@@ -52,3 +52,29 @@ function getProfile(){
 	    }
 	});
 }
+
+function updatePassword(){
+  $("#update-password").submit(function(e){
+
+    let data = {};
+    let form = this;
+
+    data["old_password"] = $("#old_password").val();
+
+    let url = "../settings/update_password";
+    alert(data);
+    $.ajax({
+      type: "POST",
+      url: url,
+      dataType: 'json',
+      contentType: 'application/json; charset=utf-8',
+      data: JSON.stringify(data),
+      success: function(response){
+        let obj = JSON.parse(response);
+        console.log(obj.message);
+      },
+    });
+
+    e.preventDefault();
+  });
+}

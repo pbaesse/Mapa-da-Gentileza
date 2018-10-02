@@ -2,6 +2,9 @@ from datetime import datetime
 from extensions import db
 from flask_login import UserMixin
 # refatorar isso aqui depois.
+#from app.common.image import convert_to_base64
+from dynaconf import settings
+from flask import send_from_directory
 from app.constants import Constants
 
 
@@ -40,7 +43,7 @@ class Users(UserMixin, db.Model):
             "dateBirth": self.date_birth,
             "email": self.email,
             "aboutMe": self.about_me,
-            "avatar": self.avatar,
+            #"avatar": self.convert(self.avatar),
             "phone": self.phone,
             "lastAcess": self.last_access
         }
