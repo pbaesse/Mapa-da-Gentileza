@@ -32,7 +32,7 @@ def feed():
         files = FilesController()
         files.save_image(files=post_image, id_kindness=id_kindness, type_upload="img_kindness")
         print("ID: {} ".format(id_kindness))
-        # ajeitar essa mensagem.
+        
         return jsonify(data={'message': 'Postado {}'.format(form.title.data)})
     return render_template("feed/feed.html", form=form)
 

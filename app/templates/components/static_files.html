@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/semantic.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+    <!-- Importação dos arquivos css comuns -->
+    <title>{{ title }}</title>
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+    <!-- Importação dos arquivos js comuns -->
+  </body>
+</html>

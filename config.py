@@ -20,4 +20,3 @@ class Config:
     MAIL_USERNAME = settings.get('MAIL_USERNAME')
     MAIL_PASSWORD = settings.get('MAIL_PASSWORD')
     ADMINS = ['kindnessmap@gmail.com']
-    

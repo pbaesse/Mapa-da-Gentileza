@@ -15,7 +15,7 @@ def register():
         return redirect(url_for('feed.feed'))
     form = RegisterForm()
     if form.validate_on_submit():
-        # ajeitar isso aqui quando estiver codificando as rotas
+        
         ip_client = request.remote_addr
         genre = "Masculino"
         date = "1999-11-28"
@@ -41,7 +41,7 @@ def login():
             login_user(user)
             return redirect(url_for('feed.feed'))
         return redirect(url_for('auth.login'))
-    return render_template("auth/login.html", form=form)
+    return render_template("auth/login.html", form=form, title="Login")
 
 
 @bp_auth.route("/reset_password/<token>", methods=['GET', 'POST'])

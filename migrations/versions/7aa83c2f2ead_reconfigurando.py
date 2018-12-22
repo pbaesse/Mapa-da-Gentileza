@@ -1,8 +1,8 @@
-"""Create tables
+"""reconfigurando
 
-Revision ID: 42ce830753b5
+Revision ID: 7aa83c2f2ead
 Revises: 
-Create Date: 2018-09-01 20:18:40.279801
+Create Date: 2018-12-20 19:58:37.552701
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '42ce830753b5'
+revision = '7aa83c2f2ead'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -79,8 +79,8 @@ def upgrade():
     op.create_table('Kindness_Files',
     sa.Column('id_kindness_file', sa.Integer(), autoincrement=True, nullable=False),
     sa.Column('file_extension', sa.String(length=6), nullable=False),
-    sa.Column('file_size', sa.Float(), nullable=False),
-    sa.Column('file_path', sa.String(length=200), nullable=False),
+    sa.Column('file_size', sa.Float(), nullable=True),
+    sa.Column('file_path', sa.String(length=70), nullable=False),
     sa.Column('date_upload', sa.DateTime(), nullable=False),
     sa.Column('id_kindness', sa.Integer(), nullable=True),
     sa.ForeignKeyConstraint(['id_kindness'], ['Kindness.id_kindness'], ),

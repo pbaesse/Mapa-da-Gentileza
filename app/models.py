@@ -5,7 +5,6 @@ from flask_login import UserMixin
 #from app.common.image import convert_to_base64
 from dynaconf import settings
 from flask import send_from_directory
-from app.constants import Constants
 
 
 class Users(UserMixin, db.Model):
