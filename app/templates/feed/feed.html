@@ -1,28 +1,7 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/leaflet.css') }}">
-	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/semantic.min.css') }}">
-	<title>Feed</title>
-	<style>
-		body{
-			padding: 0;
-			margin: 0;
-		}
-		#map{
-			width: 800px;
-			height: 500px;
-		}
-		#uploadedPreview{
-			width: 100px;
-			height: 100px;
-			border: 1px solid black;
-		}
-	</style>
-</head>
-{% extends "base.html" %}
+{% extends "components/base.html" %}
+{% block title %} Feed {% endblock %}
 {% block content %}
+{% include "components/navbar.html" %}
 	<h1>Olá</h1>
 	<div id="map"></div>
 	<form id="form-new-post" enctype="multipart/form-data" method="POST">
@@ -46,10 +25,8 @@
 		{{ form.save_post() }}
 	</form>
 	<p id="respostas"></p>
-
-	<script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+{% endblock %}
+{% block scripts %}
 	<script type="text/javascript" src="{{ url_for('static', filename='js/leaflet.js') }}"></script>
-	<script type="text/javascript" src="{{ url_for('static', filename='js/semantic.min.js') }}"></script>
 	<script type="text/javascript" src="{{ url_for('static', filename='js/feed.js') }}"></script>
 {% endblock %}
-</html>

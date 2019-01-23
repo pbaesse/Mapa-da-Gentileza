@@ -6,8 +6,8 @@ MYSQL_DATABASE = "KindnessMapDB"
 MAIL_SERVER = "smtp.googlemail.com"
 MAIL_PORT = 587
 MAIL_USE_TLS = 1
-UPLOAD_USERS_FOLDER = "/uploads/users_images/"
-UPLOAD_KINDNESS_FOLDER = "/uploads/posts_images/"
+UPLOAD_USERS_FOLDER = "uploads/users_images"
+UPLOAD_KINDNESS_FOLDER = "uploads/posts_images"
 #ALLOWED_EXTENSIONS = set(['jpg', 'png', 'gif', 'jpeg'])
 
 [testing]

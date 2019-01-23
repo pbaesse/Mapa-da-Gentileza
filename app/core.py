@@ -5,8 +5,8 @@ from extensions import db, migrate, login, dynaconf, mail
 from app.auth import routes as accounts
 from app.errors import routes as errors
 from app.feed import routes as feed
-from app.user_settings import routes as user_settings
-from app.common import image
+from app.users import routes as users
+#from app.common import image
 from app.services import mail as email
 from app import models
 from app.controllers import users_controller
@@ -26,8 +26,8 @@ def create_app():
     accounts.configure(app)
     errors.configure(app)
     feed.configure(app)
-    image.configure(app)
+    users.configure(app)
+    #image.configure(app)
     email.configure(app)
-    user_settings.configure(app)
 
     return app

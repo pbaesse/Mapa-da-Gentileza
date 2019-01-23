@@ -33,7 +33,11 @@ $(document).ready(function(){
 			}
 		}
 	});
-
+	/*
+	$("#search").change(function(){
+		getUsersBySearch();
+	});
+	*/
 	$("#uploadedImage").change(function(){
 		var reader = new FileReader();
 		reader.readAsDataURL($("#uploadedImage")[0].files[0]);
@@ -95,7 +99,34 @@ function getKindness(){
 	    }
 	});
 }
+/*
+function getUsersBySearch(){
 
+	//$('#form-search-user').submit(function (e){
+		let data = {};
+
+		var url = "../users/search";
+		data['search'] = $('#search').val();
+
+		console.log(data);
+		$.ajax({
+				type: "POST",
+				url: url,
+				dataType: 'json',
+	      contentType: 'application/json; charset=utf-8',
+	      data: JSON.stringify(data),
+				success: function(response){
+					console.log(response);
+					let obj = JSON.parse(response);
+
+	        console.log(obj);
+	      },
+		});
+
+		//e.preventDefault();
+	//});
+}
+*/
 function createKindness(){
 
 	$('#form-new-post').submit(function (e) {
@@ -113,7 +144,7 @@ function createKindness(){
 					async: true,
 	        success: function (data) {
 	            console.log(data)
-	            $('#respostas').html(data['message']);
+	            $('#respostas').html(data.message);
 	            getKindness();
 	        },
 					cache: false,

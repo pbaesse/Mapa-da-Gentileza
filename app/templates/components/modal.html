@@ -1,0 +1,67 @@
+<div id="my-id" uk-modal>
+    <div class="uk-modal-dialog uk-modal-body">
+        <h2 class="uk-modal-title">Olá</h2>
+        <form method="POST" enctype="multipart/form-data" id="update-profile" action="">
+      		{{ form.hidden_tag() }}
+      		<img src="{{ url_for('static', filename='img/noavatar.png') }}" id="previewAvatar">
+          <div class="uk-margin">
+        		<div class="uk-inline">
+              <div uk-form-custom>
+                {{ form.avatar(id='uploadAvatar', class="uk-input") }}
+                <button type="button" class="uk-button uk-button-default">Foto</button>
+              </div>
+        		</div>
+          </div>
+          <div class="uk-margin">
+      		    <div class="uk-inline">
+      			   {{ form.username.label(class="uk-form-label") }}
+      			   {{ form.username(class="uk-input") }}
+      		  </div>
+          </div>
+          <div class="uk-margin">
+      		   <div class="uk-inline">
+      			   {{ form.first_name.label(class="uk-form-label") }}
+      			   {{ form.first_name(class="uk-input") }}
+      		   </div>
+          </div>
+          <div class="uk-margin">
+      		   <div class="uk-inline">
+      			   {{ form.last_name.label(class="uk-form-label") }}
+      			   {{ form.last_name(class="uk-input") }}
+      		  </div>
+          </div>
+          <div class="uk-margin">
+      		   <div class="uk-inline">
+      			   {{ form.about_me.label(class="uk-form-label") }}
+      			   {{ form.about_me(cols=50, rows=4, class="uk-textarea") }}
+      		  </div>
+          </div>
+          <div class="uk-margin">
+      		   <div class="uk-inline">
+      			   {{ form.phone.label(class="uk-form-label") }}
+      			   {{ form.phone(class="uk-input") }}
+      		  </div>
+          </div>
+          <div class="uk-margin">
+      		   <div class="uk-inline">
+      			   {{ form.birthday.label(class="uk-form-label") }}
+      			   {{ form.birthday(class="uk-input") }}
+      		  </div>
+          </div>
+          <div class="uk-margin">
+      		   <div class="uk-inline">
+      			   {{ form.month_birth.label(class="uk-form-label") }}
+      			   {{ form.month_birth(class="uk-input uk-select") }}
+      		  </div>
+          </div>
+          <div class="uk-margin">
+      		    <div class="uk-inline">
+      			      {{ form.year_birth.label(class="uk-form-label") }}
+      			      {{ form.year_birth(class="uk-input") }}
+      		    </div>
+          </div>
+      		{{ form.update(class="uk-button uk-button-secondary") }}
+      	</form>
+        <button class="uk-modal-close" type="button">Fechar</button>
+    </div>
+</div>

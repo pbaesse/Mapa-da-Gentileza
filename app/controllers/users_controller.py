@@ -1,11 +1,12 @@
 import bcrypt
 import random
+from datetime import datetime
 import jwt
 from time import time
 from dynaconf import settings
-from datetime import datetime
 from app.models import Users
 from app.core import login
+from app.controllers.files_controller import FilesController
 from extensions import db
 
 
@@ -38,17 +39,22 @@ class UsersController:
         if user is not None and self.check_pass(password, user.password_hash) and user.confirmed:
             return user
 
-    """def save_avatar(self, image):
-        filename = photos.save(image, folder="users_images/")
-        extension = filename.split('.')[-1]
-        return filename
+    def save_avatar(self, image=None, type_upload=None, id_kindness=None, id_user=None):
+        if image is not None:
+            controller = FilesController()
+            print("ID USUÁRIO DA IMAGEM: {}".format(id_user))
+            filename = controller.save_image(files=image, type_upload="img_profile", id_user=id_user)
+            return filename
 
     def update_profile(self, user, current_user):
+        current_user.username = user.username
         current_user.first_name = user.first_name
         current_user.last_name = user.last_name
         current_user.about_me = user.about_me
-        current_user.avatar = self.save_avatar(user.avatar)
-        db.session.commit()"""
+        current_user.status = user.status
+        current_user.phone = user.phone
+        current_user.avatar = self.save_avatar(image=user.avatar, id_user=current_user.id)
+        db.session.commit()
 
     def delete_account(self, user):
         pass

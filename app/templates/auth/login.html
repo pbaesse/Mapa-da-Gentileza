@@ -1,24 +1,29 @@
-{% extends "components/static_files.html" %}
+{% extends "components/base.html" %}
+{% block title %} Login {% endblock %}
 {% block content %}
+{% include "components/navbar.html" %}
 	<div id="form-login">
 		<form action="{{ url_for('auth.login') }}" method="POST">
 			{{ form.hidden_tag() }}
-			<div>
-				{{ form.email.label }}
-				{{ form.email }}
-				{% for error in form.email.errors %}
-				<span>{{ error }}</span>
-				{% endfor %}
+			<div class="uk-margin">
+				<div class="uk-inline">
+					{{ form.email.label(class="uk-form-label") }}
+					{{ form.email(class="uk-input") }}
+				</div>
 			</div>
-			<div>
-				{{ form.password.label }}
-				{{ form.password }}
-				{% for error in form.password.errors %}
-				<span>{{ error }}</span>
-				{% endfor %}
+			<div class="uk-margin">
+				<div class="uk-inline">
+					{{ form.password.label(class="uk-form-label") }}
+					{{ form.password(class="uk-input") }}
+				</div>
 			</div>
-			{{ form.submit() }}
+			{{ form.submit(class="uk-button uk-button-primary") }}
 		</form>
+		{% for message in get_flashed_messages() %}
+		<p>
+			{{ message }}
+		</p>
+		{% endfor %}
 		<p>
 			Não possui conta?
 			<a href="{{ url_for('auth.register') }}">Register</a>

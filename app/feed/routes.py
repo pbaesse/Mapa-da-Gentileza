@@ -2,6 +2,8 @@ from flask import render_template, Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import Kindness, Users, Kindness_Files, Tags
 from app.feed.forms import NewKindnessForm, UpdateKindnessForm
+from app.users.forms import SearchUserForm
+from app.helpers import make_response_message
 from app.controllers.users_controller import UsersController
 from app.controllers.kindness_controller import KindnessController
 from app.controllers.files_controller import FilesController
@@ -20,20 +22,22 @@ def before_request():
 @login_required
 def feed():
     form = NewKindnessForm()
-    tags = Tags.query.all()
-    tags_list = [(tag.id, tag.description) for tag in tags]
+    tags_query = Tags.query.all()
+    tags_list = [(tag.id, tag.description) for tag in tags_query]
     form.tags.choices = tags_list
     if form.validate_on_submit():
-        post_image = form.file.data
-        kindness = Kindness(title=form.title.data, latitude=form.latitude.data,
-                            longitude=form.longitude.data, body=form.body.data, user_id=current_user.id)
-        controller = KindnessController()
-        id_kindness = controller.save_new_kindness(kindness)
-        files = FilesController()
-        files.save_image(files=post_image, id_kindness=id_kindness, type_upload="img_kindness")
-        print("ID: {} ".format(id_kindness))
-        
-        return jsonify(data={'message': 'Postado {}'.format(form.title.data)})
+        try:
+            post_image = form.file.data
+            tags = form.tags.data
+            kindness = Kindness(title=form.title.data, latitude=form.latitude.data,
+                                longitude=form.longitude.data, body=form.body.data, user_id=current_user.id)
+            controller = KindnessController()
+            id_kindness = controller.save_new_kindness(kindness=kindness, tags=tags, image=post_image)
+            print("ID: {} ".format(id_kindness))
+
+            return jsonify(data={'message': 'Postado {}'.format(form.title.data)})
+        except Exception as ex:
+            return jsonify(data={'message': '{}'.format(ex)})
     return render_template("feed/feed.html", form=form)
 
 
@@ -43,14 +47,9 @@ def list_kindness():
     return jsonify([kindness.to_json() for kindness in posts])
 
 
-@bp_feed.route("/<username>")
-@login_required
-def get_user(username):
-    user = Users.query.filter_by(username=username).first()
-    return render_template("feed/user_profile.html", user=user)
-
-
+#Corrigir essa rota para que possa atualizar também a imagem caso o post possua.
 @bp_feed.route("/update_kindness")
+@login_required
 def update_kindness():
     form = UpdateKindnessForm()
     if form.validate_on_submit():

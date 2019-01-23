@@ -15,7 +15,7 @@ def register():
         return redirect(url_for('feed.feed'))
     form = RegisterForm()
     if form.validate_on_submit():
-        
+
         ip_client = request.remote_addr
         genre = "Masculino"
         date = "1999-11-28"
@@ -40,6 +40,7 @@ def login():
         if user is not None:
             login_user(user)
             return redirect(url_for('feed.feed'))
+        flash("Esse usuário não está cadastrado no sistema....")
         return redirect(url_for('auth.login'))
     return render_template("auth/login.html", form=form, title="Login")
 
@@ -69,7 +70,7 @@ def reset_password_request():
         if user:
             send_password_reset_email(user)
         flash("Verifique seu email para instruções de redefinição.")
-        return redirect(url_for('auth.login'))
+        return redirect(url_for('auth.reset_password_request'))
     return render_template("auth/reset_password_request.html", form=form)
 
 

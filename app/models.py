@@ -1,8 +1,6 @@
-from datetime import datetime
+import datetime
 from extensions import db
 from flask_login import UserMixin
-# refatorar isso aqui depois.
-#from app.common.image import convert_to_base64
 from dynaconf import settings
 from flask import send_from_directory
 
@@ -16,16 +14,19 @@ class Users(UserMixin, db.Model):
     last_name = db.Column(db.String(50))
     email = db.Column(db.String(130), unique=True, nullable=False)
     about_me = db.Column(db.Text)
+    status = db.Column(db.String(20))
     password_hash = db.Column(db.String(200), nullable=False)
     avatar = db.Column(db.String(255))
     phone = db.Column(db.String(13))
-    last_access = db.Column(db.DateTime, default=datetime.utcnow)
-    registration_date = db.Column(db.DateTime, default=datetime.utcnow)
+    last_access = db.Column(db.DateTime, default=datetime.datetime.now)
+    registration_date = db.Column(db.DateTime, default=datetime.datetime.now)
     count_logins = db.Column(db.Integer)
+    count_logins_failed = db.Column(db.Integer)
+    date_last_login_failed = db.Column(db.DateTime, default=datetime.datetime.now)
     genre = db.Column(db.String(10), nullable=False)
     date_birth = db.Column(db.DateTime, nullable=False)
     confirmed = db.Column(db.Boolean, default=False)
-    date_last_change_pass = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    date_last_change_pass = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
     device_ip_register = db.Column(db.String(15), nullable=False)
     posts = db.relationship('Kindness', backref='author', lazy='dynamic')
 
@@ -39,12 +40,13 @@ class Users(UserMixin, db.Model):
             "firstName": self.first_name,
             "lastName": self.last_name,
             "genre": self.genre,
+            "status": self.status,
             "dateBirth": self.date_birth,
             "email": self.email,
             "aboutMe": self.about_me,
-            #"avatar": self.convert(self.avatar),
+            "avatar": self.avatar,
             "phone": self.phone,
-            "lastAcess": self.last_access
+            "lastAcess": self.last_access,
         }
 
 
@@ -65,9 +67,10 @@ class Kindness(db.Model):
     body = db.Column(db.Text, nullable=False)
     latitude = db.Column(db.Float, nullable=False)
     longitude = db.Column(db.Float, nullable=False)
-    post_date = db.Column(db.DateTime, default=datetime.utcnow)
+    post_date = db.Column(db.DateTime, default=datetime.datetime.now)
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id'), nullable=False)
     unnamed = db.Column(db.Boolean, default=False)
+    files = db.relationship('Kindness_Files', backref='file', lazy=True)
     tags = db.relationship('Tags', secondary=kindness_tags_association,
                            lazy='subquery', backref=db.backref('kindness', lazy=True))
 
@@ -107,8 +110,8 @@ class Tags(db.Model):
         return {
             "idTag": self.id,
             "description": self.description,
-            "path_marker": self.path_file_marker,
-            "file_name": self.file_name_marker
+            "pathMarker": self.path_file_marker,
+            "fileName": self.file_name_marker
         }
 
 
@@ -116,9 +119,17 @@ class Likes(db.Model):
     __tablename__ = "Likes"
 
     id_like = db.Column(db.Integer, primary_key=True, autoincrement=True)
-    date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    date = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
     id_user = db.Column(db.Integer, db.ForeignKey('Users.id'))
     id_kindness = db.Column(db.Integer, db.ForeignKey('Kindness.id_kindness'))
+
+    def to_json(self):
+        return {
+            "idLike": self.id_like,
+            "dateLike": self.date,
+            "idUser": self.id_user,
+            "idKindness": self.id_kindness
+        }
 
 
 class Kindness_Files(db.Model):
@@ -127,12 +138,10 @@ class Kindness_Files(db.Model):
     id_kindness_file = db.Column(
         db.Integer, primary_key=True, autoincrement=True)
     file_extension = db.Column(db.String(6), nullable=False)
-    file_size = db.Column(db.Float)
-    # depois olhar como vai ser guardado esse caminho para diminuir ou aumentar
-    # o tamanho da coluna.
+    size = db.Column(db.LargeBinary())
     file_path = db.Column(db.String(70), nullable=False)
     date_upload = db.Column(
-        db.DateTime, default=datetime.utcnow, nullable=False)
+        db.DateTime, default=datetime.datetime.now, nullable=False)
     id_kindness = db.Column(db.Integer, db.ForeignKey('Kindness.id_kindness'))
 
 
@@ -141,7 +150,7 @@ class Tokens(db.Model):
 
     id_token = db.Column(db.Integer, primary_key=True, autoincrement=True)
     token = db.Column(db.String(200), unique=True, nullable=False)
-    send_date = db.Column(db.DateTime, default=datetime.utcnow, nullable=False)
+    send_date = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
     was_used = db.Column(db.Boolean, default=False)
     type_token = db.Column(db.String(15), nullable=False)
     is_valid = db.Column(db.Boolean, default=True, nullable=False)

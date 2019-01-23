@@ -1,5 +1,12 @@
 $(document).ready(function(){
-  getProfile();
+  updateProfile();
+  $("#edit-profile").click(function(){
+    //chamara a função getProfile() e popular o form do modal
+    // para usuários atualizarem o perfil.
+    getProfile();
+    UIkit.modal("#my-id").show();
+
+  })
 
   $("#uploadAvatar").change(function(){
 		var reader = new FileReader();
@@ -15,14 +22,15 @@ function updateProfile(){
   $("#update-profile").submit(function(e){
 
     var formData = new FormData($(this)[0]);
-    var url = "../settings/edit_profile";
+    var url = "../users/settings/edit_profile";
 
     $.ajax({
       type: "POST",
       url: url,
       data: formData,
+      async: true,
       success: function(response){
-        console.log(response)
+        console.log(response);
       },
       cache: false,
       contentType: false,
@@ -32,18 +40,22 @@ function updateProfile(){
   });
 }
 
+
 function getProfile(){
 
   $.ajax({
 	    type: 'GET',
-	    url: "../settings/get_profile",
+	    url: "../users/settings/get_profile",
 	    dataType: 'json',
 	    contentType: 'application/json; charset=utf-8',
 	    success: function(user){
 	    	console.log(user);
 
+        $("#username").val(user.username);
         $("#first_name").val(user.firstName);
         $("#last_name").val(user.lastName);
+        $("#status").val(user.status);
+        $("#phone").val(user.phone);
         $("#about_me").val(user.aboutMe);
         $("#previewAvatar").attr('src', user.avatar);
 	    },
@@ -61,7 +73,7 @@ function updatePassword(){
 
     data["old_password"] = $("#old_password").val();
 
-    let url = "../settings/update_password";
+    let url = "../users/settings/update_password";
     alert(data);
     $.ajax({
       type: "POST",

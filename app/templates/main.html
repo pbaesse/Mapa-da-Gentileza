@@ -1,4 +1,4 @@
-{% extends "base.html" %}
+{% extends "components/static_files.html" %}
 {% block content %}
 <nav class=" navbar-inverse">
 	<div class="container">
@@ -25,7 +25,7 @@
 				<input id="pac-input" type="text" placeholder="Pesquise sua Cidade...">
 			</div>
 			<div class="col-md-6">
-				<button id="novaGentileza" type="button">Criar uma Gentileza</button>	
+				<button id="novaGentileza" type="button">Criar uma Gentileza</button>
 			</div>
 		</div>
 	</div>
@@ -38,7 +38,7 @@
 	<div class="modal-content">
 		<form id="myform" method="post">
 			<span class="close">x</span>
-			<p>Quem foi gentil com você? 
+			<p>Quem foi gentil com você?
 				<select name="tipo">
 					<option value="1">Motorista</option>
 					<option value="2">Motociclista</option>
@@ -177,7 +177,7 @@ var btn = document.getElementById("novaGentileza");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks on the button, open the modal 
+// When the user clicks on the button, open the modal
 btn.onclick = function() {
     //modal.style.display = "block";
 }

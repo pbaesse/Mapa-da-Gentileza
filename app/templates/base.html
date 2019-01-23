@@ -1,9 +1,0 @@
-<body>
-	<div>
-		<a href="{{ url_for('auth.logout') }}">Logout</a>
-		<a href="{{ url_for('feed.get_user', username=current_user.username) }}">Profile</a>
-		<a href="{{ url_for('feed.feed') }}">Feed</a>
-	</div>
-	{% block content %}{% endblock %}
-</body>
-</html>

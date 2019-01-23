@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/uikit.min.css') }}">
+    {% block styles %}{% endblock %}
+
+    <title>{% block title %}{% endblock %} | Mapa Da Gentileza</title>
+    <style>
+  		#map{
+  			width: 800px;
+  			height: 500px;
+  		}
+  		#uploadedPreview{
+  			width: 100px;
+  			height: 100px;
+  			border: 1px solid black;
+  		}
+  	</style>
+  </head>
+  <body>
+    {% block content %}{% endblock %}
+    <!-- Importação dos arquivos js comuns -->
+    <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>
