@@ -5,6 +5,7 @@ from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
 from dynaconf import settings
 from app.models import Users, Kindness
+from app.schemas import UserSchema, KindnessSchema
 from app.helpers import convert_object_to_json
 from app.controllers.users_controller import UsersController
 from app.controllers.files_controller import FilesController
@@ -62,9 +63,13 @@ def edit_profile():
 @bp_users.route("/settings/get_profile", methods=['GET'])
 @login_required
 def get_profile():
-    #print(current_user.posts.all())
-    #convert_to_json(current_user)
-    return jsonify(current_user.to_json())
+    user = current_user
+    user_schema = UserSchema()
+    posts = current_user.posts.all()
+    posts_schema = KindnessSchema(many=True)
+    output_user = user_schema.dump(user).data
+    output_posts = posts_schema.dump(posts).data
+    return jsonify({'user': output_user, 'posts': output_posts})
 
 
 @bp_users.route("/uploads/users_images/<path:filename>")

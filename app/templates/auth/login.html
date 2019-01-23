@@ -2,35 +2,50 @@
 {% block title %} Login {% endblock %}
 {% block content %}
 {% include "components/navbar.html" %}
-	<div id="form-login">
-		<form action="{{ url_for('auth.login') }}" method="POST">
-			{{ form.hidden_tag() }}
-			<div class="uk-margin">
-				<div class="uk-inline">
-					{{ form.email.label(class="uk-form-label") }}
-					{{ form.email(class="uk-input") }}
+<div class="" uk-height-viewport>
+	<div class="uk-width-1-1">
+		<div class="uk-container">
+			<div class="uk-grid-margin uk-grid uk-grid-stack" uk-grid>
+				<div class="uk-width-1-1@m">
+					<div class="uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large">
+						<h3 class="uk-card-title uk-text-center">Olá!</h3>
+						<form action="{{ url_for('auth.login') }}" method="POST">
+							{{ form.hidden_tag() }}
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									{{ form.email.label(class="uk-form-label") }}
+									{{ form.email(class="uk-input") }}
+								</div>
+							</div>
+							<div class="uk-margin">
+								<div class="uk-inline uk-width-1-1">
+									{{ form.password.label(class="uk-form-label") }}
+									{{ form.password(class="uk-input") }}
+								</div>
+							</div>
+							<div class="uk-margin">
+								{{ form.submit(class="uk-button uk-button-primary uk-width-1-1") }}
+							</div>
+						</form>
+						<div class="uk-text-small uk-text-center">
+						{% for message in get_flashed_messages() %}
+						<p>
+							{{ message }}
+						</p>
+						{% endfor %}
+						</div>
+						<div class="uk-text-small uk-text-center">
+							Não possui conta?
+							<a href="{{ url_for('auth.register') }}">Cadastro</a>
+						</div>
+						<div class="uk-text-small uk-text-center">
+							Esqueceu sua senha?
+							<a href="{{ url_for('auth.reset_password_request') }}">Recuperar!</a>
+						</div>
+					</div>
 				</div>
 			</div>
-			<div class="uk-margin">
-				<div class="uk-inline">
-					{{ form.password.label(class="uk-form-label") }}
-					{{ form.password(class="uk-input") }}
-				</div>
-			</div>
-			{{ form.submit(class="uk-button uk-button-primary") }}
-		</form>
-		{% for message in get_flashed_messages() %}
-		<p>
-			{{ message }}
-		</p>
-		{% endfor %}
-		<p>
-			Não possui conta?
-			<a href="{{ url_for('auth.register') }}">Register</a>
-		</p>
-		<p>
-			Esqueceu sua senha?
-			<a href="{{ url_for('auth.reset_password_request') }}">Recuperar!</a>
-		</p>
+		</div>
 	</div>
+</div>
 {% endblock %}

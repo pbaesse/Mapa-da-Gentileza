@@ -1,24 +1,58 @@
-<nav class="navbar">
-  <ul class="navbarItens">
-    {% if current_user.is_authenticated %}
-    <li class="navbarItem">
-      <a href="{{ url_for('feed.feed') }}">Home</a>
-    </li>
-    <li class="navbarItem">
-      <a href="{{ url_for('auth.logout') }}">Logout</a>
-    </li>
-    <li class="navbarItem alinhado">
-      <a href="{{ url_for('users.get_user', username=current_user.username) }}">
-        <img src="{{ url_for('static', filename='img/icons/avatar.png') }}" alt="Foto do perfil">
-      </a>
-    </li>
-    {% else %}
-    <li class="navbarItem">
-      <a href="#">Estatisticas</a>
-    </li>
-    <li class="navbarItem">
-      <a href="#">Posts</a>
-    </li>
+<nav class="uk-navbar-container uk-margin" uk-navbar>
+    <div class="uk-navbar-center">
+
+        <div class="uk-navbar-center-left">
+          <div>
+          {% if current_user.is_authenticated %}
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="#">Home</a></li>
+                <li><a href="#">Estatisticas</a></li>
+            </ul>
+            {% else %}
+            <ul class="uk-navbar-nav">
+                <li class="uk-active"><a href="#">Explore</a></li>
+                <li><a href="#">Estatisticas</a></li>
+            </ul>
+          </div>
+        </div>
+        <a class="uk-navbar-item uk-logo" href="#">
+          <img src="{{ url_for('static', filename='img/icons/love32.png') }}" alt="Ícone do Mapa da Gentileza">
+        </a>
+        <!--
+        <div class="uk-navbar-center-right"><div>
+            <ul class="uk-navbar-nav">
+                <li><a href="#">Item</a></li>
+            </ul>
+        </div></div>
+        -->
+    </div>
     {% endif %}
-  </ul>
 </nav>
+<!--
+<nav class="uk-navbar">
+  <div class="uk-container uk-container-center">
+    <ul class="uk-navbar-nav uk-visible-large">
+      {% if current_user.is_authenticated %}
+      <li class="navbarItem">
+        <a href="{{ url_for('feed.feed') }}">Home</a>
+      </li>
+      <li>
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+      </li>
+      <li>
+        <a href="{{ url_for('users.get_user', username=current_user.username) }}">
+          <img src="{{ url_for('static', filename='img/icons/avatar.png') }}" alt="Foto do perfil">
+        </a>
+      </li>
+      {% else %}
+      <li>
+        <a href="#">Estatisticas</a>
+      </li>
+      <li>
+        <a href="#">Explore</a>
+      </li>
+      {% endif %}
+    </ul>
+  </div>
+</nav>
+-->

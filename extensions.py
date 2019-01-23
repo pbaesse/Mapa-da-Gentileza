@@ -3,9 +3,11 @@ from flask_migrate import Migrate
 from flask_login import LoginManager
 from flask_mail import Mail
 from dynaconf import FlaskDynaconf
+from flask_marshmallow import Marshmallow
 
 
 db = SQLAlchemy()
+marshmallow = Marshmallow()
 migrate = Migrate()
 login = LoginManager()
 login.login_view = 'auth.login'
