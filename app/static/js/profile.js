@@ -48,15 +48,16 @@ function getProfile(){
 	    url: "../users/settings/get_profile",
 	    dataType: 'json',
 	    contentType: 'application/json; charset=utf-8',
-	    success: function(user){
-	    	console.log(user);
+	    success: function(response){
+        console.log(response);
+        console.log(response.user.posts.author);
 
-        $("#username").val(user.username);
-        $("#first_name").val(user.firstName);
-        $("#last_name").val(user.lastName);
-        $("#status").val(user.status);
-        $("#phone").val(user.phone);
-        $("#about_me").val(user.aboutMe);
+        $("#username").val(response.user.username);
+        $("#first_name").val(response.user.first_name);
+        $("#last_name").val(response.user.last_name);
+        $("#status").val(response.user.status);
+        $("#phone").val(response.user.phone);
+        $("#about_me").val(response.user.about_me);
         $("#previewAvatar").attr('src', user.avatar);
 	    },
 	    error: function(){

@@ -63,13 +63,8 @@ def edit_profile():
 @bp_users.route("/settings/get_profile", methods=['GET'])
 @login_required
 def get_profile():
-    user = current_user
-    user_schema = UserSchema()
-    posts = current_user.posts.all()
-    posts_schema = KindnessSchema(many=True)
-    output_user = user_schema.dump(user).data
-    output_posts = posts_schema.dump(posts).data
-    return jsonify({'user': output_user, 'posts': output_posts})
+    user_data = UserSchema().dump(current_user)
+    return jsonify({'user': user_data.data})
 
 
 @bp_users.route("/uploads/users_images/<path:filename>")
