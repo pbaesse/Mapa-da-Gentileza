@@ -5,7 +5,7 @@
     <link rel="shortcut icon" href="{{ url_for('static', filename='img/icons/love24.png') }}" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/leaflet.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/uikit.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/semantic.min.css') }}">
     {% block styles %}{% endblock %}
 
     <title>{% block title %}{% endblock %} | Mapa Da Gentileza</title>
@@ -25,8 +25,7 @@
     {% block content %}{% endblock %}
     <!-- Importação dos arquivos js comuns -->
     <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.2.1.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/uikit.min.js') }}"></script>
-    <script type="text/javascript" src="{{ url_for('static', filename='js/uikit-icons.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='js/semantic.min.js') }}"></script>
     {% block scripts %}{% endblock %}
   </body>
 </html>

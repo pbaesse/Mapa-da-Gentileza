@@ -15,9 +15,20 @@
 		{{ user.about_me }}
 	</p>
 	{% if user == current_user %}
+	<!--
 		{% include "components/modal.html" %}
 		<button type="button" id="edit-profile">Editar perfil</button>
+		-->
 	{% endif %}
+	<div class="ui container">
+		<div class="ui grid">
+			<div class="sixteen wide column">
+				<div class="ui three stackable cards" id="posts">
+
+				</div>
+			</div>
+		</div>
+	</div>
 {% endblock %}
 
 {% block scripts %}
