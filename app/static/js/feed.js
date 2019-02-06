@@ -49,14 +49,26 @@ $(document).ready(function(){
 
 });
 
-function addMarker(lat, lon, content){
+function addMarker(lat, lon, content, title, postDate){
 	var newMarker = createMarker(lat, lon);
+	var date = moment(postDate).fromNow();
+	var customPopup = '<div class="ui card"> <div class="content">'+
+		'<div class="meta"> <span class="right floated time">'+date+'</span> </div>'+
+    '<div class="header">'+title+'</div>'+
+    '<div class="description">'+
+      '<p>'+content+'</p></div></div>'+
+  '<div class="extra content">'+
+    '<span class="left floated like">'+
+      '<i class="like icon"></i>Like</span>'+
+    '<span class="right floated star">'+
+      '<i class="star icon"></i>Favorite'+
+    '</span></div></div>';
 
 	newMarker.addTo(map);
-	newMarker.bindPopup(content);
+	newMarker.bindPopup(customPopup);
 	newMarker.openPopup();
 
-  	return newMarker;
+  return newMarker;
 }
 
 function createMarker(lat, lon){
@@ -88,9 +100,11 @@ function getKindness(){
 
 	    	callback.forEach(function(kindness){
 	    		var lat = kindness.latitude;
+					var title = kindness.title;
+					var datePost = kindness.postDate;
 	    		var lon = kindness.longitude;
 	    		var body = kindness.body;
-	    		addMarker(lat, lon, body);
+	    		addMarker(lat, lon, body, title, datePost);
 	    	});
 
 	    },

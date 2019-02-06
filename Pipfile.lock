@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f47c458d167f918dda8ba29dae9f819cc9234f4738ddd11debd6217be33f161d"
+            "sha256": "1fe51613866d8bff7b0e762031e31ef3f2177c6469085ee1cfc75465454eca2e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -18,9 +18,9 @@
     "default": {
         "alembic": {
             "hashes": [
-                "sha256:35660f7e6159288e2be111126be148ef04cbf7306da73c8b8bd4400837bb08e3"
+                "sha256:16505782b229007ae905ef9e0ae6e880fddafa406f086ac7d442c1aaf712f8c2"
             ],
-            "version": "==1.0.6"
+            "version": "==1.0.7"
         },
         "bcrypt": {
             "hashes": [
@@ -150,6 +150,14 @@
             "index": "pypi",
             "version": "==2.3.1"
         },
+        "flask-moment": {
+            "hashes": [
+                "sha256:71a601fcd5be4742227251641cb706c109680b54c5fb25c5d2ed96e576ec3b4d",
+                "sha256:af7ccd599d85e751ff1f7661904daa51df9950e9bc9bd4ccf174bd38ccbc401f"
+            ],
+            "index": "pypi",
+            "version": "==0.6.0"
+        },
         "flask-mysql": {
             "hashes": [
                 "sha256:33389b2e74d7dccaf749a42d22dc6663e7f1467941c680ab215e1df51b5ca2d3",
@@ -236,11 +244,11 @@
         },
         "marshmallow-sqlalchemy": {
             "hashes": [
-                "sha256:1a4813bbcd2a34f10b1fcad5f4ed85355739f39edb223e6cf68a95bd75807885",
-                "sha256:5fc53b6fac10c3e0d0c3e1ba19312860b54534ffc56bc5d9615bf680f35a18de"
+                "sha256:094ea7408ce0551ef28858fbe6cb344347382858340e62978632b1b35904f122",
+                "sha256:c99d51bb4dfca7e1b35ae12ed96746c0df0464b7eb95bba6835a1231e6ea286c"
             ],
             "index": "pypi",
-            "version": "==0.15.0"
+            "version": "==0.16.0"
         },
         "migrate": {
             "hashes": [
@@ -272,18 +280,18 @@
         },
         "python-box": {
             "hashes": [
-                "sha256:3330f264ef8deb7016a002911d345a99977e2977bf5b4a1a649f63866d3d0e5b",
-                "sha256:4bde84c7fa4282fe9ee4e584234571c25c03130bbbfbebe4ae369eced9a8e3e6",
-                "sha256:f0f4c36b6209181aa74fa7f14660a1542162178765f30527e092b8fecc64595b"
+                "sha256:8c69e61e456dd771b06d0fdca6b2e19830f2463dbe7704359e9f6388a9af6e94",
+                "sha256:a00464bd1b28e26d3a048a8c7db36722d8eb570666cabcb586ef29ebc69c3967",
+                "sha256:cc54818efd9cd49eb006741fa4904f27926429766b9ef0510b6fc75d06b8b627"
             ],
-            "version": "==3.2.3"
+            "version": "==3.2.4"
         },
         "python-dateutil": {
             "hashes": [
-                "sha256:063df5763652e21de43de7d9e00ccf239f953a832941e37be541614732cdfc93",
-                "sha256:88f9287c0174266bb0d8cedd395cfba9c58e87e5ad86b2ce58859bc11be3cf02"
+                "sha256:7e6584c74aeed623791615e26efd690f29817a27c73085b78e4bad02493df2fb",
+                "sha256:c89805f6f4d64db21ed966fda138f8a5ed7a4fdbc1a8ee329ce1b74e3c74da9e"
             ],
-            "version": "==2.7.5"
+            "version": "==2.8.0"
         },
         "python-dotenv": {
             "hashes": [
@@ -295,9 +303,11 @@
         },
         "python-editor": {
             "hashes": [
-                "sha256:a3c066acee22a1c94f63938341d4fb374e3fdd69366ed6603d7b24bed1efc565"
+                "sha256:1bf6e860a8ad52a14c3ee1252d5dc25b2030618ed80c022598f00176adc8367d",
+                "sha256:51fda6bcc5ddbbb7063b2af7509e43bd84bfc32a4ff71349ec7847713882327b",
+                "sha256:5f98b069316ea1c2ed3f67e7f5df6c0d8f10b689964a4a811ff64f0106819ec8"
             ],
-            "version": "==1.0.3"
+            "version": "==1.0.4"
         },
         "six": {
             "hashes": [
@@ -308,10 +318,10 @@
         },
         "sqlalchemy": {
             "hashes": [
-                "sha256:6af3ca2f7f00844465ab4fa78337d487b39e53f516c51328aed4ed3a719d4264"
+                "sha256:52a42dbf02d0562d6e90e7af59f177f1cc027e72833cc29c3a821eefa009c71d"
             ],
             "index": "pypi",
-            "version": "==1.2.16"
+            "version": "==1.2.17"
         },
         "toml": {
             "hashes": [

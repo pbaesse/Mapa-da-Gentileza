@@ -1,6 +1,6 @@
 from flask import Flask
 from config import Config
-from extensions import db, migrate, login, dynaconf, mail, marshmallow
+from extensions import db, migrate, login, dynaconf, mail, marshmallow, moment
 
 from app.auth import routes as accounts
 from app.errors import routes as errors
@@ -22,6 +22,7 @@ def create_app():
     login.init_app(app)
     dynaconf.init_app(app)
     mail.init_app(app)
+    moment.init_app(app)
 
     # configurando os blueprints
     accounts.configure(app)

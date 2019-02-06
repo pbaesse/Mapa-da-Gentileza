@@ -24,6 +24,7 @@ pyjwt = "*"
 flask-mail = "*"
 flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
+flask-moment = "*"
 
 [requires]
 python_version = "3.5"
