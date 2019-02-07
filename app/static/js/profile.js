@@ -3,9 +3,7 @@ $(document).ready(function(){
   getProfile();
   $("#edit-profile").click(function(){
 
-    UIkit.modal("#my-id").show();
-
-  })
+  });
 
   $("#uploadAvatar").change(function(){
 		var reader = new FileReader();

@@ -97,8 +97,12 @@ function getKindness(){
 	    contentType: 'application/json; charset=utf-8',
 	    success: function(callback){
 	    	console.log(callback);
+				var data = callback.posts;
+				console.log(data);
 
-	    	callback.forEach(function(kindness){
+
+
+	    	$.forEach(data, function(key, kindness){
 	    		var lat = kindness.latitude;
 					var title = kindness.title;
 					var datePost = kindness.postDate;

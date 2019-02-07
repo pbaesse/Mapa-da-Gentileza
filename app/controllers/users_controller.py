@@ -44,6 +44,7 @@ class UsersController:
             controller = FilesController()
             print("ID USUÁRIO DA IMAGEM: {}".format(id_user))
             filename = controller.save_image(files=image, type_upload="img_profile", id_user=id_user)
+            print("FILENAME IN UPDATE PROFILE: {}".format(filename))
             return filename
 
     def update_profile(self, user, current_user):
@@ -54,6 +55,7 @@ class UsersController:
         current_user.status = user.status
         current_user.phone = user.phone
         current_user.avatar = self.save_avatar(image=user.avatar, id_user=current_user.id)
+        print("AVATAR IN UPDATE PROFILE: {}".format(current_user.avatar))
         db.session.commit()
 
     def delete_account(self, user):

@@ -1,6 +1,7 @@
 from flask import render_template, Blueprint, jsonify, request
 from flask_login import login_required, current_user
 from app.models import Kindness, Users, Kindness_Files, Tags
+from app.schemas import KindnessSchema
 from app.feed.forms import NewKindnessForm, UpdateKindnessForm
 from app.users.forms import SearchUserForm
 from app.helpers import make_response_message
@@ -44,7 +45,14 @@ def feed():
 @bp_feed.route("/list_kindness", methods=['GET'])
 def list_kindness():
     posts = Kindness.query.all()
-    return jsonify([kindness.to_json() for kindness in posts])
+    kindness_schema = KindnessSchema().dump(posts, many=True)
+    return jsonify({'posts': kindness_schema.data})
+    #return jsonify([kindness.to_json() for kindness in posts])
+
+
+@bp_feed.route("/media/<path:filename>")
+def media(filename):
+    return send_from_directory(current_app.config.get('KINDNESS_MEDIA_ROOT'), filename)
 
 
 #Corrigir essa rota para que possa atualizar também a imagem caso o post possua.

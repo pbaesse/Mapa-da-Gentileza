@@ -18,7 +18,11 @@
         </div>
       </div>
       <a href="{{ url_for('users.get_user', username=current_user.username) }}" class="item">
-        <img src="{{ url_for('static', filename='img/icons/avatar.png') }}" alt="Foto do perfil" class="ui mini circular image">
+        {% if current_user.avatar %}
+        <img src="{{ url_for('users.media', filename=current_user.avatar) }}" alt="Foto do perfil" class="ui mini circular image">
+        {% else %}
+        <img src="{{ url_for('static', filename='img/icons/noavatar.png') }}" alt="Foto do perfil" class="ui mini circular image">
+        {% endif %}
       </a>
     </div>
 

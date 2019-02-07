@@ -15,6 +15,8 @@ class Config:
     SQLALCHEMY_DATABASE_URI = DatabaseSettings.get_db()
     SQLALCHEMY_TRACK_MODIFICATIONS = False
     MAIL_SERVER = settings.get('MAIL_SERVER')
+    USERS_MEDIA_ROOT = os.path.join(basedir, 'uploads/users_images')
+    KINDNESS_MEDIA_ROOT = os.path.join(basedir, 'uploads/posts_images')
     MAIL_PORT = settings.get('MAIL_PORT')
     MAIL_USE_TLS = settings.get('MAIL_USE_TLS')
     MAIL_USERNAME = settings.get('MAIL_USERNAME')

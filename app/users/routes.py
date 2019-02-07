@@ -1,6 +1,6 @@
 import os
 from datetime import datetime
-from flask import Blueprint, request, render_template, redirect, url_for, jsonify, send_from_directory
+from flask import Blueprint, request, render_template, redirect, url_for, jsonify, send_from_directory, current_app
 from flask_login import login_required, current_user
 from werkzeug.utils import secure_filename
 from dynaconf import settings
@@ -63,13 +63,14 @@ def edit_profile():
 @bp_users.route("/settings/get_profile", methods=['GET'])
 @login_required
 def get_profile():
+    print("CURRENT USER: {}".format(current_user.avatar))
     user_data = UserSchema().dump(current_user)
     return jsonify({'user': user_data.data})
 
 
-@bp_users.route("/uploads/users_images/<path:filename>")
-def get_profile_pic(filename):
-    return send_from_directory(settings.get('UPLOAD_USERS_FOLDER'), filename)
+@bp_users.route("/media/<path:filename>")
+def media(filename):
+    return send_from_directory(current_app.config.get('USERS_MEDIA_ROOT'), filename)
 
 
 @bp_users.route("/settings/update_password", methods=['GET', 'POST'])

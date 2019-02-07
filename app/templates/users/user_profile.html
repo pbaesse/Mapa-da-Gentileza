@@ -5,7 +5,7 @@
 	<h1>{{ user.username }}</h1>
 	<h2>{{ user.first_name }}</h2>
 	{% if user.avatar %}
-		<img src="{{ url_for('users.get_profile_pic', filename=user.avatar) }}" alt="Imagem de perfil">
+		<img src="{{ url_for('users.media', filename=user.avatar) }}" alt="Imagem de perfil" class="ui small rounded image">
 	{% else %}
 		<img src="{{ url_for('static', filename='img/noavatar.png') }}" alt="Sem imagem de perfil">
 	{% endif %}
@@ -15,10 +15,10 @@
 		{{ user.about_me }}
 	</p>
 	{% if user == current_user %}
-	<!--
+<!--
 		{% include "components/modal.html" %}
 		<button type="button" id="edit-profile">Editar perfil</button>
-		-->
+-->
 	{% endif %}
 	<div class="ui container">
 		<div class="ui grid">
