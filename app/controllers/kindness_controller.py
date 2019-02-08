@@ -12,7 +12,7 @@ class KindnessController:
             kind_files = None
 
             if image is not None:
-                kind_files = self.upload_kindness_image(post_image=image)
+                kind_files.file_path = self.upload_kindness_image(post_image=image)
 
             kindness.identifier = str(uuid.uuid1())
             db.session.add(kindness)
@@ -52,7 +52,7 @@ class KindnessController:
     def upload_kindness_image(self, post_image):
         try:
             files = FilesController()
-            kind_files = files.save_image(files=post_image, type_upload="img_kindness")
-            return kind_files
+            filename = files.save_image(files=post_image, type_upload="img_kindness")
+            return filename
         except Exception as e:
             raise e

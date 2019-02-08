@@ -30,6 +30,7 @@ def feed():
         try:
             post_image = form.file.data
             tags = form.tags.data
+            print("TAGS: {}".format(tags))
             kindness = Kindness(title=form.title.data, latitude=form.latitude.data,
                                 longitude=form.longitude.data, body=form.body.data, user_id=current_user.id)
             controller = KindnessController()

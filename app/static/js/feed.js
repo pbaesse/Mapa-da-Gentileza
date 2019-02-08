@@ -1,3 +1,8 @@
+var map;
+var latitude;
+var longitude;
+
+/*
 var initialCoord = [-22.91, -43.20];
 var initialZoom = 13;
 
@@ -20,11 +25,27 @@ function mapClick(local){
 }
 
 map.on('click', mapClick);
-
+*/
 
 $(document).ready(function(){
 	getKindness();
 	createKindness();
+	$('select.dropdown').dropdown();
+	$("#new-post").click(function(){
+
+		$('.ui.modal').modal({
+			onHide: function(){
+				deleteInstanceMap(map);
+			},
+			onShow: function(){
+				createInstanceMap();
+			},
+			onApprove: function(){
+
+			}
+		}).modal('show');
+
+  });
 
 	$.ajaxSetup({
 		beforeSend: function(xhr, settings) {
@@ -33,17 +54,17 @@ $(document).ready(function(){
 			}
 		}
 	});
-	/*
-	$("#search").change(function(){
-		getUsersBySearch();
-	});
-	*/
+
 	$("#uploadedImage").change(function(){
 		var reader = new FileReader();
 		reader.readAsDataURL($("#uploadedImage")[0].files[0]);
 
 		reader.onload = function(event){
-			$("#uploadedPreview").attr('src', event.target.result);
+			var uploadPreview = document.createElement("img");
+			$(uploadPreview).attr("id", "uploadedPreview");
+			$(uploadPreview).attr("class", "ui small rounded image");
+			$(uploadPreview).attr('src', event.target.result);
+			$("#image-post").append(uploadPreview);
 		};
 	});
 
@@ -117,34 +138,42 @@ function getKindness(){
 	    }
 	});
 }
-/*
-function getUsersBySearch(){
 
-	//$('#form-search-user').submit(function (e){
-		let data = {};
-
-		var url = "../users/search";
-		data['search'] = $('#search').val();
-
-		console.log(data);
-		$.ajax({
-				type: "POST",
-				url: url,
-				dataType: 'json',
-	      contentType: 'application/json; charset=utf-8',
-	      data: JSON.stringify(data),
-				success: function(response){
-					console.log(response);
-					let obj = JSON.parse(response);
-
-	        console.log(obj);
-	      },
-		});
-
-		//e.preventDefault();
-	//});
+function mapClick(local){
+	latitude = parseFloat(local.latlng.lat.toString());
+	longitude = parseFloat(local.latlng.lng.toString());
 }
-*/
+
+function createInstanceMap(){
+	//REFATORAR ESSE CÓDIGO PARA DEIXAR MAIS LIMPO.
+	var divMap = document.createElement("div");
+	$(divMap).attr("id", "map");
+	$(divMap).css({"width": "100%", "height":"100%"});
+	$("#map-content").append(divMap);
+
+	var initialCoord = [-22.91, -43.20];
+	var initialZoom = 13;
+
+	// coordenadas do local que o usuário selecionou para o post.
+
+	// inicializa o mapa.
+	map = L.map('map').setView(initialCoord, initialZoom);
+
+	L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
+		attribution: '&copy; Contribuidores do <a href="http://osm.org/copyright">OpenStreetMap</a>'
+	}).addTo(map);
+
+	map.on('click', mapClick);
+}
+
+function deleteInstanceMap(map){
+	if(map){
+		map.off();
+		map.remove();
+		map = null;
+	}
+}
+
 function createKindness(){
 
 	$('#form-new-post').submit(function (e) {

@@ -1,3 +1,79 @@
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    Update Profile
+  </div>
+  <div class="image content">
+    <div class="ui medium rounded image">
+      {% if current_user.avatar %}
+      <img src="{{ url_for('users.media', filename=current_user.avatar) }}" alt="Foto do perfil">
+      {% else %}
+      <img src="{{ url_for('static', filename='img/icons/noavatar.png') }}" alt="Foto do perfil">
+      {% endif %}
+    </div>
+    <div class="description">
+      <form class="ui form" method="POST" enctype="multipart/form-data" id="update-profile">
+        <div class="field">
+          <label>{{ form.username.label }}</label>
+           {{ form.username(placeholder="Username") }}
+        </div>
+        <div class="field">
+          <label>Name</label>
+          <div class="two fields">
+            <div class="field">
+              {{ form.first_name(placeholder="First Name") }}
+            </div>
+            <div class="field">
+              {{ form.last_name(placeholder="Last Name") }}
+            </div>
+          </div>
+        </div>
+        <div class="field">
+          <label>About me</label>
+          {{ form.about_me(cols=50, rows=4) }}
+        </div>
+        <div class="inline fields">
+          <div class="field">
+            {{ form.birthday(placeholder="Day") }}
+          </div>
+          <div class="field">
+            {{ form.month_birth(placeholder="Month") }}
+          </div>
+          <div class="field">
+            {{ form.year_birth(placeholder="Year") }}
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black cancel button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Update
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <div id="my-id" uk-modal>
     <div class="uk-modal-dialog uk-modal-body">
         <h2 class="uk-modal-title">Olá</h2>
@@ -65,3 +141,4 @@
         <button class="uk-modal-close" type="button">Fechar</button>
     </div>
 </div>
+-->

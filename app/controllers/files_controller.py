@@ -17,6 +17,9 @@ class FilesController:
             files.save(os.path.join(settings.get('UPLOAD_USERS_FOLDER'), filename))
             print("FILENAME IN SAVE IMAGE: {}".format(filename))
             return filename
+        elif type_upload == "img_kindness":
+            files.save(os.path.join(settings.get('UPLOAD_KINDNESS_FOLDER'), filename))
+            return filename
 
 
     def get_meta_data(self, files):

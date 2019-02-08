@@ -1,0 +1,13 @@
+#map{
+  width: 800px;
+  height: 500px;
+}
+
+#uploadedPreview{
+  width: 100px;
+  height: 100px;
+}
+
+#uploadedImage{
+  display: none;
+}

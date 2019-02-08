@@ -1,0 +1,53 @@
+<div class="ui modal">
+  <i class="close icon"></i>
+  <div class="header">
+    New Post
+  </div>
+  <div class="ui segment">
+    <div class="ui two column very relaxed grid">
+      <div class="column">
+        <form id="form-new-post" class="ui form" method="POST" enctype="multipart/form-data">
+          {{ form.hidden_tag() }}
+          <div class="field">
+            <label>{{ form.title.label }}</label>
+            {{ form.title(placeholder="Title") }}
+          </div>
+          <div class="field">
+            <label>{{ form.body.label }}</label>
+      			{{ form.body(cols=50, rows=4) }}
+          </div>
+          <div class="inline fields">
+            <div class="field">
+      			   {{ form.tags(class="ui dropdown", multiple=True) }}
+      		  </div>
+            <div class="field">
+              <div>
+                <label for="uploadedImage" class="ui icon button">
+                  <i class="file image outline icon"></i></label>
+                	 {{ form.file(id='uploadedImage')}}
+              </div>
+      		  </div>
+          </div>
+          <div id="image-post"></div>
+          <div class="actions">
+      		  {{ form.save_post(class="ui positive button") }}
+          </div>
+        </form>
+      </div>
+      <div class="column" id="map-content">
+      </div>
+    </div>
+    <div class="ui vertical divider">
+      and
+    </div>
+  </div>
+  <div class="actions">
+    <div class="ui black cancel button">
+      Cancel
+    </div>
+    <div class="ui positive right labeled icon button">
+      Save
+      <i class="checkmark icon"></i>
+    </div>
+  </div>
+</div>

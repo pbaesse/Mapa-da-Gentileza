@@ -2,6 +2,7 @@
 {% block title %} {{ user.username }} {% endblock %}
 {% block content %}
 {% include "components/navbar.html" %}
+<div>
 	<h1>{{ user.username }}</h1>
 	<h2>{{ user.first_name }}</h2>
 	{% if user.avatar %}
@@ -15,11 +16,12 @@
 		{{ user.about_me }}
 	</p>
 	{% if user == current_user %}
-<!--
+
 		{% include "components/modal.html" %}
 		<button type="button" id="edit-profile">Editar perfil</button>
--->
+
 	{% endif %}
+</div>
 	<div class="ui container">
 		<div class="ui grid">
 			<div class="sixteen wide column">

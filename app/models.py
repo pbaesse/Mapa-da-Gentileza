@@ -137,7 +137,6 @@ class Kindness_Files(db.Model):
 
     id_kindness_file = db.Column(
         db.Integer, primary_key=True, autoincrement=True)
-    file_extension = db.Column(db.String(6), nullable=False)
     size = db.Column(db.LargeBinary())
     file_path = db.Column(db.String(70), nullable=False)
     date_upload = db.Column(

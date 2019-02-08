@@ -2,7 +2,8 @@ $(document).ready(function(){
   updateProfile();
   getProfile();
   $("#edit-profile").click(function(){
-
+    $('.ui.modal')
+    .modal('show');
   });
 
   $("#uploadAvatar").change(function(){
@@ -49,7 +50,6 @@ function getProfile(){
         console.log(response);
         console.log("CHAMOU POPULATE");
         populatePostCard(response.user.posts);
-        //console.log(response.user.posts.author);
 
         $("#username").val(response.user.username);
         $("#first_name").val(response.user.first_name);
@@ -57,7 +57,7 @@ function getProfile(){
         $("#status").val(response.user.status);
         $("#phone").val(response.user.phone);
         $("#about_me").val(response.user.about_me);
-        $("#previewAvatar").attr('src', user.avatar);
+        //$("#previewAvatar").attr('src', user.avatar);
 	    },
 	    error: function(){
 	    	$(this).html("error!");

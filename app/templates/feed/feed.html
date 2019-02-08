@@ -2,9 +2,11 @@
 {% block title %} Feed {% endblock %}
 {% block content %}
 {% include "components/navbar.html" %}
+{% include "components/modal_new_post.html" %}
 	<h1>Olá</h1>
-	<div id="map"></div>
-	<form id="form-new-post" enctype="multipart/form-data" method="POST">
+	<!--<div id="map"></div>-->
+	<!--
+	<form id="form-new-post" enctype="multipart/form-data" method="POST" class="ui form">
 		{{ form.hidden_tag() }}
 		<div>
 			{{ form.title.label }}
@@ -19,11 +21,13 @@
 			{{ form.file(id='uploadedImage')}}
 		</div>
 		<img src="" id="uploadedPreview">
-		<div>
-			{{ form.tags }}
+		<div class="field">
+			{{ form.tags(class="ui dropdown", multiple="") }}
 		</div>
 		{{ form.save_post() }}
 	</form>
+	-->
+	<button type="button" id="new-post" class="ui button">New Post</button>
 	<p id="respostas"></p>
 {% endblock %}
 {% block scripts %}
