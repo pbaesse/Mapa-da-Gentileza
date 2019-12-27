@@ -1,20 +1,23 @@
-from flask import Flask
+from flask import Flask, Blueprint
 from config import Config
-from extensions import db, migrate, login, dynaconf, mail, marshmallow, moment
-
-from app.auth import routes as accounts
-from app.errors import routes as errors
-from app.feed import routes as feed
-from app.users import routes as users
-#from app.common import image
-from app.services import mail as email
+from extensions import api, db, migrate, login, dynaconf, mail, marshmallow
 from app import models
 from app.controllers import users_controller
+
+from app.services.users_endpoints import namespace_user
+from app.services.kindness_endpoints import namespace_kindness
+from app.services.auth_endpoints import namespace_auth
+from app.services.tags_endpoints import namespace_tags
 
 
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
+
+    blueprint = Blueprint("api", __name__)
+
+    api.init_app(blueprint)
+    app.register_blueprint(blueprint)
 
     db.init_app(app)
     marshmallow.init_app(app)
@@ -22,14 +25,10 @@ def create_app():
     login.init_app(app)
     dynaconf.init_app(app)
     mail.init_app(app)
-    moment.init_app(app)
 
-    # configurando os blueprints
-    accounts.configure(app)
-    errors.configure(app)
-    feed.configure(app)
-    users.configure(app)
-    #image.configure(app)
-    email.configure(app)
+    api.add_namespace(namespace_user)
+    api.add_namespace(namespace_kindness)
+    api.add_namespace(namespace_auth)
+    api.add_namespace(namespace_tags)
 
     return app

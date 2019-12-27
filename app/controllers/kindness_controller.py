@@ -1,19 +1,23 @@
+import math
 import uuid
 from app.models import Kindness, Tags
 from app.exceptions import CreateKindnessException
 from app.controllers.files_controller import FilesController
+from app.util.geolocation import GeoLocation
 from extensions import db
 
 
 class KindnessController:
 
-    def save_new_kindness(self, kindness, tags, image=None):
+    def save_new_kindness(self, title, body, latitude, longitude, id_user, tags, image=None):
         try:
             kind_files = None
 
             if image is not None:
                 kind_files.file_path = self.upload_kindness_image(post_image=image)
 
+
+            kindness = Kindness(title=title, body=body, latitude=latitude, longitude=longitude, user_id=id_user)
             kindness.identifier = str(uuid.uuid1())
             db.session.add(kindness)
             db.session.commit()
@@ -43,10 +47,54 @@ class KindnessController:
         kindness.longitude = kindness_up.longitude
         db.session.commit()
 
+
+    def get_kindness_by_location(self, user_latitude, user_longitude):
+
+        search_radius = 500
+        earth_radius = 6371
+        angular_radius = search_radius/earth_radius
+
+        lat_min = user_latitude - angular_radius
+        lat_max = user_latitude + angular_radius
+
+        delta_lon = math.asin(math.sin(math.radians(angular_radius)) / math.cos(user_latitude))
+
+        lon_min = user_longitude - delta_lon
+        lon_max = user_longitude + delta_lon
+
+
+        query = ('SELECT id_kindness, identifier, title, latitude, longitude FROM Kindness '
+                 'WHERE (latitude >= '+str(lat_min)+' AND latitude <= '+str(lat_max)+') AND '
+                 '(longitude >= '+str(lon_min)+' AND longitude <= '+str(lon_max)+') AND '
+                 'acos(sin('+str(user_latitude)+') * sin(latitude) + cos('+str(user_latitude)+') * '
+                 'cos(latitude) * cos(longitude - ('+str(user_longitude)+'))) <= '+str(angular_radius))
+
+        res = db.session.execute(query)
+
+        kindness_list = []
+
+        for row in res:
+            kindness = Kindness(id_kindness=row.id_kindness, identifier=row.identifier, title=row.title,
+                                latitude=row.latitude, longitude=row.longitude)
+
+            kindness_list.append(kindness)
+
+        return kindness_list
+
+
+    def get_kindness_by_id(self, id_kindness):
+        return Kindness.query.filter_by(id_kindness=id_kindness).first()
+
     def save_kindness_tags(self, id_kindness, id_tags):
+        tags = []
+
         kindness = Kindness.query.filter_by(id_kindness=id_kindness).first()
-        tags = Tags.query.filter_by(id=id_tags).first()
-        kindness.tags = [tags]
+
+        for id in id_tags:
+            tag = Tags.query.filter_by(id=id).first()
+            tags.append(tag)
+
+        kindness.tags = tags
         db.session.commit()
 
     def upload_kindness_image(self, post_image):

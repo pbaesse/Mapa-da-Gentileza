@@ -14,7 +14,7 @@ class Users(UserMixin, db.Model):
     last_name = db.Column(db.String(50))
     email = db.Column(db.String(130), unique=True, nullable=False)
     about_me = db.Column(db.Text)
-    status = db.Column(db.String(20))
+    auth_token = db.Column(db.String(200), nullable=True)
     password_hash = db.Column(db.String(200), nullable=False)
     avatar = db.Column(db.String(255))
     phone = db.Column(db.String(13))
@@ -28,6 +28,7 @@ class Users(UserMixin, db.Model):
     confirmed = db.Column(db.Boolean, default=False)
     date_last_change_pass = db.Column(db.DateTime, default=datetime.datetime.now, nullable=False)
     device_ip_register = db.Column(db.String(15), nullable=False)
+    amount_posts = db.Column(db.Integer, nullable=True)
     posts = db.relationship('Kindness', backref='author', lazy='dynamic')
 
     def __repr__(self):
@@ -70,6 +71,7 @@ class Kindness(db.Model):
     post_date = db.Column(db.DateTime, default=datetime.datetime.now)
     user_id = db.Column(db.Integer, db.ForeignKey('Users.id'), nullable=False)
     unnamed = db.Column(db.Boolean, default=False)
+    likes = db.relationship('Likes', backref='likes', lazy='dynamic')
     files = db.relationship('Kindness_Files', backref='file', lazy=True)
     tags = db.relationship('Tags', secondary=kindness_tags_association,
                            lazy='subquery', backref=db.backref('kindness', lazy=True))

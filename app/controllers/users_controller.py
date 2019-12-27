@@ -12,9 +12,6 @@ from extensions import db
 
 class UsersController:
 
-    @login.user_loader
-    def load_user(username):
-        return Users.query.get(username)
 
     def encrypt_pass(self, password):
         return bcrypt.hashpw(password.encode('utf8'), bcrypt.gensalt(9))
@@ -22,17 +19,23 @@ class UsersController:
     def check_pass(self, password, pass_hash):
         return bcrypt.checkpw(password.encode('utf8'), pass_hash.encode('utf8'))
 
-    def save_new_user(self, user):
-        received_data = [
-            user.first_name, user.email,
-            user.password_hash, user.genre,
-            user.date_birth, user.username
-        ]
+    def save_new_user(self, first_name=None, email=None, password=None, genre=None, date_birth=None, username=None, device_ip_register=None):
 
-        if all(received_data):
-            user.password_hash = self.encrypt_pass(user.password_hash)
-            db.session.add(user)
-            db.session.commit()
+        user = Users(first_name=first_name, email=email, genre=genre, date_birth=date_birth, username=username, device_ip_register=device_ip_register)
+
+        user.password_hash = self.encrypt_pass(password)
+
+        db.session.add(user)
+        db.session.commit()
+
+
+    def search_user(self, search):
+        return Users.query.filter((Users.username.contains(search)) | (Users.first_name.contains(search))).all()
+
+
+    def get_user_profile(self, id_user):
+        return Users.query.filter_by(id=id_user).first()
+
 
     def login(self, email, password):
         user = Users.query.filter_by(email=email).first()
@@ -47,6 +50,7 @@ class UsersController:
             print("FILENAME IN UPDATE PROFILE: {}".format(filename))
             return filename
 
+    """
     def update_profile(self, user, current_user):
         current_user.username = user.username
         current_user.first_name = user.first_name
@@ -57,10 +61,17 @@ class UsersController:
         current_user.avatar = self.save_avatar(image=user.avatar, id_user=current_user.id)
         print("AVATAR IN UPDATE PROFILE: {}".format(current_user.avatar))
         db.session.commit()
-
-    def delete_account(self, user):
-        pass
-
+    """
+    """
+    def update_profile(self, id_user, username, first_name, last_name, about_me, phone, avatar):
+        current_user = Users.query.get(id_user)
+        current_user.username = username
+        current_user.first_name = first_name
+        current_user.last_name = last_name
+        current_user.about_me = about_me
+        current_user.phone = phone
+        db.session.commit()
+    """
     @staticmethod
     def last_access(user):
         user.last_access = datetime.utcnow()

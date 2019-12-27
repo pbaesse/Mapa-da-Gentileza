@@ -25,6 +25,7 @@ flask-mail = "*"
 flask-marshmallow = "*"
 marshmallow-sqlalchemy = "*"
 flask-moment = "*"
+flask-restplus = "*"
 
 [requires]
-python_version = "3.5"
+python_version = "3.6"
