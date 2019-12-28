@@ -3,7 +3,7 @@ from flask_restplus import Resource
 from extensions import api
 from app.schemas import UserSchema
 from app.util.decorator import token_required
-from app.serializers.user_serializer import user_create_serializer
+from app.serializers.user_serializer import user_create_serializer, user_update_serializer
 from app.controllers.users_controller import UsersController
 
 namespace_user = api.namespace("user", description="Operations related with users")
@@ -20,9 +20,9 @@ class UserCollection(Resource):
         self.user = UsersController()
 
 
-    @api.doc(security="apiKey")
+    #@api.doc(security="apiKey")
     @api.expect(parser)
-    @token_required
+    #@token_required
     def get(self):
         schema = UserSchema(many=True)
 
@@ -64,19 +64,16 @@ class UsersDetail(Resource):
         return schema.dump(data)
 
 
-    @api.doc(security="apiKey")
-    @token_required
+    #@api.doc(security="apiKey")
+    @api.expect(user_update_serializer)
+    #@token_required
     def put(self, id):
         data = request.json
-        """
-        username = data.get('username')
+
         first_name = data.get('first_name')
         last_name = data.get('last_name')
-        email = data.get('email')
         about_me = data.get('about_me')
-        status = data.get('status')
-        phone = data.get('phone')
+        date_birth = data.get('date_birth')
 
-        return self.user.update_profile(id_user=id, username=username, first_name=first_name,
-                                        last_name=last_name, about_me=about_me, status=status, phone=phone)
-        """
+        return self.user.update_profile(id_user=id, first_name=first_name,
+                                        last_name=last_name, about_me=about_me, date_birth=date_birth)

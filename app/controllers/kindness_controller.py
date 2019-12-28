@@ -39,12 +39,12 @@ class KindnessController:
         Kindness.query.filter_by(identifier=kindness_identifier).delete()
         db.session.commit()
 
-    def update_kindness(self, kindness_up, kindness_identifier):
-        kindness = Kindness.query.filter_by(identifier=kindness_identifier)
-        kindness.title = kindness_up.title
-        kindness.body = kindness_up.body
-        kindness.latitude = kindness_up.latitude
-        kindness.longitude = kindness_up.longitude
+    def update_kindness(self, title, body, latitude, longitude, kindness_identifier):
+        kindness_to_update = Kindness.query.filter_by(identifier=kindness_identifier)
+        kindness_to_update.title = title
+        kindness_to_update.body = body
+        kindness_to_update.latitude = latitude
+        kindness_to_update.longitude = longitude
         db.session.commit()
 
 

@@ -13,12 +13,9 @@ user_create_serializer = api.model('UserCreate', {
 })
 
 user_update_serializer = api.model('UserUpdate', {
-    "email": fields.String(required=True),
     "first_name": fields.String(required=True),
     "genre": fields.String(),
-    "username": fields.String(required=True),
     "date_birth": fields.DateTime(dt_format="iso8601"),
     "last_name": fields.String(),
-    "about_me": fields.String(),
-    "phone": fields.String()
+    "about_me": fields.String()
 })

@@ -37,9 +37,9 @@ class KindnessCollection(Resource):
         return schema.dump(data)
 
 
-    #@api.doc(security="apiKey")
+    @api.doc(security="apiKey")
     @api.expect(kindness_create_serializer)
-    #@token_required
+    @token_required
     def post(self):
         data = request.json
 
@@ -73,5 +73,5 @@ class KindnessDetail(Resource):
 
     @api.doc(security="apiKey")
     @token_required
-    def put(self, id):
-        pass
+    def delete(self, id_kindness):
+        return self.kindness.delete_kindness(kindness_identifier=id_kindness)

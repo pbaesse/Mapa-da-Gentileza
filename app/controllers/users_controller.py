@@ -50,28 +50,15 @@ class UsersController:
             print("FILENAME IN UPDATE PROFILE: {}".format(filename))
             return filename
 
-    """
-    def update_profile(self, user, current_user):
-        current_user.username = user.username
-        current_user.first_name = user.first_name
-        current_user.last_name = user.last_name
-        current_user.about_me = user.about_me
-        current_user.status = user.status
-        current_user.phone = user.phone
-        current_user.avatar = self.save_avatar(image=user.avatar, id_user=current_user.id)
-        print("AVATAR IN UPDATE PROFILE: {}".format(current_user.avatar))
-        db.session.commit()
-    """
-    """
-    def update_profile(self, id_user, username, first_name, last_name, about_me, phone, avatar):
+
+    def update_profile(self, id_user, first_name, last_name, about_me, date_birth):
         current_user = Users.query.get(id_user)
-        current_user.username = username
         current_user.first_name = first_name
         current_user.last_name = last_name
         current_user.about_me = about_me
-        current_user.phone = phone
+        current_user.date_birth = date_birth
         db.session.commit()
-    """
+
     @staticmethod
     def last_access(user):
         user.last_access = datetime.utcnow()
